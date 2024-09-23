@@ -233,7 +233,7 @@ for (let i = 1; i <= 100; i++) {
 // }
 // console.log(strfibonacci);
 
-//! 10 - Asagidaki ciktiyi console a yazdiriniz.
+//! 10) Asagidaki ciktiyi console a yazdiriniz.
 
 // ?      * * * * *
 // ?      * * * * *
@@ -241,7 +241,7 @@ for (let i = 1; i <= 100; i++) {
 // ?      * * * * *
 // ?      * * * * *
 
-let stars = '';
+let stars = "";
 
 for (let i = 0; i < 5; i++) {
   for (let j = 0; j < 5; j++) {
@@ -252,7 +252,22 @@ for (let i = 0; i < 5; i++) {
 
 console.log(stars);
 
-//! 11 - Asagidaki ciktiyi console a yazdiriniz
+//! 11) Asagidaki ciktiyi console a yazdiriniz.
+
+//? 0
+//? 00
+//? 000
+//? 0000
+//? 00000
+//? 000000
+
+for (let i = 0; i <= 6; i++) {
+  let row = "";
+  for (let j = 0; j < i; j++) {
+    row += "0";
+  }
+  console.log(row);
+}
 
 //! 12 - Girilen degerlerin ücgen olusturup olusturamayacagini bulan program:
 
