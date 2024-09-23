@@ -229,12 +229,12 @@ console.log(Boolean(v5));
 
 let para = Number("1000") + Number("400");
 
-console.log(para);//1400
+console.log(para); //1400
 
-console.log("1000" - "400");//600
-console.log("1000" * "400");//400000
-console.log("1000" / "400");//2.5
-console.log("1000" + "400");//1000400
+console.log("1000" - "400"); //600
+console.log("1000" * "400"); //400000
+console.log("1000" / "400"); //2.5
+console.log("1000" + "400"); //1000400
 
 const s1 = 12;
 const s2 = "23";
@@ -255,7 +255,7 @@ console.log(f.toString()); //number'i stringe cevirir
 
 let ee = "12";
 
-console.log(typeof +ee);//12
+console.log(typeof +ee); //12
 
 //* toFixed(x) metodu virgülden x basamak birakmamizi saglar ama sayiyi string'e cevirir
 
@@ -265,7 +265,7 @@ console.log(+z.toFixed(3));
 
 //*prompt komutu da toFixed gibi kullanilan sayiyi string yapar
 
-// const age=+prompt("yasinizi giriniz")
+// const age=+prompt("yasinizi giriniz");
 
 console.log(typeof age);
 
