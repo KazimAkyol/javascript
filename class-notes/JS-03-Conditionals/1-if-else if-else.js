@@ -1,4 +1,4 @@
-//! ************ IF - ELSE
+//! ************ IF - ELSE ********** //
 /*
 if ( şart )
 { 
@@ -20,18 +20,33 @@ if (sicaklik > 50) {
 // prompt kodu kullanicidan bilgi almayi saglar
 //! kullanicidan alinan her bilgi string olarak gelir
 
-// girilen sayi tek mi cift mi oldugunu yazan program
+// Girilen sayi tek mi cift mi oldugunu yazan program:
 
 // let sayi = Number(prompt("Bir sayi giriniz"));
 
 // let kalan = sayi % 2;
 
-// if (kalan ===0){
+// if (kalan === 0){
 //     console.log("Sayi cifttir");
 // }
 // else{
 //     console.log("Sayi tektir");
 // }
+
+//! ******* IF - ELSE IF - ELSE ******* //
+/* if ( şart1 )
+{ 
+    şart1 durumu doğru ise bu blok çalıştırılır
+} 
+
+else if (şart2 ){
+    şart1 durumu doğru değil şart2 durumu doğru ise bu blok çalıştırılır
+}
+
+else{
+    şart durumu doğru değilse bu blok çalıştırılır.
+}
+*/
 
 //! HESAP MAKINESI
 
@@ -88,7 +103,6 @@ let h = "saglikli";
 
 if (yas > 18 && h == "saglikli") {
   console.log("Askerlik yapabilir");
-} 
-else {
+} else {
   console.log("Askerlik yapamaz");
 }
