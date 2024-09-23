@@ -125,19 +125,19 @@ if (dersNotu < 0 || dersNotu > 100) {
 
 //? Bir tarih 4 ile tam bölünüp 100 katları ile tam bölünemiyorsa, veya yıl 400 sayısına tam bölünüyorsa artık yıldır. BU iki şartın dışında yılarda şubat ayı 28 gün, artık yıllarda 29 gün olarak belirlenir.
 
-//? Yukarıdaki bilgilere göre bir yılın artık yıl olup olmadığını konsola yazdıran conditional statement'i yazınız.
+//? Yukarıdaki bilgilere göre bir yılın artık yıl olup olmadığını console a yazdıran conditional statement'i yazınız.
 
-// let y = 2001;
+let y = 2040;
 
-// if (y%4 === 0 && y%100 !== 0) {
-//     console.log(`${y} yili artik yildir`);
-// }
-// else if (y % 400 = 000) {
-//     console.log(`${y} yili artik yildir`);
-// }
-// else{
-//     console.log(`${y} yili artik yil degildir`);
-// }
+if (y%4 == 0 && y%100 != 0) {
+    console.log(`${y} artik yildir`);
+}
+else if (y % 400 == 0) {
+    console.log(`${y} yili artik yildir`);
+}
+else{
+    console.log(`${y} artik yil degildir`);
+}
 
 //! 4 - 1000 ile 2000 arasindaki 13'e bölümünden kalani 3 olan sayilari console a yazdiriniz
 
@@ -240,3 +240,25 @@ if (dersNotu < 0 || dersNotu > 100) {
 //! 12 - Girilen degerlerin ücgen olusturup olusturamayacagini bulan program:
 
 //let a = +prompt("Birinci kenari giriniz")
+
+//! freeCodeCamp'ten calisildi ve buraya yazildi...
+
+// function twoNumberSum(array, targetSum) {
+//     let result = []
+//     // We use a nested loop to test every possible combination of numbers within the array
+//         for (let i = 0; i < array.length; i++) {
+//           for (let j = i+1; j < array.length; j++) {
+//               // If we find the right combination, we push both values into the result array and return it
+//               if (array[i] + array[j] === targetSum) {
+//                   result.push(array[i])
+//                   result.push(array[j])
+//                   return result
+//               }
+//           }
+//       }
+//       // Return the result array
+//       return result
+// }
+
+// console.log(twoNumberSum([9,1,3,4,5], 6)) // [1,5]
+// console.log(twoNumberSum([1,2,3,4,5], 10)) // []
