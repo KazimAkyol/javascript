@@ -140,12 +140,14 @@ if (y % 4 == 0 && y % 100 != 0) {
 //! 4) 1000 ile 2000 arasindaki 13'e bölümünden kalani 3 olan sayilari console a yazdiriniz
 
 // let sayac = 0;
+
 // for (let i = 1000; i < 2000; i++) {
 //   if (i % 13 == 3) {
 //     console.log(i);
 //     sayac++;
 //   }
 // }
+
 //console.log("kac tane", sayac);
 
 //! 5) Kullanicidan alinan 5 adet sayinin ortalamasini console a yazdiriniz
@@ -154,28 +156,33 @@ if (y % 4 == 0 && y % 100 != 0) {
 
 // let sayac = 0;
 // let toplam = 0;
+
 // for (let i = 1; i <= 5; i++) {
 //   let sayi = +prompt("sayi giriniz");
 //   sayac++;
 //   toplam += sayi;
 // }
+
 // console.log(sayac);
 // console.log(toplam / sayac);
 
 //?while ile
 
 // let num = 0;
+
 // let result = 0;
 // while (num < 5) {
 //   let sayi = +prompt("sayi giriniz");
 //   result += sayi;
 //   num++;
 // }
+
 // console.log(`Girilen ${num} sayinin ortalamasi ${result / num} tir`);
 
 //! 6) Kullanıcıdan alınan sayıları negatif girilene kadar toplayan ve sonucunu console a yazdıran kodu yazınız.
 
 // let sum = 0;
+
 // while (true) {
 //   let num = +prompt("lütfen sayi giriniz");
 //   if (num < 0) {
@@ -183,23 +190,24 @@ if (y % 4 == 0 && y % 100 != 0) {
 //   }
 //   sum += num;
 // }
+
 // console.log(`Girilen sayilarin toplami ${sum}`);
 
-//! 7 - Sizden 1'den 100'e kadar sayilari console a yazdirmaniz istenmektedir ancak 3'ün katlarina gelince 'Fizz', 5'in katlarina gelince 'Buzz' yazacak. Hem 3'ün hem de 5'in katina geldiginde ise 'FizzBuzz' yazdirmaniz istenmektedir.
+//! 7) Sizden 1'den 100'e kadar olan sayilari console a yazdirmaniz istenmektedir ancak 3'ün katlarina gelince 'Fizz', 5'in katlarina gelince 'Buzz' yazacak. Hem 3'ün hem de 5'in katina geldiginde ise 'FizzBuzz' yazdirmaniz istenmektedir.
 
-// for (let i = 1; i <= 100; i++) {
-//   if (i % 3 === 0 && i % 5 === 0) {
-//     console.log("FizzBuzz");
-//   } else if (i % 3 === 0) {
-//     console.log("Fizz");
-//   } else if (i % 5 === 0) {
-//     console.log("Buzz");
-//   } else {
-//     console.log(i);
-//   }
-// }
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
 
-//! 8 - Bir sayinin(number) basamak sayisini yazdiran kodu yaziniz
+//! 8) Bir sayinin(number) basamak sayisini yazdiran kodu yaziniz.
 
 // let number = +prompt("sayi giriniz");
 
@@ -211,13 +219,13 @@ if (y % 4 == 0 && y % 100 != 0) {
 
 // console.log(`sayinin basamak sayisi ${digitCount}`);
 
-//! 9 - Kullanicidan alinan n adet kadar olan Fibonacci dizisini aralarinda bosluk olan string sekilde console a yazdiriniz // 0 1 1 2 3 5 8 13
+//! 9) Kullanicidan alinan n adet kadar olan Fibonacci dizisini aralarinda bosluk olan string sekilde console a yazdiriniz // 0 1 1 2 3 5 8 13
 
 // let a = 0;
 // let b = 1;
-// let strfibonacci = `0 1`;
-// let n = +prompt("kac tane fibonacci sayisi istersiniz");
-// for (let i = 2; i < n; i++) {
+// let strfibonacci = "0 1";
+// let n = +prompt("kac tane fibonacci sayisi istersiniz?");
+// for (let i = 0; i < n; i++) {
 //   c = a + b;
 //   strfibonacci += ` ${c}`;
 //   a = b;
@@ -225,7 +233,24 @@ if (y % 4 == 0 && y % 100 != 0) {
 // }
 // console.log(strfibonacci);
 
-//! 10 - Asagidaki ciktiyi console a yazdiriniz
+//! 10 - Asagidaki ciktiyi console a yazdiriniz.
+
+// ?      * * * * *
+// ?      * * * * *
+// ?      * * * * *
+// ?      * * * * *
+// ?      * * * * *
+
+let stars = '';
+
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 5; j++) {
+    stars += "*";
+  }
+  stars += "\n";
+}
+
+console.log(stars);
 
 //! 11 - Asagidaki ciktiyi console a yazdiriniz
 
