@@ -27,8 +27,8 @@ console.log(0 || false || undefined); //undefined
 
 // const sabah = false
 
-// if (condition) {
-//     console.log("merhaba");
+// if (sabah) {
+//     console.log("Günaydin");
 // }
 // else {
 //     console.log("Güle Güle");
