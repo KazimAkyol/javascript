@@ -269,9 +269,21 @@ for (let i = 0; i <= 6; i++) {
   console.log(row);
 }
 
-//! 12 - Girilen degerlerin ücgen olusturup olusturamayacagini bulan program:
+//! 12) Girilen degerlerin ücgen olusturup olusturamayacagini bulan program:
 
-//let a = +prompt("Birinci kenari giriniz")
+// let a = +prompt("Birinci kenari giriniz");
+// let b = +prompt("Ikinci kenari giriniz");
+// let c = +prompt("Ücüncü kenari giriniz");
+
+// let check1 = a + b > c;
+// let check2 = a + c > b;
+// let check3 = b + c > a;
+
+// if (check1 && check2 && check3) {
+//   console.log("Bu sayilar ücgen olusturabilir");
+// } else {
+//   console.log("Bu sayilar ücgen olusturamaz");
+// }
 
 //! freeCodeCamp'ten calisildi ve buraya yazildi...
 
