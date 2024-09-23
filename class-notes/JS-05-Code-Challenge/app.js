@@ -33,7 +33,7 @@ if (sabah) {
   console.log("Güle Güle");
 }
 
-//! 18 yasindan büyüklerin oy kullanabilecegini, 18 yasindan kücüklerin oy kullanamayacagini console a yazdiran kodu yaziniz: (if-else -- ternary)
+//! 1) 18 yasindan büyüklerin oy kullanabilecegini, 18 yasindan kücüklerin oy kullanamayacagini console a yazdiran kodu yaziniz: (if-else -- ternary)
 
 //let yas = +prompt("yasinizi giriniz");
 
@@ -56,7 +56,7 @@ if (sabah) {
 // let x = Math.trunc(yil/100) + 1;
 // console.log(`${x}.yüzyil`);
 
-//! 2 - Bir dersten  alinan notun harfini asagidaki duruma göre console a yazdiriniz
+//! 2) Bir dersten  alinan notun harfini asagidaki duruma göre console a yazdiriniz
 
 //?  Not:
 //?  90'dan büyükse AA.
@@ -119,9 +119,9 @@ if (dersNotu < 0 || dersNotu > 100) {
   console.log("Harfiniz FF'dir.");
 }
 
-//! 3 - Artik yil sorusu
+//! 3) Artik yil sorusu
 
-//? Artık yıl, bir yıldaki günlerin 365 yerine 366 gün olmasına denir. Bu fazladan gün (artık gün), normalde 28 gün olan şubat ayına 29 Şubat'ın eklenmesi ile elde edilir.  Bunun hesaplanması için aşağıdaki algoritma kullanılır.
+//? Artık yıl, bir yıldaki günlerin 365 yerine 366 gün olmasına denir. Bu fazladan gün (artık gün), normalde 28 gün olan Subat ayına 29 Şubat'ın eklenmesi ile elde edilir.  Bunun hesaplanması için aşağıdaki algoritma kullanılır.
 
 //? Bir tarih 4 ile tam bölünüp 100 katları ile tam bölünemiyorsa, veya yıl 400 sayısına tam bölünüyorsa artık yıldır. BU iki şartın dışında yılarda şubat ayı 28 gün, artık yıllarda 29 gün olarak belirlenir.
 
@@ -129,30 +129,26 @@ if (dersNotu < 0 || dersNotu > 100) {
 
 let y = 2040;
 
-if (y%4 == 0 && y%100 != 0) {
-    console.log(`${y} artik yildir`);
-}
-else if (y % 400 == 0) {
-    console.log(`${y} yili artik yildir`);
-}
-else{
-    console.log(`${y} artik yil degildir`);
+if (y % 4 == 0 && y % 100 != 0) {
+  console.log(`${y} artik yildir`);
+} else if (y % 400 == 0) {
+  console.log(`${y} yili artik yildir`);
+} else {
+  console.log(`${y} artik yil degildir`);
 }
 
-//! 4 - 1000 ile 2000 arasindaki 13'e bölümünden kalani 3 olan sayilari console a yazdiriniz
+//! 4) 1000 ile 2000 arasindaki 13'e bölümünden kalani 3 olan sayilari console a yazdiriniz
 
 // let sayac = 0;
-
 // for (let i = 1000; i < 2000; i++) {
 //   if (i % 13 == 3) {
 //     console.log(i);
 //     sayac++;
 //   }
 // }
-
 //console.log("kac tane", sayac);
 
-//! 5 - Kullanicidan alinan 5 adet sayinin ortalamasini console a yazdiriniz
+//! 5) Kullanicidan alinan 5 adet sayinin ortalamasini console a yazdiriniz
 
 //? for ile
 
@@ -170,27 +166,23 @@ else{
 
 // let num = 0;
 // let result = 0;
-// while (num<5) {
-//     let sayi = +prompt("sayi giriniz")
-//     result += sayi
-//     num ++
+// while (num < 5) {
+//   let sayi = +prompt("sayi giriniz");
+//   result += sayi;
+//   num++;
 // }
+// console.log(`Girilen ${num} sayinin ortalamasi ${result / num} tir`);
 
-// console.log(`Girilen ${num} sayinin ortalamasi ${result/num} tir`);
-
-//! 6 - Kullanıcıdan alınan sayıları negatif girilene kadar toplayan ve sonucunu konsola yazdıran kodu yazınız ?
+//! 6) Kullanıcıdan alınan sayıları negatif girilene kadar toplayan ve sonucunu console a yazdıran kodu yazınız.
 
 // let sum = 0;
-
 // while (true) {
 //   let num = +prompt("lütfen sayi giriniz");
-//   if (num < 0);
-//   {
+//   if (num < 0) {
 //     break;
 //   }
 //   sum += num;
 // }
-
 // console.log(`Girilen sayilarin toplami ${sum}`);
 
 //! 7 - Sizden 1'den 100'e kadar sayilari console a yazdirmaniz istenmektedir ancak 3'ün katlarina gelince 'Fizz', 5'in katlarina gelince 'Buzz' yazacak. Hem 3'ün hem de 5'in katina geldiginde ise 'FizzBuzz' yazdirmaniz istenmektedir.
@@ -278,7 +270,7 @@ else{
 //             const currentSum = sortedArray[leftLimit] + sortedArray[rightLimit]
 
 //             if (currentSum === targetSum) return [sortedArray[leftLimit], sortedArray[rightLimit]]
-//             else currentSum < targetSum ? leftLimit++ : rightLimit--        
+//             else currentSum < targetSum ? leftLimit++ : rightLimit--
 //     }
 
 //     return []
