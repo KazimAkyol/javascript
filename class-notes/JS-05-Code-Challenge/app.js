@@ -12,7 +12,7 @@ console.log(false && 1); // false
 console.log(1 && 3); //3
 console.log(0 && 1); // 0
 console.log(NaN && 1); //NaN
-console.log([] && 1);//Boolen degeri icine yazilinca console da görünür.
+console.log([] && 1); //Boolen degeri icine yazilinca console da görünür.
 console.log(Boolean([])); //true
 
 //OR OPERATÖRÜ
@@ -25,29 +25,26 @@ console.log([] || "" || undefined); //[]
 console.log(0 || "" || undefined); //undefined
 console.log(0 || false || undefined); //undefined
 
-// const sabah = false
+const sabah = false;
 
-// if (sabah) {
-//     console.log("Günaydin");
-// }
-// else {
-//     console.log("Güle Güle");
-// }
+if (sabah) {
+  console.log("Günaydin");
+} else {
+  console.log("Güle Güle");
+}
 
-//! 18 yasindan büyüklerin oy kullanabilecegini 18 yasindan kücüklerin oy kullanamayacagini ternary yapi ile konsola yazdiran kodu yaziniz. (ternary)
+//! 18 yasindan büyüklerin oy kullanabilecegini, 18 yasindan kücüklerin oy kullanamayacagini console a yazdiran kodu yaziniz: (if-else -- ternary)
 
 //let yas = +prompt("yasinizi giriniz");
 
-//if(yas < 18) {
-//console.log("Yasiniz 18'den kücüktür.Oy kullanamazsiniz");
-//}
-//else{
-//console.log("Yasiniz 18'den büyüktür.Oy kullanabilirsiniz");
-//}
+// if(yas < 18) {
+// console.log("Yasiniz 18'den kücüktür.Oy kullanamazsiniz");
+// }
+// else{
+// console.log("Yasiniz 18'den büyüktür.Oy kullanabilirsiniz");
+// }
 
-///let yas = +prompt("yasinizi giriniz");
-
-//yas < 18 ? console.log("Kisi oy kullanamaz") : console.log(Kisi oy kullanabilir);
+//yas < 18 ? console.log("Yasiniz 18'den kücüktür.Oy kullanamazsiniz") : console.log("Yasiniz 18'den büyüktür.Oy kullanabilirsiniz");
 
 //!1/2 girilen yilin yüzyilini veren program 1788 > 18.yüzyil
 
@@ -55,11 +52,9 @@ console.log(0 || false || undefined); //undefined
 //17,88
 //17+1
 
-//let yil = +prompt("Yil giriniz");
-
-//let x = Math.trunc(yil/100); + 1
-
-//console.log(`${x}.yüzyil`);
+// let yil = +prompt("Yil giriniz");
+// let x = Math.trunc(yil/100) + 1;
+// console.log(`${x}.yüzyil`);
 
 //! 2 - Bir dersten  alinan notun harfini asagidaki duruma göre console a yazdiriniz
 
@@ -99,6 +94,30 @@ console.log(0 || false || undefined); //undefined
 // else {
 //     console.log("FF");
 // }
+
+//! 2.Cözüm:
+
+let dersNotu = 83;
+
+if (dersNotu < 0 || dersNotu > 100) {
+  console.log("Notunuz 100'den büyük 0'dan küçük olamaz");
+} else if (dersNotu > 90) {
+  console.log("Harfiniz AA'dir.");
+} else if (dersNotu > 80) {
+  console.log("Harfiniz AB'dir.");
+} else if (dersNotu > 70) {
+  console.log("Harfiniz BB'dir.");
+} else if (dersNotu > 60) {
+  console.log("Harfiniz BC'dir.");
+} else if (dersNotu > 50) {
+  console.log("Harfiniz CC'dir.");
+} else if (dersNotu > 40) {
+  console.log("Harfiniz CD'dir.");
+} else if (dersNotu > 30) {
+  console.log("Harfiniz DD'dir.");
+} else {
+  console.log("Harfiniz FF'dir.");
+}
 
 //! 3 - Artik yil sorusu
 
@@ -220,4 +239,4 @@ console.log(0 || false || undefined); //undefined
 
 //! 12 - Girilen degerlerin ücgen olusturup olusturamayacagini bulan program:
 
-let a = +prompt("Birinci kenari giriniz")
+//let a = +prompt("Birinci kenari giriniz")
