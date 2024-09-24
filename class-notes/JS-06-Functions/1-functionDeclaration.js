@@ -82,4 +82,18 @@ function isEvenOdd(sayi) {
   return sayi % 2 == 0 ? "cifttir" : "tektir";
 }
 
-//*örnek-5
+//*örnek-5 (arguments keyword'ü ile karsilama)
+
+function sumAll() {
+  //console.log(arguments);
+  //console.log(arguments[0]);
+  //console.log(arguments[1]);
+
+  let toplam = 0;
+  for (let i = 0; i < 11; i++) {
+    toplam = toplam + arguments[i];
+  }
+  return `${toplam}, ${arguments[4]}`;
+}
+
+console.log(sumAll(23, 34, 67, 89, 23, 45, 35, 67, 23, 12, 36));
