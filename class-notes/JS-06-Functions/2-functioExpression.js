@@ -42,13 +42,35 @@ buyukBul(243, 475, 78);
 
 const enBul = function () {
   let enBuyuk = arguments[0];
+  let enKucuk = arguments[0];
 
   for (let i = 1; i < arguments.length; i++) {
     if (arguments[i] > enBuyuk) {
       enBuyuk = arguments[i];
     }
+
+    if (arguments[i] < enKucuk) {
+      enKucuk = arguments[i];
+    }
   }
-  return enBuyuk;
+  return `en büyük sayi ${enBuyuk}, en kücük sayi ${enKucuk}`;
 };
 
 console.log(enBul(34, 111, 777, 678, 56, 2, 5678, 34, 6));
+
+//* örnek-4 bir fonsiyon oconden baska bir fonksiyon cagirilabilir
+
+const usAl = function (a, b) {
+  return a ** b;
+};
+
+const alanBul = function(a,b) {
+    let alan = a*b
+    return alan
+}
+
+const Hesapla = function() {
+
+}
+
+Hesapla()
