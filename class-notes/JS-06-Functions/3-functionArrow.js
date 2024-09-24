@@ -23,3 +23,20 @@ const kontrol2 = (sayi) => {
 };
 
 console.log(kontrol2(51));
+
+//*örnek-2 : Menu fonksiyon
+//! ok(arrow) fonsiyonunda birden fazla ifade varsa, fonksiyonda süslü parantez kullanmaliyiz.
+
+const menu = () => {
+  console.log("=========================");
+  console.log("    JAVASCRIPT DERSI     ");
+  console.log("=========================");
+
+  const a = "=========================";
+  const b = "    JAVASCRIPT DERSI     ";
+  const c = "=========================";
+
+  return `${a} ${b} ${c}`;
+};
+
+console.log(menu());
