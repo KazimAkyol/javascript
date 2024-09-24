@@ -15,7 +15,7 @@ console.log("******** 2- EXPRESSION*******");
 //isEvenOdd(34); Expression da fonksiyon tanimlanmadan cagiramayiz
 
 const isEvenOdd = function (sayi) {
-  return (sayi %= 2 == 0 ? "cifttir" : "tektir");
+  return sayi % 2 == 0 ? "cifttir" : "tektir";
 };
 
 //console.log(isEvenOdd(34));
