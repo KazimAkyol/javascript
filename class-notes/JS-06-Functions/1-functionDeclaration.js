@@ -24,7 +24,7 @@
 
 //! Function declaration yöntemi ile  fonksiyonun tanımlanması çağrılmasından önce veya sonra olabilir.
 
-console.log("************ 1- FUNC DECLARATION *************");
+console.log("******** 1- FUNC DECLARATION *********");
 
 //* örnek-1
 
@@ -56,6 +56,28 @@ function yasHesapla(isim, yil) {
   console.log(
     `benim adim ${isim} ve ben ${new Date().getFullYear() - yil} yasindayim`
   );
+
+  return new Date().getFullYear() - yil;
 }
 
-yasHesapla("mehmet", 1988);
+const mehmet = yasHesapla("mehmet", 1988); //benim adim mehmet ve ben 36 yasindayim
+const muhterem = yasHesapla("muhterem", 1990); //benim adim muhterem ve ben 34 yasindayim
+const fatma = yasHesapla("fatma", 2000); //benim adim fatma ve ben 24 yasindayim
+
+//console.log(mehmet);
+//console.log(fatma);
+
+console.log((mehmet + muhterem + fatma) / 3); //31.333
+
+//* örnek-4
+//tek-cift sorgulamasi
+
+console.log(isEvenOdd(34));
+
+console.log(isEvenOdd(37));
+
+function isEvenOdd(sayi) {
+  //console.log(sayi % 2 == 0 ? "cifttir" : "tektir");
+
+  return sayi % 2 == 0 ? "cifttir" : "tektir";
+}
