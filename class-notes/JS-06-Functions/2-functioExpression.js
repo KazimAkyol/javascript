@@ -64,13 +64,35 @@ const usAl = function (a, b) {
   return a ** b;
 };
 
-const alanBul = function(a,b) {
-    let alan = a*b
-    return alan
-}
+const cevreBul = function (a, b) {
+  return (a + b) * 2;
+};
 
-const Hesapla = function() {
+const alanBul = function (a, b) {
+  let alan = a * b;
+  return alan;
+};
 
-}
+const Hesapla = function (secim, s1, s2) {
+  if (secim == "üsalirmisin") {
+    console.log(usAl(s1, s2));
+  } else if (secim == "cevrebulurmusun") {
+    console.log(cevreBul(s1, s2));
+  } else if (secim == "alanbulurmusun") {
+    console.log(alanBul(s1, s2));
+  }
+};
 
-Hesapla()
+Hesapla("üsalirmisin", 3, 5);
+Hesapla("cevrebulurmusun", 3, 5);
+Hesapla("alanbulurmusun", 3, 5);
+
+//*ornek5:-------------------------------------------------------------------------- 
+//Bir ülkedeki ortalama yaşam ömrü 95 yıl olduğuna göre, 
+// doğum yılı girilen kişinin yaşını hesaplattıran
+// yaşına göre ortalama ... ömrünüz kaldı yazıp önerilerde bulunan program
+
+// 0-10 : " Sen bu değerleri önemseme hayatın tadını çıkar"
+// 10-20 : " Gezmek görmek istediğin yerler varsa yola çıkma zamanı.. "
+
+/* -----------------------------------------------------------*/
