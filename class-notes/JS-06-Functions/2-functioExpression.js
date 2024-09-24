@@ -26,7 +26,7 @@ console.log(result);
 //*örnek-2
 
 const buyukBul = function (a, b, c) {
-  let enBuyuk;
+  let enBuyuk; //finction scope
   if (a > b && a > c) {
     enBuyuk = a;
   } else if (b > a && b > c) {
@@ -36,4 +36,19 @@ const buyukBul = function (a, b, c) {
   console.log(enBuyuk);
 };
 
-buyukBul(23, 45, 78);
+buyukBul(243, 475, 78);
+
+//*örnek-3 arguments keyword'ü ile
+
+const enBul = function () {
+  let enBuyuk = arguments[0];
+
+  for (let i = 1; i < arguments.length; i++) {
+    if (arguments[i] > enBuyuk) {
+      enBuyuk = arguments[i];
+    }
+  }
+  return enBuyuk;
+};
+
+console.log(enBul(34, 111, 777, 678, 56, 2, 5678, 34, 6));
