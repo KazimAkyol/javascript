@@ -87,8 +87,8 @@ Hesapla("üsalirmisin", 3, 5);
 Hesapla("cevrebulurmusun", 3, 5);
 Hesapla("alanbulurmusun", 3, 5);
 
-//*ornek5:-------------------------------------------------------------------------- 
-//Bir ülkedeki ortalama yaşam ömrü 95 yıl olduğuna göre, 
+//*ornek5:--------------------------------------------------------------------------
+//Bir ülkedeki ortalama yaşam ömrü 95 yıl olduğuna göre,
 // doğum yılı girilen kişinin yaşını hesaplattıran
 // yaşına göre ortalama ... ömrünüz kaldı yazıp önerilerde bulunan program
 
@@ -96,3 +96,19 @@ Hesapla("alanbulurmusun", 3, 5);
 // 10-20 : " Gezmek görmek istediğin yerler varsa yola çıkma zamanı.. "
 
 /* -----------------------------------------------------------*/
+
+const bilgilendirme = function (birth) {
+  const ortOmur = 95;
+
+  const kalanOmur = ortOmur - (2024 - birth);
+
+  if (kalanOmur > 0 && kalanOmur <= 10) {
+    return "sen bu degerleri önemseme, hayatin tadini cikar";
+  } else if (kalanOmur > 10 && kalanOmur <= 20) {
+    return "Gezmek görmek istedigin yerler varsa yola cikma zamani";
+  } else return `${kalanOmur} yil ömrün var istedigin gibi yasa`;
+};
+
+console.log(bilgilendirme(1939));
+console.log(bilgilendirme(1949));
+console.log(bilgilendirme(1979));
