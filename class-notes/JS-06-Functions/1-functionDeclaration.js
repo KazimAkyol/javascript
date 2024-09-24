@@ -81,3 +81,5 @@ function isEvenOdd(sayi) {
 
   return sayi % 2 == 0 ? "cifttir" : "tektir";
 }
+
+//*örnek-5
