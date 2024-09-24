@@ -5,14 +5,15 @@
 //!----------------------------------------------------------
 //! 2.YÖNTEM  : FUNCTION EXPRESSION
 //!-----------------------------------------------------------
-// //!Funct expression ve arrow func yontemlerinde
-// //! Once fonks tanimlanmalidir sonra cagrilmalidir.
+// //!Function expression ve arrow function yöntemlerinde
+// //! Önce fonksiyon tanimlanmalidir sonra cagrilmalidir.
 // //! Aksi takdirde hata alırsiniz.
-//* Örnek1:tek-çift kontrolü
-//**********************************************************/
+
 console.log("******** 2- EXPRESSION*******");
 
-//isEvenOdd(34); Expression da fonksiyon tanimlanmadan cagiramayiz
+//* Örnek1: (tek-çift kontrolü):
+
+//isEvenOdd(34); Expression da fonksiyon tanimlanmadan cagiramayiz.
 
 const isEvenOdd = function (sayi) {
   return sayi % 2 == 0 ? "cifttir" : "tektir";
@@ -21,12 +22,12 @@ const isEvenOdd = function (sayi) {
 //console.log(isEvenOdd(34));
 
 const result = isEvenOdd(35);
-console.log(result);
+console.log(result);//tektir
 
-//*örnek-2
+//*örnek-2:
 
 const buyukBul = function (a, b, c) {
-  let enBuyuk; //finction scope
+  let enBuyuk; //function scope
   if (a > b && a > c) {
     enBuyuk = a;
   } else if (b > a && b > c) {
@@ -36,9 +37,9 @@ const buyukBul = function (a, b, c) {
   console.log(enBuyuk);
 };
 
-buyukBul(243, 475, 78);
+buyukBul(243, 475, 78);//475
 
-//*örnek-3 arguments keyword'ü ile
+//*örnek-3: (arguments keyword'ü ile):
 
 const enBul = function () {
   let enBuyuk = arguments[0];
