@@ -17,16 +17,16 @@
 // Function Constructor (Fonksiyon Oluşturucusu):
 
 //! * --------Function-Declaration----------------------------*/
-// 1-Fonksiyonlar   function anahtar kelimesi ile tanımlanır
-// 2-Function kelimesini ardından fonksiyonun ismi verilir.
+// 1-Fonksiyonlar function anahtar kelimesi ile tanımlanır.
+// 2-Function kelimesinin ardından fonksiyonun ismi verilir.
 // 3-Sonra da bir parantez açılıp kapatılır.
-//? fonksiyonun çalışması için çağırmak gereklidir.Çağırılmadığında işleme alınmaz.Bu çağırma işlemine invoke yada call denir.
+//? Fonksiyonun çalışması için çağırmak gereklidir.Çağırılmadığında işleme alınmaz.Bu çağırma işlemine invoke yada call denir.
 
-//! Function declaration yöntemi ile  fonksiyonun tanımlanması çağrılmasından önce veya sonra olabilir.
+//! Function declaration yöntemi ile fonksiyonun tanımlanması çağrılmasından önce veya sonra olabilir.
 
-console.log("******** 1- FUNC DECLARATION *********");
+console.log("******** 1- FUNCTION DECLARATION *********");
 
-//* örnek-1
+//* örnek-1:
 
 yazdir();
 
@@ -39,7 +39,7 @@ function yazdir() {
 //? call - invoke fonksiyonu calistirma
 //yazdir
 
-//* örnek-2 (parametreli fonksiyon)
+//* örnek-2 (parametreli fonksiyon):
 
 function adYazdir(a, b, c) {
   console.log(a);
@@ -50,7 +50,7 @@ function adYazdir(a, b, c) {
 adYazdir("kazim", "fatma", "gökhan");
 adYazdir("mehmet", "muhterem");
 
-//* örnek-3 (parametreli, dönüs degerli-return)
+//* örnek-3 (parametreli, dönüs degerli-return):
 
 function yasHesapla(isim, yil) {
   console.log(
