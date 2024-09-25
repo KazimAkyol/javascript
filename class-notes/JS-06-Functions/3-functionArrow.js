@@ -8,8 +8,8 @@
 
 console.log("****** 3- ARROW FUNCTIONS ******");
 
-// //!Funct expression ve arrow func yontemlerinde
-// //! Once fonks tanimlanmalidir sonra cagrilmalidir.
+// //!Function expression ve arrow function yontemlerinde
+// //! Önce fonksiyon tanimlanmalidir sonra cagrilmalidir.
 // //! Aksi takdirde hata alırsiniz.
 
 //*örnek-1 : Girilen sayinin 3'ün kati olup olmadigini kontrol eden fonksiyon:
@@ -55,6 +55,8 @@ const fibonacciNumber = (n) => {
   let sagFibo = 1;
   let yeniFibo = 0;
 
+  let toplam = 2;
+
   for (let i = 1; i <= n - 2; i++) {
     yeniFibo = solFibo + sagFibo;
 
@@ -63,7 +65,8 @@ const fibonacciNumber = (n) => {
 
     toplam = toplam + yeniFibo;
   }
-
   console.log(yeniFibo);
+
+  return toplam;
 };
-fibonacciNumber(8);
+console.log(fibonacciNumber(8));
