@@ -40,3 +40,12 @@ const menu = () => {
 };
 
 console.log(menu());
+
+//örnek-3: Silindirin hacmini hesapla (pi*r**2*h):
+
+const hacimHesapla = (r, h) => Math.PI * r * r * h;
+
+console.log(hacimHesapla(3, 5).toFixed(2));
+
+//* Örnek-4: Girilen n. terimdeki  Fibonacci sayisını  yazdiran fonksiyonu dongu ile kodlayiniz. ve bu n sayısına kadar olan elemanları toplayınız
+//? FIBONACCI terimleri:  1, 1, 2, 3, 5, 8, 13, 21, 34, ...
