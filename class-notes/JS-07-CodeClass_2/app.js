@@ -1,13 +1,40 @@
 islem(4, 20);
 
 function islem(par1, par2) {
-  console.log(par1);
-  console.log(par2);
+  console.log(par1); //4
+  console.log(par2); //20
 
   return par1 + par2;
 }
 
-console.log(islem(5, 10));
+console.log(islem(5, 10)); //15
+
+console.log("******** lock *********");
+
+let topla = function (p1, p2) {
+  return p1 + p2;
+};
+
+console.log(topla(4, 6)); //10
+
+console.log("******** lock *********");
+
+const carp = (p1, p2) => {
+  return p1 * p2;
+};
+
+console.log(carp(4, 5)); //20
+
+console.log("******** lock *********");
+
+let isim = "harvey watson";
+console.log(isim.lenght); //undefined
+console.log(isim[0]); //h
+console.log(isim[1]); //a
+console.log(isim[2]); //r
+console.log(isim[isim.lenght - 1]); //undefined
+
+console.log("******** lock *********");
 
 //! 1- Celsius değerini Fahrenheit değerine dönüştüren bir fonksiyon yazınız? (Celsius × 9/5) + 32 = Fahrenheit
 
