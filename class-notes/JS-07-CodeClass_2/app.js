@@ -168,7 +168,7 @@ console.log(ters(2024)); //4202
 
 console.log("******** lock *********");
 
-//! 9- 100-1000'e kadar olan sayilarin polindrom olanlarini belirten/yazan program:
+//! 9) 100-1000'e kadar olan sayilarin polindrom olanlarini belirten/yazan program:
 
 function reverseNumber(number) {
   var reverse = 0;
@@ -176,15 +176,44 @@ function reverseNumber(number) {
   while (num != 0) {
     reverse = reverse * 10;
     reverse = reverse + (num % 10);
-    num = Math.trunc(num / 10);
+    num = Math.trunc(num / 10); //virgülden sonraki kısmı atmak için
   }
-  return reverse === number ? `$(number) polindromdur` : null;
+  return reverse === number ? `${number} polindromdur` : null;
 }
 
 for (let i = 100; i < 1000; i++) {
   let x = reverseNumber(i);
   x === null ? null : console.log(x);
 }
+
+console.log("******** lock *********");
+
+//! 10) Girilen bir sayinin pozitif bölenlerini bulan bir fonksiyon yaziniz:
+
+function findPositiveDivisors(num) {
+  let result = [];
+
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) result.push(i);
+    console.log("result", result);
+  }
+
+  return result;
+}
+
+console.log(findPositiveDivisors(12)); // output: [1, 2, 3, 4, 6, 12]
+
+function findFactors(num) {
+  const factors = [];
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) {
+      factors.push(i);
+    }
+  }
+  return factors;
+}
+
+console.log(findFactors(12)); // output: [1, 2, 3, 4, 6, 12]
 
 //! 12 - Mükemmel sayiyi bulan fonksiyonunu yaziniz:
 
