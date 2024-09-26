@@ -97,8 +97,12 @@ console.log("******** lock *********");
 //! 5) Yarıçapı verilen bir dairenin alan ve çevresini bulan program:
 
 function circleValues(rad) {
-    return `Perimeters: ${2 * Math.PI * rad}, Area: ${Math.PI * rad * rad}`
+  return `Perimeters: ${2 * Math.PI * rad}, Area: ${Math.PI * rad * rad}`;
 }
+
+console.log(circleValues(10)); //"Perimeters: 62.83, Area: 314.15"
+console.log(circleValues(15)); //"Perimeters: 94.24, Area: 706.85"
+console.log(circleValues(25)); //"Perimeters: 157.07 Area: 1963.49"
 
 //! 6- Belirli vir sayinin asal olup olmadigini bulan fonksiyonu yaziniz:
 
