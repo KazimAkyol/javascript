@@ -215,7 +215,36 @@ function findFactors(num) {
 
 console.log(findFactors(12)); // output: [1, 2, 3, 4, 6, 12]
 
-//! 12 - Mükemmel sayiyi bulan fonksiyonunu yaziniz:
+console.log("******** lock *********");
+
+//! 11) Aşağıdaki isterleri sağlayan bir fal programı yazıniz:
+
+//? tellFortune adlı bir işlev yazın:
+//? 4 farklı parametre : jobTitle, geoLocation, partner, numKids.
+//? falınızı ekrana şu şekilde verir: "Gelecekteki mesleğiniz *****'dir. ****'da yaşayacaksınız. **** ile evlenecek ve *** çocuk sahibi olacaksınız"
+
+function tellFortune(jobTitle, geoLocation, partner, numKids) {
+  let future =
+    "You will be a " +
+    jobTitle +
+    " in " +
+    geoLocation +
+    " and married to " +
+    partner +
+    " " +
+    " with " +
+    numKids +
+    " kids.";
+  console.log(future);
+}
+
+// tellFortune('bball player', 'spain', 'Shaq', 3);
+// tellFortune('stunt double', 'Japan', 'Ryan Gosling', 3000);
+// tellFortune('Elvis impersonator', 'Russia', 'The Oatmeal', 0);
+
+console.log("******** lock *********");
+
+//! 12) Mükemmel sayiyi bulan fonksiyonunu yaziniz:
 
 //? Bölen sayilarinin toplami orjinal sayinin 2 katina esitse bu mükemmel sayidir...
 //? 6 = 1, 2, 3, 6 = 12 =6*2
@@ -239,5 +268,42 @@ const mukSayi = (sayi) => {
   }
 };
 
-mukSayi(150); // mükemmel sayi degildir
+mukSayi(50); // mükemmel sayi degildir
 mukSayi(28); // mükemmel sayidir
+
+console.log("******** lock *********");
+
+//! 13) Anapara tutarına dayalı bileşik faizi hesaplamak için bir fonksiyon yazın:
+// Fonksiyon `compoundInt()`, anapara tutarı, yıllık faiz oranı, yıllık bazda zaman ve faizin birim zamanda kaç kez bileştirileceği olarak n verilen bileşik faiz formülüne dayalı nihai bir tutar döndürür.
+
+function compoundInt(principle, rate, time, n) {
+  var interest = principle * Math.pow(1 + rate / n, n * time);
+  return principle + interest;
+}
+
+console.log(compoundInt(20000, 5, 2, 2)); //3021250
+console.log(compoundInt(150000, 25, 1, 2)); //27487500
+
+console.log("******** lock *********");
+
+//! 14) calculateSupply adında bir fonksiyon yazın:
+// 2 argüman alır: yaş, günlük miktar.
+// hayatın geri kalanı için tüketilen miktarı hesaplar (sabit bir maksimum yaşa göre).
+// sonucu ekrana şu şekilde çıkarır: “X yaşına kadar size yetecek NN'ye ihtiyacınız olacak”
+// Bu fonksiyonu her seferinde farklı değerler girerek üç kez çağırın.
+// Bonus: Günlük miktar için kayan nokta değerlerini kabul edin ve sonucu yuvarlak bir sayıya yuvarlayın.
+
+function calculateSupply(age, numPerDay) {
+  var maxAge = 100;
+  var totalNeeded = numPerDay * 365 * (maxAge - age);
+  var message =
+    "You will need " +
+    totalNeeded +
+    " cups of tea to last you until the ripe old age of " +
+    maxAge;
+  console.log(message);
+}
+
+calculateSupply(28, 36); //946080
+calculateSupply(28, 2.5); //65700
+calculateSupply(28, 400); //10512000
