@@ -129,18 +129,44 @@ const transmogrifier = (val1, val2, val3) => {
   console.log(result);
 };
 
-transmogrifier(3, 4, 2);//144
+transmogrifier(3, 4, 2); //144
+
+console.log("******** lock *********");
 
 //! 8) Bir sayiyi tersine cevirecek bir fonksiyon yaziniz:
-
 //546
 //!1.Yöntem:
+// function reverseNumber(num) {
+//   var reverse = 0;
+//   while (num != 0) {
+//     reverse = reverse * 10;
+//     reverse = reverse + (num % 10);
+//     num = Math.trunc(num / 10); //virgülden sonraki kismi atmak icin
+//   }
+//   return reverse;
+// }
+
+// console.log(reverseNumber(546));
 
 //!2.Yöntem:
 
-let numara = 5441681;
+// let numara = 5441681;
+// console.log(numara);
+// console.log(numara(toString()));
 
-console.log(numara);
+const ters = (sayi) => {
+  let cevir = sayi.toString();
+  let ekle = "";
+  for (let i = cevir.length - 1; i >= 0; i--) {
+    ekle += cevir[i];
+  }
+  return parseInt(ekle);
+};
+
+console.log(ters(654)); //456
+console.log(ters(2024)); //4202
+
+console.log("******** lock *********");
 
 //! 9- 100-1000'e kadar olan sayilarin polindrom olanlarini belirten/yazan program:
 
