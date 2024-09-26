@@ -1,3 +1,5 @@
+
+
 //! 1- Celsius değerini Fahrenheit değerine dönüştüren bir fonksiyon yazınız? (Celsius × 9/5) + 32 = Fahrenheit
 
 //! 2- Belirli bir string ifadenin tersini bulan fonksiyonu yazınız?
