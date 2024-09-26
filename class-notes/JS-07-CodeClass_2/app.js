@@ -104,7 +104,9 @@ console.log(circleValues(10)); //"Perimeters: 62.83, Area: 314.15"
 console.log(circleValues(15)); //"Perimeters: 94.24, Area: 706.85"
 console.log(circleValues(25)); //"Perimeters: 157.07 Area: 1963.49"
 
-//! 6- Belirli vir sayinin asal olup olmadigini bulan fonksiyonu yaziniz:
+console.log("******** lock *********");
+
+//! 6) Belirli vir sayinin asal olup olmadigini bulan fonksiyonu yaziniz:
 
 const isPrime = (num) => {
   if (num < 2) return false;
@@ -116,18 +118,20 @@ const isPrime = (num) => {
   return true;
 };
 
-console.log(isPrime(71));
+console.log(isPrime(71)); //output true
 
-//! 7- ilk 2 parametreyi carpip 3.parametre üssüne alan fonsiyonu yaziniz:
+console.log("******** lock *********");
+
+//! 7) ilk 2 parametreyi carpip 3.parametre üssüne alan fonsiyonu yaziniz:
 
 const transmogrifier = (val1, val2, val3) => {
   let result = Math.pow(val1 * val2, val3);
   console.log(result);
 };
 
-transmogrifier(3, 4, 2);
+transmogrifier(3, 4, 2);//144
 
-//! 8- Bir sayiyi tersine cevirecek bir fonksiyon yaziniz:
+//! 8) Bir sayiyi tersine cevirecek bir fonksiyon yaziniz:
 
 //546
 //!1.Yöntem:
