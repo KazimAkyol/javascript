@@ -1,4 +1,13 @@
+islem(4, 20);
 
+function islem(par1, par2) {
+  console.log(par1);
+  console.log(par2);
+
+  return par1 + par2;
+}
+
+console.log(islem(5, 10));
 
 //! 1- Celsius değerini Fahrenheit değerine dönüştüren bir fonksiyon yazınız? (Celsius × 9/5) + 32 = Fahrenheit
 
