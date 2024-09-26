@@ -36,3 +36,32 @@ const transmogrifier = (val1, val2, val3) => {
 };
 
 transmogrifier(3, 4, 2);
+
+//! 8- Bir sayiyi tersine cevirecek bir fonksiyon yaziniz:
+
+//546
+//!1.Yöntem:
+
+//!2.Yöntem:
+
+let numara = 5441681;
+
+console.log(numara);
+
+//! 9- 100-1000'e kadar olan sayilarin polindrom olanlarini belirten/yazan program:
+
+function reverseNumber(number) {
+  var reverse = 0;
+  var num = number;
+  while (num != 0) {
+    reverse = reverse * 10;
+    reverse = reverse + (num % 10);
+    num = Math.trunc(num / 10);
+  }
+  return reverse === number ? `$(number) polindromdur` : null;
+}
+
+for (let i = 100; i < 1000; i++) {
+  let x = reverseNumber(i);
+  x === null ? null : console.log(x);
+}
