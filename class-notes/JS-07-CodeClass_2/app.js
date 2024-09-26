@@ -6,6 +6,7 @@ function islem(par1, par2) {
 
   return par1 + par2;
 }
+
 console.log(islem(5, 10)); //15
 
 console.log("******** lock *********");
@@ -21,6 +22,7 @@ console.log("******** lock *********");
 const carp = (p1, p2) => {
   return p1 * p2;
 };
+
 console.log(carp(4, 5)); //20
 
 console.log("******** lock *********");
@@ -55,6 +57,7 @@ function reversString(str) {
   }
   return newStr;
 }
+
 console.log(reversString(string)); // dlrow olleh
 
 console.log("******** lock *********");
@@ -64,19 +67,38 @@ console.log("******** lock *********");
 const string1 = "selles";
 
 function isPalindrome(str) {
-  let newStr1 = "";
-  for (let i = str.lenght - 1; i >= 0; i--) {
-    newStr1 += str[i];
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
   }
-  return newStr1 === str;
+  return newStr === str;
 }
-console.log(isPalindrome(string1));
 
-//! 4- Belirli bir sayinin tam bölenlerinin toplamini bulan fonksiyonu yaziniz.
+console.log(isPalindrome(string1)); //true
 
-const sumDivisors = function (num) {};
+console.log("******** lock *********");
 
-//! 5-Yarıçapı verilen bir dairenin alan ve çevresini bulan program?
+//! 4) Belirli bir sayinin tam bölenlerinin toplamini bulan fonksiyonu yaziniz:
+
+function sumDivisors(num) {
+  let sum = 0;
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+
+console.log(sumDivisors(12)); //28
+
+console.log("******** lock *********");
+
+//! 5) Yarıçapı verilen bir dairenin alan ve çevresini bulan program:
+
+function circleValues(rad) {
+    return `Perimeters: ${2 * Math.PI * rad}, Area: ${Math.PI * rad * rad}`
+}
 
 //! 6- Belirli vir sayinin asal olup olmadigini bulan fonksiyonu yaziniz:
 
