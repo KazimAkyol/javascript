@@ -57,11 +57,20 @@ function reversString(str) {
 }
 console.log(reversString(string)); // dlrow olleh
 
-//! 3- Belirli bir string ifadenin palindrome olup olmadığını bulan fonksiyonu yazınız?
+console.log("******** lock *********");
+
+//! 3) Belirli bir string ifadenin palindrome olup olmadığını bulan fonksiyonu yazınız:
 
 const string1 = "selles";
 
-//console.log(isPalindrome(string1)); //true
+function isPalindrome(str) {
+  let newStr1 = "";
+  for (let i = str.lenght - 1; i >= 0; i--) {
+    newStr1 += str[i];
+  }
+  return newStr1 === str;
+}
+console.log(isPalindrome(string1));
 
 //! 4- Belirli bir sayinin tam bölenlerinin toplamini bulan fonksiyonu yaziniz.
 
