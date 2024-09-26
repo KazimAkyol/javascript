@@ -6,7 +6,6 @@ function islem(par1, par2) {
 
   return par1 + par2;
 }
-
 console.log(islem(5, 10)); //15
 
 console.log("******** lock *********");
@@ -22,7 +21,6 @@ console.log("******** lock *********");
 const carp = (p1, p2) => {
   return p1 * p2;
 };
-
 console.log(carp(4, 5)); //20
 
 console.log("******** lock *********");
@@ -36,9 +34,28 @@ console.log(isim[isim.lenght - 1]); //undefined
 
 console.log("******** lock *********");
 
-//! 1- Celsius değerini Fahrenheit değerine dönüştüren bir fonksiyon yazınız? (Celsius × 9/5) + 32 = Fahrenheit
+//! 1) Celsius değerini Fahrenheit değerine dönüştüren bir fonksiyon yazınız: (Celsius × 9/5) + 32 = Fahrenheit
 
-//! 2- Belirli bir string ifadenin tersini bulan fonksiyonu yazınız?
+function calcFahrenheit(celcius) {
+  let fahrenheit = (celcius * 9) / 5 + 32;
+  console.log(fahrenheit);
+}
+calcFahrenheit(30); //86
+
+console.log("******** lock *********");
+
+//! 2) Belirli bir string ifadenin tersini bulan fonksiyonu yazınız:
+
+const string = "hello world";
+
+function reversString(str) {
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+}
+console.log(reversString(string)); // dlrow olleh
 
 //! 3- Belirli bir string ifadenin palindrome olup olmadığını bulan fonksiyonu yazınız?
 
