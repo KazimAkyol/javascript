@@ -65,3 +65,30 @@ for (let i = 100; i < 1000; i++) {
   let x = reverseNumber(i);
   x === null ? null : console.log(x);
 }
+
+//! 12 - Mükemmel sayiyi bulan fonksiyonunu yaziniz:
+
+//? Bölen sayilarinin toplami orjinal sayinin 2 katina esitse bu mükemmel sayidir...
+//? 6 = 1, 2, 3, 6 = 12 =6*2
+//? 28 = 1, 2, 4 ,7, 14, 28 = 56 =28*2
+
+const mukSayi = (sayi) => {
+  let toplam = 0;
+
+  for (let i = 2; i <= sayi / 2; i++) {
+    if (sayi % i === 0) {
+      toplam += i;
+    }
+  }
+  toplam += 1 + sayi;
+  //console.log(toplam)
+
+  if (toplam == sayi * 2) {
+    console.log("Mükemmel sayidir...");
+  } else {
+    console.log("Mükemmel sayi degildir...");
+  }
+};
+
+mukSayi(150); // mükemmel sayi degildir
+mukSayi(28); // mükemmel sayidir
