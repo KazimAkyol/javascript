@@ -18,7 +18,7 @@ const str4 = "🐝";
 console.log(str4);
 
 //! Normalde primitive veri tiplerinin property veya metodu olmaz.
-//! Ancak Javascript otomatik olarak primitive String'leri String object'lerine dönüştürür. Bu sayede, String object'lerine ait olan fonksiyonlar veya özellikleri primitive string ile kullanmak mümkün olur. 
+//! Ancak Javascript otomatik olarak primitive String'leri String object'lerine dönüştürür. Bu sayede, String object'lerine ait olan fonksiyonlar veya özellikleri primitive string ile kullanmak mümkün olur.
 //!Ayrıca 2 tür arasında çevrim yapmakta mümkündür.
 
 //* -------------------------------------------------------------------------- */
@@ -27,23 +27,24 @@ console.log(str4);
 
 let kelime = "Clarusway";
 
-console.log(kelime[0]);
-console.log(kelime[1]);
-console.log(kelime[2]);
+console.log(kelime[0]); //C
+console.log(kelime[1]); //l
+console.log(kelime[2]); //a
 
-for (let i = 8; i >= 0; i--) {
-  console.log(kelime[i]);
+for (let i = 0; i <= 8; i++) {
+  console.log(kelime[i]); //Clarusway
 }
 
 // Stringler, parca olarak degistiremezsiniz
-// You cannot
+// You cannot mutate a string, since it is a primitive value:
+//immutable
 
 kelime[7] = "o";
-console.log(kelime);
+console.log(kelime); //Clarusway
 
 //! ************STRING PROPERTY ************
-// Property bir stringin kendi özelliğidir bir method(fonksiyon) değildir
-//parantez açıp kapatmaya gerek yoktur
+// Property bir stringin kendi özelliğidir, bir method(fonksiyon) değildir.
+// Parantez açıp kapatmaya gerek yoktur
 
 //?length
 //prototype
@@ -75,17 +76,23 @@ console.log(kelime);
 // trim()	            Removes whitespace from both ends of a string.
 // valueOf()	        Returns the primitive value of a String object.
 
-const metin = "Clarusway🚗";
-console.log(metin.length);
+// *=========================================================
+// *               lenght - Property
+// *=========================================================
 
-//Emojiler 2 karakter uzunlugundadir
+//? Lenght => Bir stringin bosluklarda dahil kac karaktaerden olustugunu verir.
+
+const metin = "Clarusway🚗";
+console.log(metin.length); //11
+
+//Emojiler 2 karakter uzunlugundadir.
 
 for (let i = 0; i <= metin.length - 1; i++) {
   console.log(metin[i]);
 }
 
 let emoji = "🚗";
-console.log(emoji.length);
+console.log(emoji.length); //2
 
 //! ************STRING METHODS ************
 // String metodları () kullanılır. (Arkaplanda fonksiyonlardır)
@@ -96,11 +103,11 @@ console.log(emoji.length);
 // *=========================================================
 //? Karakterleri büyük harfe dönüştürme => .toUpperCase()
 
-console.log(metin.toUpperCase());
-console.log(metin);
+console.log(metin.toUpperCase()); //CLARUSWAY🚗
+console.log(metin); //Clarusway🚗
 //Degisim gecicidir. Tamamen degistirmiyor, degistirip kaydetmek istiyorsak yeni bir degere atamaliyiz.
 let yeniMetin = metin.toUpperCase();
-console.log(yeniMetin);
+console.log(yeniMetin); //CLARUSWAY🚗
 
 //? Karakterleri kücük harfe dönüstürme => .toLowercase()
 
