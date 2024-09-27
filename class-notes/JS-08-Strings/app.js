@@ -161,6 +161,52 @@ console.log(`${str5}
     
     ${str6}
     
-    "Nasilsin?"`);
+    "Nasilsin?"`); //seklinde yazilabilir
 
-    
+//! String Parcalama Metodlari
+//split()
+//substring()
+//substr()
+//slice()
+
+
+
+
+
+console.clear();
+
+const metin1 = "Clarusway IT Bootcamp De10"
+console.log(metin1.split(" "));
+console.log(metin1);
+
+let parcalanmisMetin = metin1.split(" ");
+console.log(parcalanmisMetin);
+console.log(parcalanmisMetin[2]); //Bootcamp
+
+for (let i = 0; i < parcalanmisMetin.length; i++) {
+    if (parcalanmisMetin[i] === "IT") {
+        console.log("Bu cümle IT kelimesi iceriyor") //Bu cümle IT kelimesi iceriyor
+    }
+    //console.log(parcalanmisMetin[i]);
+}
+
+//Cümleyi harf harf parcalamak icin
+console.log(metin1.split("")); //tirnak icerisinde bosluk birakilmadigi icin yazilan kelimeleri harf harf console'a yazdirir.
+
+//! Verilen tarih bilgisini gün/ay/yil olarak ayirma:
+
+let date = "27.09.2024";
+let newDate = date.split(".");
+console.log(newDate);
+let gun = newDate[0];
+let ay = newDate[1];
+let yil = newDate[2];
+
+console.log("gün", gun);
+console.log("ay", ay);
+console.log("yil", yil);
+
+let months = "Jan / Feb / Mar / Apr / May / Jun / Aug / Sep / Oct / Nov / Dec"
+
+let newMonth = months.split(" / ");
+console.log(newMonth);
