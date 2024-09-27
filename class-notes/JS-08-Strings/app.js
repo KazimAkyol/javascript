@@ -185,7 +185,7 @@ console.log(`${str5}
 // separator : ayraç
 // Parçaladığı elemanları bir diziye aktarır.
 
-const metin1 = "Clarusway IT Bootcamp De10";
+const metin1 = "Clarusway IT Bootcamp DE10";
 console.log(metin1.split(" "));
 console.log(metin1);
 
@@ -239,7 +239,7 @@ console.log(newMonth.join("-"));
 
 let kelime1 = "Merhaba";
 
-console.log(kelime1.split("").reverse().join(""));
+console.log(kelime1.split("").reverse().join("")); //abahreM
 
 //! Polindrom:
 let kelime2 = "madam";
@@ -251,16 +251,28 @@ let mesaj =
 
 console.log(mesaj); //Polindromdur
 
+// *=========================================================
+// *               Slice
+// *=========================================================
+
+//! Slice Metodu
+//? String içinde bir bölümü almak için kullanılır.
+// Slice(başlangıç index numarası, bitiş index numarası(bu numara dahil değildir))
+
 let sentence = "Merhaba Cohort DE-10";
-console.log(sentence.slice(8, 14));
-console.log(sentence.slice(8));
+console.log(sentence.slice(8, 14)); //Cohort
+console.log(sentence.slice(8)); //Cohort DE-10
 
-console.log(sentence.slice(-5));
-console.log(sentence.slice(-12, -6));
+console.log(sentence.slice(-5)); //DE-10
+console.log(sentence.slice(-12, -6)); //Cohort
 
-//substring
+// *=========================================================
+// *               substring
+// *=========================================================
+//! substring(başlangıç index numarası,bitiş index numarası) 
+//Slicedan farkı negatif sayı kullanılmaz
 
-console.log(sentence.substring(8, 14));
+console.log(sentence.substring(8, 14)); //Cohort
 
 let cumle = "to be or not To be, Thats is The question";
 console.log(cumle.toUpperCase().includes("TO BE"));
