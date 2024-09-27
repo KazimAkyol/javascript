@@ -293,3 +293,41 @@ console.log(variable.search(/[^A-Z]/));
 
 //? match metodu, bir dize icindeki bir düzenli ifadeye (Regex) uyari kisimlari bulur ve bir dizi olarak döner.
 //Bir dizi döndürür.
+
+let phone = "My phone is 123-456-7890";
+
+let result = phone.match(/\d/);
+console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(phone.startsWith("My"));
+console.log(phone.endsWith("890"));
+
+//! Stringde Degisiklik Yapma
+
+
+
+
+let text5 = "Hello World, How are you? World";
+let newText = text5.replace("World", "JavaScript");
+console.log(newText);
+console.log(text5.replaceAll("World" , "JavaScript"));
+
+//? bas ve sondaki bosluklari kaldirmak icin => trim
+
+let metin2= " Clarusway";
+console.log(metin2);
+let metin3 = metin2.trim();
+console.log(metin3);
