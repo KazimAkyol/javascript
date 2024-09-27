@@ -2,28 +2,28 @@
 // ?                 STRINGLER
 // ?=========================================================
 
+//!String Tanimlama
 
-//!String Tanimlama 
+const str1 = "Clarusway DE-10";
+const str2 = `Hello world!`;
 
-const str1 = "Clarusway DE-10"
-const str2 = `Hello world!`
-
-console.log(str2);
+console.log(str2); // Hello world!
 
 // String constructor ile String olusturma
 
 const str3 = new String("World");
-console.log(str3);
+console.log(str3); //"World"
 
-const str4 = "🐝"
-console.log(str4)
+const str4 = "🐝";
+console.log(str4);
 
 //! Normalde primitive veri tiplerinin property veya metodu olmaz.
-//! Ancak Javascript  otomatik olarak primitive String'leri String object lerine dönüştürür. Bu sayede, String object lerine ait olan
-//! fonksiyonlar veya özellikleri primitive string ile kullanmak
-//! mümkün olur. Ayrıca 2 tür arasında çevrim yapmakta mümkündür.
+//! Ancak Javascript otomatik olarak primitive String'leri String object'lerine dönüştürür. Bu sayede, String object'lerine ait olan fonksiyonlar veya özellikleri primitive string ile kullanmak mümkün olur. 
+//!Ayrıca 2 tür arasında çevrim yapmakta mümkündür.
 
-
+//* -------------------------------------------------------------------------- */
+//*                         STRING YAPISI VE INDEXLEME                         */
+//* -------------------------------------------------------------------------- */
 
 let kelime = "Clarusway";
 
@@ -31,8 +31,8 @@ console.log(kelime[0]);
 console.log(kelime[1]);
 console.log(kelime[2]);
 
-for (let i=8; i>=0; i--) {
-    console.log(kelime[i]);
+for (let i = 8; i >= 0; i--) {
+  console.log(kelime[i]);
 }
 
 // Stringler, parca olarak degistiremezsiniz
@@ -41,9 +41,8 @@ for (let i=8; i>=0; i--) {
 kelime[7] = "o";
 console.log(kelime);
 
-
 //! ************STRING PROPERTY ************
-// Property bir stringin kendi özelliğidir bir method(fonksiyon) değildir 
+// Property bir stringin kendi özelliğidir bir method(fonksiyon) değildir
 //parantez açıp kapatmaya gerek yoktur
 
 //?length
@@ -76,21 +75,13 @@ console.log(kelime);
 // trim()	            Removes whitespace from both ends of a string.
 // valueOf()	        Returns the primitive value of a String object.
 
-
-
-
-
-
-
-
-
 const metin = "Clarusway🚗";
 console.log(metin.length);
 
 //Emojiler 2 karakter uzunlugundadir
 
 for (let i = 0; i <= metin.length - 1; i++) {
-    console.log(metin[i]);
+  console.log(metin[i]);
 }
 
 let emoji = "🚗";
@@ -117,14 +108,6 @@ console.log(yeniMetin.toLowerCase());
 let yeniMetin2 = yeniMetin.toLowerCase();
 console.log(yeniMetin2);
 
-
-
-
-
-
-
-
-
 //* + ile birlestirme
 //* concat ile birlestirme
 //* Template Literal (``) ile baglama
@@ -132,15 +115,12 @@ console.log(yeniMetin2);
 let text1 = "Merhaba";
 let text2 = "JavaScript";
 
-console.log(text1 + " " + text2);//Merhaba Javascript
+console.log(text1 + " " + text2); //Merhaba Javascript
 
 let text = "Merhaba";
 
 text += " clarusway";
-console.log(text);//Merhaba clarusway
-
-
-
+console.log(text); //Merhaba clarusway
 
 const s1 = "Mola Saati";
 const s2 = " yaklasiyor";
@@ -151,7 +131,6 @@ console.log(s2);
 
 let newStr = s1.concat(s2);
 console.log(newStr);
-
 
 let str5 = "Merhaba";
 let str6 = "Dünya";
@@ -169,13 +148,7 @@ console.log(`${str5}
 //substr()
 //slice()
 
-
-
-
-
-console.clear();
-
-const metin1 = "Clarusway IT Bootcamp De10"
+const metin1 = "Clarusway IT Bootcamp De10";
 console.log(metin1.split(" "));
 console.log(metin1);
 
@@ -184,10 +157,10 @@ console.log(parcalanmisMetin);
 console.log(parcalanmisMetin[2]); //Bootcamp
 
 for (let i = 0; i < parcalanmisMetin.length; i++) {
-    if (parcalanmisMetin[i] === "IT") {
-        console.log("Bu cümle IT kelimesi iceriyor") //Bu cümle IT kelimesi iceriyor
-    }
-    //console.log(parcalanmisMetin[i]);
+  if (parcalanmisMetin[i] === "IT") {
+    console.log("Bu cümle IT kelimesi iceriyor"); //Bu cümle IT kelimesi iceriyor
+  }
+  //console.log(parcalanmisMetin[i]);
 }
 
 //Cümleyi harf harf parcalamak icin
@@ -206,7 +179,7 @@ console.log("gün", gun);
 console.log("ay", ay);
 console.log("yil", yil);
 
-let months = "Jan / Feb / Mar / Apr / May / Jun / Aug / Sep / Oct / Nov / Dec"
+let months = "Jan / Feb / Mar / Apr / May / Jun / Aug / Sep / Oct / Nov / Dec";
 
 let newMonth = months.split(" / ");
 console.log(newMonth);
@@ -220,36 +193,25 @@ let kelime1 = "Merhaba";
 console.log(kelime1.split("").reverse().join(""));
 
 //! Polindrom:
-let kelime2 = "madam"
+let kelime2 = "madam";
 
-let mesaj = kelime2 === kelime2.split("").reverse().join("") ? "Polindromdur" : "Plondrom degildir";
+let mesaj =
+  kelime2 === kelime2.split("").reverse().join("")
+    ? "Polindromdur"
+    : "Plondrom degildir";
 
 console.log(mesaj); //Polindromdur
 
-
-console.clear();
-
-
-
-
-
-
-
-
-
-
-
-
 let sentence = "Merhaba Cohort DE-10";
-console.log(sentence.slice(8,14));
+console.log(sentence.slice(8, 14));
 console.log(sentence.slice(8));
 
 console.log(sentence.slice(-5));
-console.log(sentence.slice(-12,-6));
+console.log(sentence.slice(-12, -6));
 
 //substring
 
-console.log(sentence.substring(8,14));
+console.log(sentence.substring(8, 14));
 
 let cumle = "to be or not To be, Thats is The question";
 console.log(cumle.toUpperCase().includes("TO BE"));
@@ -259,10 +221,10 @@ console.log(cumle.toUpperCase().includes("TO BE"));
 
 let url = "https://clarusway.com/";
 
-let msg = url.includes("https") ? "Bu site güvenlidir" : "bu site güvenli degildir"
+let msg = url.includes("https")
+  ? "Bu site güvenlidir"
+  : "bu site güvenli degildir";
 console.log(msg);
-
-
 
 console.log(cumle.indexOf("be")); //3
 console.log(cumle.indexOf("The")); //29
@@ -276,7 +238,6 @@ console.log(cumle.search("be"));
 let variable = "Kücük";
 
 console.log(variable.search(/U/)); // -1
-
 
 // [A-Z] , [a-z] , [0-9]
 let cumle2 = "to be or not To be, Thats is The question";
@@ -299,35 +260,19 @@ let phone = "My phone is 123-456-7890";
 let result = phone.match(/\d/);
 console.log(result);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 console.log(phone.startsWith("My"));
 console.log(phone.endsWith("890"));
 
 //! Stringde Degisiklik Yapma
 
-
-
-
 let text5 = "Hello World, How are you? World";
 let newText = text5.replace("World", "JavaScript");
 console.log(newText);
-console.log(text5.replaceAll("World" , "JavaScript"));
+console.log(text5.replaceAll("World", "JavaScript"));
 
 //? bas ve sondaki bosluklari kaldirmak icin => trim
 
-let metin2= " Clarusway";
+let metin2 = " Clarusway";
 console.log(metin2);
 let metin3 = metin2.trim();
 console.log(metin3);
