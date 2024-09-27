@@ -156,3 +156,11 @@ console.log(newStr);
 let str5 = "Merhaba";
 let str6 = "Dünya";
 console.log(`${str5} ${str6}`);
+
+console.log(`${str5} 
+    
+    ${str6}
+    
+    "Nasilsin?"`);
+
+    
