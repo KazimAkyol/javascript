@@ -210,3 +210,39 @@ let months = "Jan / Feb / Mar / Apr / May / Jun / Aug / Sep / Oct / Nov / Dec"
 
 let newMonth = months.split(" / ");
 console.log(newMonth);
+
+//?join metodu
+
+//?reverse metodu
+
+let kelime1 = "Merhaba";
+
+console.log(kelime1.split("").reverse().join(""));
+
+//! Polindrom:
+let kelime2 = "madam"
+
+let mesaj = kelime2 === kelime2.split("").reverse().join("") ? "Polindromdur" : "Plondrom degildir";
+
+console.log(mesaj); //Polindromdur
+
+
+console.clear();
+
+
+
+
+
+
+
+
+
+
+
+
+let sentence = "Merhaba Cohort DE-10";
+console.log(sentence.slice(8,14));
+console.log(sentence.slice(8));
+
+console.log(sentence.slice(-5));
+
