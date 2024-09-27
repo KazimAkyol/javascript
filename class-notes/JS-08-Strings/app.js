@@ -374,15 +374,23 @@ console.log(emails);
 // startsWith :.. ile başlıyormu (True , false)
 // endsWith :.. ile başlıyormu (True , false)
 
-console.log(phone.startsWith("My"));
-console.log(phone.endsWith("890"));
+console.log(phone.startsWith("My")); //true
+console.log(phone.endsWith("890")); //true
 
 //! Stringde Degisiklik Yapma
 
+// *=========================================================
+// *               Replace -immutable
+// *=========================================================
+
 let text5 = "Hello World, How are you? World";
 let newText = text5.replace("World", "JavaScript");
-console.log(newText);
-console.log(text5.replaceAll("World", "JavaScript"));
+console.log(newText); //Hello JavaScript, How are you? World
+console.log(text5.replaceAll("World", "JavaScript")); //Hello JavaScript, How are you? JavaScript
+
+// *=========================================================
+// *               Trim
+// *=========================================================
 
 //? bas ve sondaki bosluklari kaldirmak icin => trim
 
