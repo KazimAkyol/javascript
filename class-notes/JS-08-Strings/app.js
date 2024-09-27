@@ -96,6 +96,63 @@ for (let i = 0; i <= metin.length - 1; i++) {
 let emoji = "🚗";
 console.log(emoji.length);
 
-//!
+//! ************STRING METHODS ************
+// String metodları () kullanılır. (Arkaplanda fonksiyonlardır)
+//? Chaining yani zincirleme olarak birden fazla metod birlikte kullanılabilir.
+
+// *=========================================================
+// *   toLowerCase() toUpperCase() immutable=değiştirmez
+// *=========================================================
+//? Karakterleri büyük harfe dönüştürme => .toUpperCase()
+
+console.log(metin.toUpperCase());
+console.log(metin);
+//Degisim gecicidir. Tamamen degistirmiyor, degistirip kaydetmek istiyorsak yeni bir degere atamaliyiz.
+let yeniMetin = metin.toUpperCase();
+console.log(yeniMetin);
+
+//? Karakterleri kücük harfe dönüstürme => .toLowercase()
+
+console.log(yeniMetin.toLowerCase());
+let yeniMetin2 = yeniMetin.toLowerCase();
+console.log(yeniMetin2);
 
 
+
+
+
+
+
+
+
+//* + ile birlestirme
+//* concat ile birlestirme
+//* Template Literal (``) ile baglama
+
+let text1 = "Merhaba";
+let text2 = "JavaScript";
+
+console.log(text1 + " " + text2);//Merhaba Javascript
+
+let text = "Merhaba";
+
+text += " clarusway";
+console.log(text);//Merhaba clarusway
+
+
+
+
+const s1 = "Mola Saati";
+const s2 = " yaklasiyor";
+
+console.log(s1.concat(s2));
+console.log(s1);
+console.log(s2);
+
+let newStr = s1.concat(s2);
+console.log(newStr);
+
+
+let str5 = "Merhaba";
+let str6 = "Dünya";
+console.log(`${str5} ${str6}`);
