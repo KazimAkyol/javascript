@@ -245,4 +245,23 @@ console.log(sentence.slice(8,14));
 console.log(sentence.slice(8));
 
 console.log(sentence.slice(-5));
+console.log(sentence.slice(-12,-6));
 
+//substring
+
+console.log(sentence.substring(8,14));
+
+let cumle = "to be or not To be, Thats is The question"
+console.log(cumle.toUpperCase().includes("TO BE"));
+
+//! Bir site adresi güvenli mi degil mi?
+//! https : s secure demek
+
+let url = "https://clarusway.com/";
+
+let msg = url.includes("https") ? "Bu site güvenlidir" : "bu site güvenli degildir"
+console.log(msg);
+
+
+
+console.log(cumle.indexOf("be"));
