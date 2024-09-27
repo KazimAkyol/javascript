@@ -115,6 +115,10 @@ console.log(yeniMetin.toLowerCase());
 let yeniMetin2 = yeniMetin.toLowerCase();
 console.log(yeniMetin2);
 
+/* -------------------------------------------------------------------------- */
+/*                      //! String Bİrleştirme yöntemleri                     */
+/* -------------------------------------------------------------------------- */
+
 //* + ile birlestirme
 //* concat ile birlestirme
 //* Template Literal (``) ile baglama
@@ -128,6 +132,18 @@ let text = "Merhaba";
 
 text += " clarusway";
 console.log(text); //Merhaba clarusway
+
+// let a = 5;
+// let b = 4;
+
+// a += b;
+// console.log(a);
+
+// *=========================================================
+// *               concat() immutable=değiştirmez
+// *=========================================================
+//? concatanation
+
 
 const s1 = "Mola Saati";
 const s2 = " yaklasiyor";
