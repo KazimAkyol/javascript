@@ -144,7 +144,6 @@ console.log(text); //Merhaba clarusway
 // *=========================================================
 //? concatanation
 
-
 const s1 = "Mola Saati";
 const s2 = " yaklasiyor";
 
@@ -155,9 +154,17 @@ console.log(s2);
 let newStr = s1.concat(s2);
 console.log(newStr);
 
+// *=========================================================
+// *               Template Literals
+// *=========================================================
+
+// ES6 ile tanıtılan bu yöntem, backtick işareti (`) kullanarak string birleştirmeyi kolaylaştırır ve değişkenleri doğrudan string içinde kullanmanıza olanak tanır.
+
 let str5 = "Merhaba";
 let str6 = "Dünya";
-console.log(`${str5} ${str6}`);
+
+console.log("Merhaba" + "Dünya"); //MerhabaDünya
+console.log(`${str5} ${str6}`); //Merhaba Dünya
 
 console.log(`${str5} 
     
@@ -170,6 +177,13 @@ console.log(`${str5}
 //substring()
 //substr()
 //slice()
+// *=========================================================
+// *                 split() immutable
+// *=========================================================
+// Stringi belirtilen şekilde parçalara ayırır ve parçalarını bir diziye aktarır
+// str.split(seperator)
+// separator : ayraç
+// Parçaladığı elemanları bir diziye aktarır.
 
 const metin1 = "Clarusway IT Bootcamp De10";
 console.log(metin1.split(" "));
@@ -202,14 +216,26 @@ console.log("gün", gun);
 console.log("ay", ay);
 console.log("yil", yil);
 
-let months = "Jan / Feb / Mar / Apr / May / Jun / Aug / Sep / Oct / Nov / Dec";
+let months =
+  "Jan / Feb / Mar / Apr / May / Jun / Jul / Aug / Sep / Oct / Nov / Dec";
 
 let newMonth = months.split(" / ");
 console.log(newMonth);
 
-//?join metodu
+/* -------------------------------------------------------------------------- */
+/*                               //? Join metodu                              */
+/* -------------------------------------------------------------------------- */
+// String metodu değildir.
+// Javascript dilinde join metodu, bir dizi elemanı string olarak birleştirir. Join metodu dizi (array) alarak bunu virgül gibi bir karakter ile ayırarak string'e dönüştürür.
+console.log(newMonth.join("-"));
 
-//?reverse metodu
+/* -------------------------------------------------------------------------- */
+//?                               Reverse Metodu                              */
+/* -------------------------------------------------------------------------- */
+// String metodu değildir.
+// Reverse methodu ile bir diziyi tersine çevirebilmekteyiz. Dizi içerisindeki ilk değeri son, son değeri ise ilk sıraya şeklinde sıralayabilmekteyiz.
+
+//! Bir kelimeyi tersten yazdıran program:
 
 let kelime1 = "Merhaba";
 
