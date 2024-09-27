@@ -269,32 +269,70 @@ console.log(sentence.slice(-12, -6)); //Cohort
 // *=========================================================
 // *               substring
 // *=========================================================
-//! substring(başlangıç index numarası,bitiş index numarası) 
-//Slicedan farkı negatif sayı kullanılmaz
+//! substring(başlangıç index numarası, bitiş index numarası)
+//Slicedan farkı negatif sayı kullanılmaz.
 
 console.log(sentence.substring(8, 14)); //Cohort
 
+// *=========================================================
+// *               substr
+// *=========================================================
+//! substr(başlangıç index numarası, kaç adet karakter alınacağı)
+
+console.log(sentence.substr(15, 2)); //DE
+
+/* -------------------------------------------------------------------------- */
+/*                      //!String içinde arama işlemleri                      */
+/* -------------------------------------------------------------------------- */
+// includes, indexOf, search ,match  metodlarını kullanabiliriz.
+
+// *=========================================================
+// *               includes
+// *=========================================================
+//? includes()   ... yı içeriyor mu -> true yada false bir değer döndürür.
+//? caseSensitive bir özelliktir.
+
 let cumle = "to be or not To be, Thats is The question";
-console.log(cumle.toUpperCase().includes("TO BE"));
+console.log(cumle.toUpperCase().includes("TO BE")); //true
 
 //! Bir site adresi güvenli mi degil mi?
-//! https : s secure demek
+//! https : s means secure
 
 let url = "https://clarusway.com/";
 
 let msg = url.includes("https")
   ? "Bu site güvenlidir"
   : "bu site güvenli degildir";
-console.log(msg);
+console.log(msg); //Bu site güvenlidir
+
+// *=========================================================
+// *               indexOf
+// *=========================================================
+
+//? indexOf (aranacak metin, konum) Bir karakter yada karakter grubunun kaçıncı sırada olduğunu yani index numarasını verir. Eğer o karakter yoksa olmadığını -1 değeri vererek gösterir. Büyük küçük harfe duyarlıdır. Sadece ilk gördüğünün index numarasını verir.
 
 console.log(cumle.indexOf("be")); //3
 console.log(cumle.indexOf("The")); //29
 // parantez icinde yazilan/aratilan karakter yoksa -1 döndürür
-console.log(cumle.lastIndexOf("be"));
+console.log(cumle.lastIndexOf("be")); //16
+
+// *=========================================================
+// *               search
+// *=========================================================
 
 //? search() bir string icindeki aranan elemanin ilk index numarasini yazar. Bulamzsa -1 döndürür.
 // Büyük kücük harfe duyarlidir.
-console.log(cumle.search("be"));
+console.log(cumle.search("be")); //3
+
+//!REGEX - regular expression
+
+// Regex regular expression denir. Bunların yazım stili / işaretiyledir.
+
+// Flags Kullanımı
+// Düzenli ifadelerde çeşitli bayraklar kullanarak aramayı değiştirebiliriz:
+
+// g : Global arama
+// i : Büyük/küçük harf duyarsız arama
 
 let variable = "Kücük";
 
@@ -313,13 +351,28 @@ console.log(cumle2.search(/[.]/));
 
 console.log(variable.search(/[^A-Z]/));
 
-//? match metodu, bir dize icindeki bir düzenli ifadeye (Regex) uyari kisimlari bulur ve bir dizi olarak döner.
+// *=========================================================
+// *               match
+// *=========================================================
+
+//? match metodu, bir dizi icindeki bir düzenli ifadeye (Regex) uyari kisimlari bulur ve bir dizi olarak döner.
 //Bir dizi döndürür.
 
 let phone = "My phone is 123-456-7890";
 
 let result = phone.match(/\d/);
 console.log(result);
+
+let text3 = "Contact us at support@example.com or sales@example.com";
+let emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+let emails = text3.match(emailPattern);
+console.log(emails);
+
+// *=========================================================
+// *               startsWith(), endsWith() -- case sensitive
+// *=========================================================
+// startsWith :.. ile başlıyormu (True , false)
+// endsWith :.. ile başlıyormu (True , false)
 
 console.log(phone.startsWith("My"));
 console.log(phone.endsWith("890"));
