@@ -251,7 +251,7 @@ console.log(sentence.slice(-12,-6));
 
 console.log(sentence.substring(8,14));
 
-let cumle = "to be or not To be, Thats is The question"
+let cumle = "to be or not To be, Thats is The question";
 console.log(cumle.toUpperCase().includes("TO BE"));
 
 //! Bir site adresi güvenli mi degil mi?
@@ -264,4 +264,32 @@ console.log(msg);
 
 
 
-console.log(cumle.indexOf("be"));
+console.log(cumle.indexOf("be")); //3
+console.log(cumle.indexOf("The")); //29
+// parantez icinde yazilan/aratilan karakter yoksa -1 döndürür
+console.log(cumle.lastIndexOf("be"));
+
+//? search() bir string icindeki aranan elemanin ilk index numarasini yazar. Bulamzsa -1 döndürür.
+// Büyük kücük harfe duyarlidir.
+console.log(cumle.search("be"));
+
+let variable = "Kücük";
+
+console.log(variable.search(/U/)); // -1
+
+
+// [A-Z] , [a-z] , [0-9]
+let cumle2 = "to be or not To be, Thats is The question";
+console.log(variable.search(/[A-Z]/));
+console.log(variable.search(/[a-z]/));
+console.log(cumle2.search(/[A-Z]/));
+console.log(cumle2.search(/[a-z]/));
+console.log(cumle2.search(/[0-9]/));
+console.log(cumle2.search(/[.]/));
+
+// ^ olmayan
+
+console.log(variable.search(/[^A-Z]/));
+
+//? match metodu, bir dize icindeki bir düzenli ifadeye (Regex) uyari kisimlari bulur ve bir dizi olarak döner.
+//Bir dizi döndürür.
