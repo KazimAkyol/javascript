@@ -12,16 +12,9 @@ console.warn("bu bir uyari mesajidir");
 
 //alert("alert mesaji")
 
-
 //PROMPT KULLANIMI
 
 console.log(prompt("lütfen adinizi giriniz"));
 
-name1=prompt("lütfen adinizi giriniz");
+name1 = prompt("lütfen adinizi giriniz");
 console.log(name1);
-
-
-
-
-
-
