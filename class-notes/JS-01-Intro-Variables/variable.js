@@ -69,7 +69,7 @@ console.log(ilk);
 }
 
 console.log(ikinci);
-console.log(ilk); // var oldigi icin süslünün disindan da erisebildim
+console.log(ilk); // var oldugu icin süslünün disindan da erisebildik.
 
 console.log("*****************LET********************");
 
