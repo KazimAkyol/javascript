@@ -36,10 +36,6 @@ let mesaj =
 
 console.log(mesaj);
 
-age > 18 && health == true && gender == "male"
-  ? console.log("tamam sen git askere")
-  : console.log("hayir asla gidemezsin");
-
 const sayi1 = 56;
 const sayi2 = 23;
 
@@ -83,9 +79,9 @@ let age1 = 70;
 let num1 = -3;
 
 // 6.Bir sayı hem 4’e hem 6’ya tam bölünebiliyor mu?
-let sayi = 24; // Kontrol etmek istediğimiz sayı
-let sonuc1 = sayi % 4 === 0 && sayi % 6 === 0 ? "Bölünebilir" : "Bölünemez";
-console.log(sonuc1);
+let sayi4 = 24; // Kontrol etmek istediğimiz sayı
+let sonuc2 = sayi4 % 4 === 0 && sayi4 % 6 === 0 ? "Bölünebilir" : "Bölünemez";
+console.log(sonuc2);
 
 // 7.Bir sayı 5’e bölünebiliyor mu ve 50’den büyük mü?
 
