@@ -59,13 +59,13 @@ let grade = 40;
 
 grade > 50 ? console.log("Gectiniz") : console.log("Kaldiniz");
 
-//else icin bir degerimiz yoksa "" veya null verip kurturlabiliriz
+//else icin bir degerimiz yoksa "" veya null verip kurtulabiliriz:
 grade > 50 ? console.log("Gectiniz") : null;
 
 //ÖRNEK SORULAR
-//1.Bir sayi 50 ile 100 arasinda mi? Evetse 50 ile 100 arasinda degilse, bu aralikta degil yazdiralim
+//1.Bir sayi 50 ile 100 arasinda mi? Evetse 50 ile 100 arasinda, degilse bu aralikta degil yazdiralim:
 
-let num = 55; //101 yailarak "Bu aralikta degil" seklinde de yazdirabiliriz
+let num = 55; // 101 degeri verildiginde "Bu aralikta degil" seklinde de console'a yazdirilabilir.
 num > 50 && num < 100
   ? console.log("50 ile 100 arasinda")
   : console.log("Bu aralikta degil");
@@ -83,6 +83,9 @@ let age1 = 70;
 let num1 = -3;
 
 // 6.Bir sayı hem 4’e hem 6’ya tam bölünebiliyor mu?
+let sayi = 24; // Kontrol etmek istediğimiz sayı
+let sonuc1 = sayi % 4 === 0 && sayi % 6 === 0 ? "Bölünebilir" : "Bölünemez";
+console.log(sonuc1);
 
 // 7.Bir sayı 5’e bölünebiliyor mu ve 50’den büyük mü?
 
