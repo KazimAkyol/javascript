@@ -43,7 +43,7 @@ const soyisim = "kara";
 
 console.log("benim adim soyadim " + isim + " " + soyisim);
 
-//!BACKTICK (template literals) ````````
+//!BACKTICK (template literals) ``
 
 console.log(`benim adim soyadim ${isim} ${soyisim} `);
 
@@ -66,12 +66,15 @@ console.log(sayi4 - sayi3); //!37
 
 const ab = 1.3;
 const cd = 1.8;
+
 console.log(Math.floor(ab));
 console.log(Math.floor(cd));
+
 console.log(Math.ceil(ab));
 console.log(Math.ceil(cd));
 
 console.log(Math.trunc(ab));
+console.log(Math.trunc(cd));
 
 console.log(Math.round(ab));
 console.log(Math.round(cd));
@@ -82,16 +85,15 @@ console.log(Math.random());
 
 //document.write(Math.trunc(ab));
 
-//RANDOM: rastgele
-//rasgele sayi üretmek icin kullanilir
-//0-1 arasinda bir sayi üretir
+//* RANDOM: rastgele, rastgele sayi üretmek icin kullanilir.
+//* 0-1 arasinda bir sayi üretir.
+
 console.log(Math.random());
 console.log(Math.ceil(Math.random() * 20));
 
 //*ARTTIRMA AZALTMA
 
 let a = 5;
-
 console.log("ilk", a++); //5
 console.log("ikinci", a); //6
 
@@ -100,7 +102,6 @@ console.log(b); //&
 console.log(a); //7
 
 let c = 10;
-
 console.log("ilk", ++c); //11
 
 let d = ++c;
@@ -108,7 +109,6 @@ console.log(d); //12
 console.log(c); //12
 
 let e = 33;
-
 console.log("ilk", e--); //33
 console.log("ikinci", e); //32
 
@@ -158,9 +158,7 @@ console.log(144 ** (1 / 2)); //12
 const number = 456;
 
 console.log("birler", 456 % 10); //birler basamagi 6
-
 console.log("onlar", Math.trunc((456 % 100) / 10)); //onlar basamagi 5
-
 console.log("yüzler", Math.trunc(456 / 100)); //yüzler basamagi 4
 
 // * =======================================================
