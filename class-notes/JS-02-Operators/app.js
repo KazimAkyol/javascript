@@ -185,13 +185,13 @@ console.log(nummer >= 4); //true
 
 console.log("*******************");
 
-//?TRUE
+// ?TRUE:
 console.log(Boolean(5));
 console.log(Boolean(5.8));
 console.log(Boolean(-5.8));
 console.log(Boolean([1, 2, 5]));
 
-//? 5 FALSE
+//? FALSE:
 console.log(Boolean(0));
 console.log(Boolean(null));
 console.log(Boolean(""));
@@ -242,26 +242,26 @@ console.log(s1 + Number(s2)); //35
 
 let ss1 = "123.456";
 
-console.log(parseInt(ss1)); //stringi tam sayiya cevirir //123
-console.log(parseFloat(ss1)); // stringi sayiya cevirir //123.456
+console.log(parseInt(ss1)); //string'i tam sayiya cevirir. //123
+console.log(parseFloat(ss1)); // string'i sayiya cevirir. //123.456
 
 let f = 123.678;
 
-console.log(f.toString()); //number'i stringe cevirir
+console.log(f.toString()); //number'i string'e cevirir.
 
-//* ile number'a cevirme
+//* ile number'a cevirme:
 
 let ee = "12";
 
-console.log(typeof +ee); //12
+console.log(typeof +ee); //number
 
-//* toFixed(x) metodu virgülden x basamak birakmamizi saglar ama sayiyi string'e cevirir
+//* toFixed(x) metodu virgülden sonra x basamak kadar birakmamizi saglar ama sayiyi string'e cevirir.
 
 let z = 34.4564563456;
 
 console.log(+z.toFixed(3));
 
-//*prompt komutu da toFixed gibi kullanilan sayiyi string yapar
+//* prompt komutu da toFixed gibi kullanilan sayiyi string yapar.
 
 // const age=+prompt("yasinizi giriniz");
 
@@ -270,14 +270,11 @@ console.log(typeof age);
 //* Null Undefined NaN
 
 console.log(typeof null); //object
-
 console.log(Boolean(null)); //false
-
 console.log(null - 5); //-5
 
 console.log(null == undefined); //true
 console.log(null === undefined); //false
-
 console.log(null === null); //true
 
 console.log(Number("asdfg")); //NaN
