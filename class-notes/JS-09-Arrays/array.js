@@ -138,18 +138,35 @@ console.log(isimler1.indexOf("ipek")); //-1
 //* Örnek:
 //* Kullanıcıdan sayı isteyin ve girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index ini döndür
 
-//const string = prompt("lütfen bir sayi giriniz");
+// const string = prompt("lütfen bir sayi giriniz");
 
-const number1 = +string;
+// const number1 = +string;
 
-if (sayilar1.includes(string)) {
-  console.log("girdiginiz sayinin string hali sayilar1 dizisinde mevcut");
-} else {
-  console.log("girdiginiz sayinin string hali sayilar1 dizisinde mevcut degil");
-}
+// if (sayilar1.includes(string)) {
+//   console.log("girdiginiz sayinin string hali sayilar1 dizisinde mevcut");
+// } else {
+//   console.log("girdiginiz sayinin string hali sayilar1 dizisinde mevcut degil");
+// }
 
-if (sayilar1.includes(number1)) {
-    console.log("girdiginiz sayinin number hali sayilar1 dizisinde mevcut");
-  } else {
-    console.log("girdiginiz sayinin number hali sayilar1 dizisinde mevcut degil");
-  }
+// if (sayilar1.includes(number1)) {
+//     console.log("girdiginiz sayinin number hali sayilar1 dizisinde mevcut");
+//   } else {
+//     console.log("girdiginiz sayinin number hali sayilar1 dizisinde mevcut degil");
+//   }
+
+//* join()
+//*-----------------------------------------------------------
+//? join, dizinin elamanlari birlestirip string hale cevirir.join("x")=>varolan virgül+boşluk sil, elemanların aralarına x koy(mesela join parantezinde boşluk yerine 2 varsa her eleman arasına 2 koy demek)
+//* split(" ")=>string i boşluklardan ayırır,boşlukları silip virgül+boşluk yapar ve yeni dizi döndürür.orijinal diziyi değiştirmez
+
+console.log(sayilar1.join(""));
+console.log(sayilar1.join(" "));
+console.log(sayilar1.join("A"));
+
+//* slice()
+
+const araba = ["bmw", "mercedes", "audi", "ferrari", "lamborgini"];
+
+console.log(araba.slice(2));
+console.log(araba.slice(1, 4));
+
