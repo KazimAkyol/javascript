@@ -34,11 +34,11 @@ const negatifler2 = [];
 const pozitifler2 = [];
 
 for (let eleman of dizi2) {
-    if (eleman < 0){
-        negatifler2.push(eleman);
-    } else {
-        pozitifler2.push(eleman);
-    }
+  if (eleman < 0) {
+    negatifler2.push(eleman);
+  } else {
+    pozitifler2.push(eleman);
+  }
 }
 
 console.log(pozitifler2);
@@ -51,32 +51,30 @@ console.log(negatifler2);
 //*-------------------------------------------------------
 //* SORU: Bir hayvanat bahçesinde bulunan hayvan türlerinin bir dizide saklandığını varsayalım.Bu hayvanları türüne göre aramamızı sağlayacak ve o türden kaç adet bulunduğunu ana programa döndürecek fonksiyonu yazınız:
 
-const animals = ["fil", "aslan", "deve", "fil", "kaplan", "deve", "aslan", "aslan", "aslan"];
+// const animals = ["fil", "aslan", "deve", "fil", "kaplan", "deve", "aslan", "aslan", "aslan"];
 
-const animal = prompt("bir hayvan ismi giriniz");
+// const animal = prompt("bir hayvan ismi giriniz");
 
-const findAnimal = () => {
-    let sayac = 0;
+// const findAnimal = () => {
+//     let sayac = 0;
 
-    for (let i in animals) {
-        if(animals[i] == animal) {
-            sayac++;
-        }
-    }
-    return `${animal} hayvanindan ${sayac} adet vardir`
-};
+//     for (let i in animals) {
+//         if(animals[i] == animal) {
+//             sayac++;
+//         }
+//     }
+//     return `${animal} hayvanindan ${sayac} adet vardir`
+// };
 
-console.log(findAnimal());
+// console.log(findAnimal());
 
+//* ======================================================
+//*                   FOR OF LOOP
+//* ======================================================
 
+//* for of döngüsü, for in döngüsünün bircok veri yapisini kapsayacak sekilde güncellenmis halidir. Bu döngüde dizi icindeki veriye erisirken indisleme kullanmaya gerek yoktur.
 
-
-
-
-
-
-
-//* Örnek: Alttaki dizinin elemanlarini yan yana string olarak yazdir (for of döngüsü kullanin)
+//* Örnek: Alttaki dizinin elemanlarini yan yana string olarak yazdiriniz (for of döngüsü kullanininiz):
 
 const arabalar = ["bmw", "mercedes", "audi", "volvo"];
 
@@ -84,43 +82,35 @@ const arabalar = ["bmw", "mercedes", "audi", "volvo"];
 
 console.log(arabalar.join(""));
 
-//! 2.yol (for of)
+//! 2.yol (for of):
 
+let araba = "";
 
+for (let i of arabalar) {
+  araba += i;
+}
 
+console.log(araba);
 
-
-
-
-
-
-
-
-
-
-//! for loop=> Bir dizi üzerinde iteration yapmanın orjinal yollarından biridir.	
+//! for loop=> Bir dizi üzerinde iteration yapmanın orjinal yollarından biridir.
 //? forEach=> Bir dizi üzerinde iteration yapmak için daha az kod içeren daha yeni bir yoldur.
-//! for loop=>Performansta daha hızlıdır.	
+//! for loop=>Performansta daha hızlıdır.
 //? forEach=> Performansta geleneksel döngüden daha yavaştır.
-//! for loop=> Break ifadesi döngüden çıkmak için kullanılabilir.	
+//! for loop=> Break ifadesi döngüden çıkmak için kullanılabilir.
 //? forEach=> Break ifadesi, geri arama işlevi nedeniyle kullanılamaz.
 
+//* every()
 
-// //***** every()
+//? Tum diziyi itere eder ve aldigi callback fonksiyonuna göre test gerceklestirir.Tüm elemanlar icin test basarili ise true aksi takdirde false deger döndürür.
 
-//? Tum diziyi itere eder ve aldigi callback fonksiyonuna gore test gerceklestirir.Tüm elemanlar icin test basarili ise true aksi takdirde false deger döndürür.
+const yas = [18, 23, 36, 56, 89];
 
-const yas = [18,23,36,56,89];
+console.log(yas.every((a) => a >= 18)); //true
+console.log(yas.every((a) => a > 20)); //false
 
-console.log(yas.every((a)=> a>=18)); //true
-console.log(yas.every((a)=> a>20)); //false
+//* some()
 
-// //***** some()
+//? ALdigi callback fonksiyonuna (bizim yadigimiz fonksiyon) göre test gerceklestirir. En az bir eleman icin bile test basarili ise true aksi takdirde false deger döndürür.
 
-
-
-
-
-
-console.log(yas.some((eleman)=> eleman > 70)); //true
-console.log(yas.some((eleman)=> eleman < 0)); //false
+console.log(yas.some((eleman) => eleman > 70)); //true
+console.log(yas.some((eleman) => eleman < 0)); //false

@@ -7,6 +7,8 @@
 
 // let urun = prompt("Bir ürün giriniz");
 // let fiyat;
+// let urunAdedi = 10;
+// let = tutar;
 
 // switch (urun) {
 //   case "kalem": {
@@ -31,9 +33,9 @@
 
 //**********hesap makinesi örnegi - switch-case********* */
 
- const sayi1=+prompt("1.Sayıyı giriniz:");
- const islem=prompt(" Bir operator giriniz(+,-,*,/):");
- const sayi2=+prompt("2. sayıyı giriniz:");
+const sayi1 = +prompt("1.Sayıyı giriniz:");
+const islem = prompt(" Bir operator giriniz(+,-,*,/):");
+const sayi2 = +prompt("2. sayıyı giriniz:");
 
 // let sonuc;
 
@@ -46,14 +48,22 @@
 // }
 // console.log(sonuc);
 
-  switch(islem){
-
-     case "+": console.log(sayi1+sayi2); break;
-     case "-": console.log(sayi1-sayi2); break;
-    case "*": console.log(sayi1*sayi2); break;
-     case "/": console.log(sayi1/sayi2); break;
-    default: console.log("Gecerli bir operatör giriniz");
-  }
+switch (islem) {
+  case "+":
+    console.log(sayi1 + sayi2);
+    break;
+  case "-":
+    console.log(sayi1 - sayi2);
+    break;
+  case "*":
+    console.log(sayi1 * sayi2);
+    break;
+  case "/":
+    console.log(sayi1 / sayi2);
+    break;
+  default:
+    console.log("Gecerli bir operatör giriniz");
+}
 
 // let ay=7
 // switch (ay){
