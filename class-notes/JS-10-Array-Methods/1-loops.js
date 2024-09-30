@@ -81,5 +81,5 @@ console.log(yas.every((a)=> a>20)); //false
 
 
 
-console.log(yas.some((eleman)=> eleman >70)); //true
-console.log(yas.some((eleman)=> eleman >100)); //false
+console.log(yas.some((eleman)=> eleman > 70)); //true
+console.log(yas.some((eleman)=> eleman < 0)); //false
