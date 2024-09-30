@@ -5,6 +5,7 @@
 // Burda bir şart durumunun karşılasacağı birden fazla ihtimale göre ortaya çıkabilme ihtimali olan her duruma karşılık bir yapı verilir .
 // Switch de önemli olan şey; bir şartla karşılaştığı zaman onu uygular ve devam eder işte o noktada çıkmasını istiyoruz ve kod blogunu kırıp çıkmazsak (with break) sadece sonuncu değeri yazar.
 
+// birden fazla satirlik kod olacaksa {} acilmalidir.
 // let urun = prompt("Bir ürün giriniz");
 // let fiyat;
 // let urunAdedi = 10;
@@ -33,18 +34,26 @@
 
 //**********hesap makinesi örnegi - switch-case********* */
 
-const sayi1 = +prompt("1.Sayıyı giriniz:");
+const sayi1 = +prompt("1.Sayiyi giriniz:");
 const islem = prompt(" Bir operator giriniz(+,-,*,/):");
-const sayi2 = +prompt("2. sayıyı giriniz:");
+const sayi2 = +prompt("2.Sayiyi giriniz:");
 
 // let sonuc;
-
-// switch(islem){
-//     case"+":sonuc=sayi1+sayi2;break;
-//     case"-":sonuc=sayi1-sayi2;break;
-//     case"*":sonuc=sayi1*sayi2;break;
-//     case"/":sonuc=sayi1/sayi2;break;
-//     default:console.log("Lütfen bir islem operatörü giriniz");
+// switch (islem) {
+//   case "+":
+//     sonuc = sayi1 + sayi2;
+//     break;
+//   case "-":
+//     sonuc = sayi1 - sayi2;
+//     break;
+//   case "*":
+//     sonuc = sayi1 * sayi2;
+//     break;
+//   case "/":
+//     sonuc = sayi1 / sayi2;
+//     break;
+//   default:
+//     console.log("Lütfen bir islem operatörü giriniz");
 // }
 // console.log(sonuc);
 
