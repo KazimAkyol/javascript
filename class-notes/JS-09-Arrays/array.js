@@ -5,7 +5,7 @@
 //* Dizi Tanımlama
 //* ---------------------------------------------------------
 
-//! 1. yöntem (Array literal) tercih edilen yöntem
+//! 1. yöntem (Array literal) tercih edilen yöntem:
 
 const yaslar = [30, 56, 45, 98, 23];
 
@@ -38,7 +38,7 @@ console.log(isimler[2]); //gökhan
 console.log(isimler[6]); //yaslar
 console.log(isimler[6][2]); //45
 console.log(--isimler[6][2]); //44 (45-1)
-console.log(isimler[6][2]);
+console.log(isimler[6][2]); //44
 
 isimler[6] = false;
 console.log(isimler[6]); // false (43.satirda 6.indeksli eleman false olarak degistirildigi icin console'da false olarak yazdirdi. Bu islem kalicidir.)
