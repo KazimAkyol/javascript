@@ -87,7 +87,7 @@ console.log(meyveler[3].split("").reverse()); //['t', 'u', 'm', 'r', 'A']
 
 console.log(meyveler[3].split("").reverse().join("")); //tumrA
 
-//* splice() 
+//* splice()
 //* 1.parametre dizinin eleman ekleyeceğimiz index'ini belirtir.
 //* 2.parametre=0 ise belirttiğimiz index'teki elemanı sağa ittirir, artık orada yeni yazdığımiz olur.
 //* 2.parametre=1 ise belirttiğimiz index'teki elemanı siler ve üstüne yazar.
@@ -138,7 +138,7 @@ console.log(isimler1.indexOf("mehmet", 2)); //5
 console.log(isimler1.indexOf("ipek")); //-1
 
 //* Örnek:
-//* Kullanıcıdan sayı isteyin ve girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index ini döndür
+//* Kullanıcıdan sayı isteyin ve girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index'ini döndürün:
 
 // const string = prompt("lütfen bir sayi giriniz");
 
@@ -157,9 +157,10 @@ console.log(isimler1.indexOf("ipek")); //-1
 //   }
 
 //* join()
-//*-----------------------------------------------------------
-//? join, dizinin elamanlari birlestirip string hale cevirir.join("x")=>varolan virgül+boşluk sil, elemanların aralarına x koy(mesela join parantezinde boşluk yerine 2 varsa her eleman arasına 2 koy demek)
-//* split(" ")=>string i boşluklardan ayırır,boşlukları silip virgül+boşluk yapar ve yeni dizi döndürür.orijinal diziyi değiştirmez
+//? join, dizinin elamanlarini birlestirip string hale cevirir.
+//? join("x")=>varolan virgül+boşluk sil, elemanların aralarına x koy(mesela join parantezinde boşluk yerine 2 varsa her eleman arasına 2 koy demektir)
+
+//* split(" ")=>string'i boşluklardan ayırır,boşlukları silip virgül+boşluk yapar ve yeni dizi döndürür.Orijinal diziyi değiştirmez.
 
 console.log(sayilar1.join(""));
 console.log(sayilar1.join(" "));
@@ -167,8 +168,14 @@ console.log(sayilar1.join("A"));
 
 //* slice()
 
-const araba = ["bmw", "mercedes", "audi", "ferrari", "lamborgini"];
+const araba = ["bmw", "mercedes", "audi", "ferrari", "lamborghini"];
 
 console.log(araba.slice(2));
 console.log(araba.slice(1, 4));
 
+//* concat()
+
+const kisiler = ["özlem", "esra", "nihal", "fatih", "Hüseyin"];
+const rakamlar = [1, 2, 3, 4, 5, 6];
+
+console.log(kisiler.concat(rakamlar));
