@@ -83,3 +83,23 @@ meyveler.reverse();
 console.log(meyveler);
 
 console.log(meyveler[3].split("").reverse());
+
+console.log(meyveler[3].split("").reverse().join(""));
+
+//* splice() 1. parametre dizinin eleman ekleyeceğimiz index'ini belirtir.
+//* 2. parametre=0 ise belirttiğim index'teki elemanı sağa ittir, artık orada yeni yazdığım olsun.
+//* 2.parametre=1 ise belirttiğim index teki elemanı sil üstüne yaz.
+
+console.log(meyveler);
+
+meyveler.splice(2, 1, "Ananas");
+console.log(meyveler);
+
+meyveler.splice(2, 0, "seftali");
+console.log(meyveler);
+
+console.log(meyveler.splice(3, 1)); //3 indexli eleman silindi.
+console.log(meyveler);
+
+meyveler.push("cilek");
+console.log(meyveler.sort());
