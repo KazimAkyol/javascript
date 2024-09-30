@@ -74,26 +74,30 @@ switch (islem) {
     console.log("Gecerli bir operatör giriniz");
 }
 
-// let ay=7
-// switch (ay){
-//     case (ay===12 || ay===1 || ay===2):
-//         {console.log("kis");
-//         break;}
+// let ay = 7;
+// switch (ay) {
+//   case ay === 12 || ay === 1 || ay === 2: {
+//     console.log("kis");
+//     break;
+//   }
 
-//     case (ay===3 || ay===4 || ay===5):
-//         {console.log("ilkbahar");
-//         break;}
+//   case ay === 3 || ay === 4 || ay === 5: {
+//     console.log("ilkbahar");
+//     break;
+//   }
 
-//     case (ay===6 || ay===7 || ay===8):
-//         {console.log("yaz");
-//         break;}
+//   case ay === 6 || ay === 7 || ay === 8: {
+//     console.log("yaz");
+//     break;
+//   }
 
-//     case (ay===9 || ay===10 || ay===11):
-//         {console.log("sonbahar");
-//         break;}
+//   case ay === 9 || ay === 10 || ay === 11: {
+//     console.log("sonbahar");
+//     break;
+//   }
 
-//     default:
-//         console.log("Gecersiz bir ay girdiniz");
+//   default:
+//     console.log("Gecersiz bir ay girdiniz");
 // }
 
 const day = new Date().getDay();
