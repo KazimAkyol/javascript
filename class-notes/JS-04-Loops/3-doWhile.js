@@ -1,8 +1,8 @@
 //!  ********** DO- WHILE *******
 // kontrol sonda yapıldığı için, en az bir defa işlem gerçekleşir.
 
-// do {
-//      çalıştırılacak kodlar
+//  do {
+//       calistirilacak kodlar
 //   }
 //   while(Koşul);
 
@@ -27,3 +27,26 @@ let sayi;
 do {
   sayi = prompt("Bir sayi girin:");
 } while (isNaN(sayi));
+
+// sayi tahmini
+let devam = "";
+do {
+  const sayi = Math.trunc(Math.random() * 50);
+  console.log(sayi);
+  let hak = 5;
+
+  while (hak > 0) {
+    hak--;
+    tahmin = +prompt("Bir sayı tahmin ediniz:");
+    if (tahmin === sayi) {
+      console.log("Buldunuz");
+      break;
+    } else if (tahmin > sayi) {
+      console.log("AZALT");
+    } else {
+      console.log("Arttır");
+    }
+  }
+
+  devam = prompt("Devam etmek istermisin(E):");
+} while (devam === "E");

@@ -2,16 +2,15 @@
 // ?                DİZİLER (ARRAYS)
 // ?=========================================================
 
-//* Dizi Tanımlama
-//* ---------------------------------------------------------
+//* Dizi Tanımlama:
 
-//! 1. yöntem (Array literal) tercih edilen yöntem:
+//! 1.yöntem (Array literal) tercih edilen yöntem:
 
 const yaslar = [30, 56, 45, 98, 23];
 
 console.log(yaslar);
 
-//yaslar = [3, 5, 7]; // Assigment to constant variable
+//yaslar = [3, 5, 7]; // Assigment to constant variable.
 
 //! 2.yöntem (Array constructor):
 
@@ -37,7 +36,7 @@ console.log(isimler);
 console.log(isimler[2]); //gökhan
 console.log(isimler[6]); //yaslar
 console.log(isimler[6][2]); //45
-console.log(--isimler[6][2]); //44 (45-1)
+console.log(--isimler[6][2]); //44(45-1)
 console.log(isimler[6][2]); //44
 
 isimler[6] = false;
@@ -50,34 +49,32 @@ console.log(isimler);
 // ?                DİZİYİ DEĞİŞTİREN METODLAR (MUTATOR)
 // ?=========================================================
 
-//* pop() dizinin son elemanini siler, yazdirmaya kalkarsak sildigi elemani döndürür.
+//* pop(): dizinin son elemanini siler, yazdirmaya kalkarsak sildigi elemani döndürür.
 
 const meyveler = ["Elma", "Erik", "Armut", "Muz", "Kivi"];
 
-meyveler.pop(); // Kivi silindi
+meyveler.pop(); //Kivi silindi
 console.log(meyveler);
 
-console.log(meyveler.pop()); // Muz'u gösterdi ve kalici olarak sildi.
+console.log(meyveler.pop()); //Muz'u gösterdi ve kalici olarak sildi.
 console.log(meyveler);
 
-//* shift() komutu dizinin ilk elemanini siler, yazdirmaya kalkarsak sildigi elemani döndürür.
+//* shift(): komutu dizinin ilk elemanini siler, yazdirmaya kalkarsak sildigi elemani döndürür.
 
 console.log(meyveler.shift());
 console.log(meyveler);
 
-//* push() dizinin sonuna eleman ekler.
+//* push(): dizinin sonuna eleman ekler.
 
 meyveler.push("cilek", "Kavun", "karpuz"); // 3 elemani da diziye ekleyecek.
-
 console.log(meyveler);
 
-//* unshift() dizinin basina eleman ekler.
+//* unshift(): dizinin basina eleman ekler.
 
 meyveler.unshift("Ayva");
-
 console.log(meyveler);
 
-//* reverse() dizinin tamamini ters cevirir(dizilerde calisir).
+//* reverse(): dizinin tamamini ters cevirir(dizilerde calisir).
 
 meyveler.reverse();
 
@@ -94,17 +91,17 @@ console.log(meyveler[3].split("").reverse().join("")); //tumrA
 
 console.log(meyveler);
 
-meyveler.splice(2, 1, "Ananas"); // index'i 2 olan eleman silindi ve yerine Ananan yazdirdi
+meyveler.splice(2, 1, "Ananas"); //index'i 2 olan eleman silindi ve yerine Ananas yazdirdi.
 console.log(meyveler);
 
-meyveler.splice(2, 0, "seftali"); // index'i 2 olan eleman saga ittirdi ve yerine seftali yazdirdi
+meyveler.splice(2, 0, "seftali"); //index'i 2 olan eleman saga ittirdi ve yerine seftali yazdirdi
 console.log(meyveler);
 
-console.log(meyveler.splice(3, 1)); // index'i 3 olan eleman silindi.
+console.log(meyveler.splice(3, 1)); //index'i 3 olan eleman silindi.
 console.log(meyveler);
 
 //* sort(), string ifadelerde alfabetik sıralar(ASCII değerlerine göre)
-//* sort metodu diziyi iterasyona uğratır ve parametre olarak aldığı arrow fonksiyonunu (a-b>0 önce b yi yaz gibi) dizinin her bir elemanına uygular. Bu sayade küçük sayılar ile büyük sayıları yer değişirerek sıralama işlemini gerçekleştirir.
+//* sort metodu diziyi iterasyona uğratır ve parametre olarak aldığı arrow fonksiyonunu (a-b>0 önce b yi yaz gibi) dizinin her bir elemanına uygular. Bu sayede küçük sayılar ile büyük sayılar yer değişirerek sıralama işlemini gerçekleştirir.
 
 meyveler.push("cilek");
 console.log(meyveler.sort());
@@ -137,8 +134,7 @@ console.log(isimler1.lastIndexOf("mehmet")); //5
 console.log(isimler1.indexOf("mehmet", 2)); //5
 console.log(isimler1.indexOf("ipek")); //-1
 
-//* Örnek:
-//* Kullanıcıdan sayı isteyin ve girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index'ini döndürün:
+//* Örnek: Kullanıcıdan sayı isteyin ve girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index'ini döndürün:
 
 // const string = prompt("lütfen bir sayi giriniz");
 
@@ -156,17 +152,17 @@ console.log(isimler1.indexOf("ipek")); //-1
 //     console.log("girdiginiz sayinin number hali sayilar1 dizisinde mevcut degil");
 //   }
 
-//* join()
-//? join, dizinin elamanlarini birlestirip string hale cevirir.
-//? join("x")=>varolan virgül+boşluk sil, elemanların aralarına x koy(mesela join parantezinde boşluk yerine 2 varsa her eleman arasına 2 koy demektir)
+//* join():
+//? join, dizinin elemanlarini birlestirip string hale cevirir.
+//? join("x")=> varolan virgül+boşluk sil, elemanların aralarına x koy(mesela join parantezinde boşluk yerine 2 varsa her eleman arasına 2 koy demektir).
 
-//* split(" ")=>string'i boşluklardan ayırır,boşlukları silip virgül+boşluk yapar ve yeni dizi döndürür.Orijinal diziyi değiştirmez.
+//* split(" ")=>string'i boşluklardan ayırır, boşlukları silip virgül+boşluk yapar ve yeni dizi döndürür. Orijinal diziyi değiştirmez.
 
 console.log(sayilar1.join(""));
 console.log(sayilar1.join(" "));
 console.log(sayilar1.join("A"));
 
-//* slice()
+//* slice():
 
 const araba = ["bmw", "mercedes", "audi", "ferrari", "lamborghini"];
 
@@ -175,7 +171,7 @@ console.log(araba.slice(1, 4));
 
 //* concat()
 
-const kisiler = ["özlem", "esra", "nihal", "fatih", "Hüseyin"];
+const kisiler = ["özlem", "esra", "nihal", "fatih", "hüseyin"];
 const rakamlar = [1, 2, 3, 4, 5, 6];
 
 console.log(kisiler.concat(rakamlar));

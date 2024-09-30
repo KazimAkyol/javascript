@@ -15,7 +15,7 @@ for (let i = 0; i < 10; i++) {
   console.log(kelime);
 }
 
-//Baslangic degeri hep 0, 1 gibi baslayip artmak zorunda degil, azaltarak da islem yapilabilir
+//Baslangic degeri hep 0, 1 gibi baslayip artmak zorunda degil, azaltarak da islem yapilabilir.
 
 for (let i = 20; i > 0; i--) {
   console.log(i);

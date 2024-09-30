@@ -22,10 +22,29 @@ for (let i = 0; i < dizi1.length; i++) {
   }
 }
 
-console.log(pozitifler); //15,34,27,4,7
-console.log(negatifler); //-5,-78,-45,-9
+console.log(negatifler); //[-5, -78, -45, -9]
+console.log(pozitifler); //[15, 34, 27, 4, 7]
 
 //* FOR IN ile ayni soruyu cözelim:
+
+const dizi = [-5, 15, -78, -45, 34, 27, 4, -9, 7];
+
+const negatifler1 = [];
+
+const pozitifler1 = [];
+
+for (let i in dizi) {
+  if (dizi[i] < 0) {
+    negatifler1.push(dizi[i]);
+  } else {
+    pozitifler1.push(dizi[i]);
+  }
+}
+
+console.log(negatifler1); //[-5, -78, -45, -9]
+console.log(pozitifler1); //[15, 34, 27, 4, 7]
+
+//* FOR OF ile aynı soruyu çözelim:
 
 const dizi2 = [-5, 15, -78, -45, 34, 27, 4, -9, 7];
 
@@ -41,8 +60,8 @@ for (let eleman of dizi2) {
   }
 }
 
-console.log(pozitifler2);
-console.log(negatifler2);
+console.log(negatifler2); //[-5, -78, -45, -9]
+console.log(pozitifler2); //[15, 34, 27, 4, 7]
 
 //* ======================================================
 //*                   FOR IN LOOP
@@ -74,13 +93,13 @@ console.log(negatifler2);
 
 //* for of döngüsü, for in döngüsünün bircok veri yapisini kapsayacak sekilde güncellenmis halidir. Bu döngüde dizi icindeki veriye erisirken indisleme kullanmaya gerek yoktur.
 
-//* Örnek: Alttaki dizinin elemanlarini yan yana string olarak yazdiriniz (for of döngüsü kullanininiz):
+//* Örnek: Alttaki dizinin elemanlarini yan yana string olarak yazdiriniz (for of döngüsü kullaniniz):
 
 const arabalar = ["bmw", "mercedes", "audi", "volvo"];
 
 //! 1.yol (join()):
 
-console.log(arabalar.join(""));
+console.log(arabalar.join("")); //bmwmercedesaudivolvo
 
 //! 2.yol (for of):
 
@@ -90,7 +109,7 @@ for (let i of arabalar) {
   araba += i;
 }
 
-console.log(araba);
+console.log(araba); //bmwmercedesaudivolvo
 
 //! for loop=> Bir dizi üzerinde iteration yapmanın orjinal yollarından biridir.
 //? forEach=> Bir dizi üzerinde iteration yapmak için daha az kod içeren daha yeni bir yoldur.
@@ -110,7 +129,7 @@ console.log(yas.every((a) => a > 20)); //false
 
 //* some()
 
-//? ALdigi callback fonksiyonuna (bizim yadigimiz fonksiyon) göre test gerceklestirir. En az bir eleman icin bile test basarili ise true aksi takdirde false deger döndürür.
+//? Aldigi callback fonksiyonuna (bizim yazdigimiz fonksiyon) göre test gerceklestirir. En az bir eleman icin bile test basarili ise true aksi takdirde false deger döndürür.
 
 console.log(yas.some((eleman) => eleman > 70)); //true
 console.log(yas.some((eleman) => eleman < 0)); //false

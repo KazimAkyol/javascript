@@ -1,7 +1,8 @@
 //!  ***** WHILE LOOP *******
-// For loop ile benzer şekilde sadece syntax farklılığı vardır.Birbirini yerine kullanılabilir
-//*"while" döngüsü, belirli bir koşul doğru olduğu sürece kod bloğunu tekrarlayan bir döngüdür. "While" döngüsü, başlangıçta belirtilen koşul doğru olduğu sürece çalışır ve koşul yanlış olduğunda döngüyü sonlandırır.
-//! NOT: Eğer koşul düzgün yapılındırılmamışsa, "while" döngüsü sonsuz bir döngü oluşturabilir ve bu durum sayfanızın veya uygulamanızın donmasına neden olabilir.
+// For loop ile benzer şekilde sadece syntax farklılığı vardır.Birbirinin yerine kullanılabilir.
+//* "while" döngüsü, belirli bir koşul doğru olduğu sürece kod bloğunu tekrarlayan bir döngüdür. "While" döngüsü, başlangıçta belirtilen koşul doğru olduğu sürece çalışır ve koşul yanlış olduğunda döngüyü sonlandırır.
+//! NOT: Eğer koşul düzgün yapılandırılmamışsa, "while" döngüsü sonsuz bir döngü oluşturabilir ve bu durum sayfanızın veya uygulamanızın donmasına neden olabilir.
+
 // while(Koşul) {
 //      çalıştırılacak kodlar
 //   }
