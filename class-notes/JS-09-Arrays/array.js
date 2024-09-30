@@ -101,6 +101,9 @@ console.log(meyveler);
 console.log(meyveler.splice(3, 1)); //3 indexli eleman silindi.
 console.log(meyveler);
 
+//*sort(), string ifadelerde alfabetik sıralar(ascıı değerlerine göre)
+//* sort metodu diziyi iterasyona uğratır ve parametre olarak aldığı arrow fonksiyonunu (a-b>0 önce b yi yaz gibi) dizinin her bir elemanına uygular. Bu sayade küçük sayılar ile büyük sayıları yer değişirerek sıralama işlemini gerçleştirir.
+
 meyveler.push("cilek");
 console.log(meyveler.sort());
 
@@ -109,3 +112,44 @@ const number = [3, 5, 1, 35, 10, 22, 55, 77, 231];
 console.log(number.sort());
 
 console.log(number.sort((a, b) => a - b));
+
+//? ===========================================================
+//?  DİZİ ERİŞİM METOTLARI (diziyi değiştirmezler)
+//? ===========================================================
+
+const sayilar1 = [3, 5, 2, "2", "uc", 2, "bes", 5, "6"];
+
+//* includes()
+
+console.log(sayilar1.includes("5")); //false
+console.log(sayilar1.includes(5)); //true
+console.log(sayilar1.includes(5, "6", 2)); //true
+
+//* indexOf(), lastIndexOf()
+
+const isimler1 = ["fatma", "mehmet", "kazim", "gökhan", "muhterem", "mehmet"];
+
+console.log(isimler1.indexOf("mehmet")); //1
+console.log(isimler1.lastIndexOf("mehmet")); //5
+
+console.log(isimler1.indexOf("mehmet", 2)); //5
+console.log(isimler1.indexOf("ipek")); //-1
+
+//* Örnek:
+//* Kullanıcıdan sayı isteyin ve girilen sayının hem string hem number hali sayılar dizisinde var mı araştır, varsa index ini döndür
+
+//const string = prompt("lütfen bir sayi giriniz");
+
+const number1 = +string;
+
+if (sayilar1.includes(string)) {
+  console.log("girdiginiz sayinin string hali sayilar1 dizisinde mevcut");
+} else {
+  console.log("girdiginiz sayinin string hali sayilar1 dizisinde mevcut degil");
+}
+
+if (sayilar1.includes(number1)) {
+    console.log("girdiginiz sayinin number hali sayilar1 dizisinde mevcut");
+  } else {
+    console.log("girdiginiz sayinin number hali sayilar1 dizisinde mevcut degil");
+  }
