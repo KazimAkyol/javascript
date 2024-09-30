@@ -103,3 +103,9 @@ console.log(meyveler);
 
 meyveler.push("cilek");
 console.log(meyveler.sort());
+
+const number = [3, 5, 1, 35, 10, 22, 55, 77, 231];
+
+console.log(number.sort());
+
+console.log(number.sort((a, b) => a - b));
