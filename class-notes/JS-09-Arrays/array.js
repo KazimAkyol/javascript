@@ -41,8 +41,9 @@ console.log(--isimler[6][2]); //44 (45-1)
 console.log(isimler[6][2]); //44
 
 isimler[6] = false;
-console.log(isimler[6]); // false (43.satirda 6.indeksli eleman false olarak degistirildigi icin console'da false olarak yazdirdi. Bu islem kalicidir.)
+console.log(isimler[6]); // false (43.satirda index 6'daki eleman false olarak degistirildigi icin console'da false olarak yazdirdi. Bu islem kalicidir.)
 
+isimler[7] = "ipek";
 console.log(isimler);
 
 // ?=========================================================
@@ -53,9 +54,9 @@ console.log(isimler);
 
 const meyveler = ["Elma", "Erik", "Armut", "Muz", "Kivi"];
 
-meyveler.pop(); // kivi silindi
-
+meyveler.pop(); // Kivi silindi
 console.log(meyveler);
+
 console.log(meyveler.pop()); // Muz'u gösterdi ve kalici olarak sildi.
 console.log(meyveler);
 
@@ -82,27 +83,28 @@ meyveler.reverse();
 
 console.log(meyveler);
 
-console.log(meyveler[3].split("").reverse());
+console.log(meyveler[3].split("").reverse()); //['t', 'u', 'm', 'r', 'A']
 
-console.log(meyveler[3].split("").reverse().join(""));
+console.log(meyveler[3].split("").reverse().join("")); //tumrA
 
-//* splice() 1. parametre dizinin eleman ekleyeceğimiz index'ini belirtir.
-//* 2. parametre=0 ise belirttiğim index'teki elemanı sağa ittir, artık orada yeni yazdığım olsun.
-//* 2.parametre=1 ise belirttiğim index teki elemanı sil üstüne yaz.
+//* splice() 
+//* 1.parametre dizinin eleman ekleyeceğimiz index'ini belirtir.
+//* 2.parametre=0 ise belirttiğimiz index'teki elemanı sağa ittirir, artık orada yeni yazdığımiz olur.
+//* 2.parametre=1 ise belirttiğimiz index'teki elemanı siler ve üstüne yazar.
 
 console.log(meyveler);
 
-meyveler.splice(2, 1, "Ananas");
+meyveler.splice(2, 1, "Ananas"); // index'i 2 olan eleman silindi ve yerine Ananan yazdirdi
 console.log(meyveler);
 
-meyveler.splice(2, 0, "seftali");
+meyveler.splice(2, 0, "seftali"); // index'i 2 olan eleman saga ittirdi ve yerine seftali yazdirdi
 console.log(meyveler);
 
-console.log(meyveler.splice(3, 1)); //3 indexli eleman silindi.
+console.log(meyveler.splice(3, 1)); // index'i 3 olan eleman silindi.
 console.log(meyveler);
 
-//*sort(), string ifadelerde alfabetik sıralar(ascıı değerlerine göre)
-//* sort metodu diziyi iterasyona uğratır ve parametre olarak aldığı arrow fonksiyonunu (a-b>0 önce b yi yaz gibi) dizinin her bir elemanına uygular. Bu sayade küçük sayılar ile büyük sayıları yer değişirerek sıralama işlemini gerçleştirir.
+//* sort(), string ifadelerde alfabetik sıralar(ASCII değerlerine göre)
+//* sort metodu diziyi iterasyona uğratır ve parametre olarak aldığı arrow fonksiyonunu (a-b>0 önce b yi yaz gibi) dizinin her bir elemanına uygular. Bu sayade küçük sayılar ile büyük sayıları yer değişirerek sıralama işlemini gerçekleştirir.
 
 meyveler.push("cilek");
 console.log(meyveler.sort());
