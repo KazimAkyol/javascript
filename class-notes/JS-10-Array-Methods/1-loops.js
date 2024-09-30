@@ -24,3 +24,25 @@ for (let i = 0; i < dizi1.length; i++) {
 
 console.log(pozitifler); //15,34,27,4,7
 console.log(negatifler); //-5,-78,-45,-9
+
+
+
+
+
+
+
+
+
+
+
+//* Örnek: Alttaki dizinin elemanlarini yan yana string olarak yazdir (for of döngüsü kullanin)
+
+const arabalar = ["bmw", "mercedes", "audi", "volvo"];
+
+//! 1.yol (join()):
+
+console.log(arabalar.join(""));
+
+//! 2.yol (for of)
+
+
