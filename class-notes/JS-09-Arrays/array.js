@@ -45,4 +45,41 @@ console.log(isimler[6]); // false (43.satirda 6.indeksli eleman false olarak deg
 
 console.log(isimler);
 
+// ?=========================================================
+// ?                DİZİYİ DEĞİŞTİREN METODLAR (MUTATOR)
+// ?=========================================================
 
+//* pop() dizinin son elemanini siler, yazdirmaya kalkarsak sildigi elemani döndürür.
+
+const meyveler = ["Elma", "Erik", "Armut", "Muz", "Kivi"];
+
+meyveler.pop(); // kivi silindi
+
+console.log(meyveler);
+console.log(meyveler.pop()); // Muz'u gösterdi ve kalici olarak sildi.
+console.log(meyveler);
+
+//* shift() komutu dizinin ilk elemanini siler, yazdirmaya kalkarsak sildigi elemani döndürür.
+
+console.log(meyveler.shift());
+console.log(meyveler);
+
+//* push() dizinin sonuna eleman ekler.
+
+meyveler.push("cilek", "Kavun", "karpuz"); // 3 elemani da diziye ekleyecek.
+
+console.log(meyveler);
+
+//* unshift() dizinin basina eleman ekler.
+
+meyveler.unshift("Ayva");
+
+console.log(meyveler);
+
+//* reverse() dizinin tamamini ters cevirir(dizilerde calisir).
+
+meyveler.reverse();
+
+console.log(meyveler);
+
+console.log(meyveler[3].split("").reverse());
