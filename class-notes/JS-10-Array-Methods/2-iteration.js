@@ -29,7 +29,7 @@ const prices2 = [100, 250, 50, 90];
 let toplam1 = 0;
 
 prices2.forEach((p, i, prices) => {
-  //? 
+  //?
   prices[i] = p * 2;
 
   //? dizinin elemanlarini toplayip yazdirdim
@@ -37,7 +37,6 @@ prices2.forEach((p, i, prices) => {
 });
 
 console.log(prices2);
-
 
 //* Örnek-3: Meyveler dizisindeki elemanların harf sayısı 3 ten büyük olan meyveleri büyük harfe çevir.
 
@@ -50,3 +49,36 @@ meyveler.forEach((meyve) => {
     console.log(meyve);
   }
 });
+
+//* ======================================================
+//*                       MAP METHOD
+//!map yapılan değişikliği bir diziye atıp, bunu döndürebilir,  foreach gibi tüketmez.
+//* ======================================================
+
+//*-------------- ÖRNEK -------------------
+//* names dizisinin içindeki her ismi büyük harf olarak
+//* yeni bir diziye saklayalım.
+
+let names = [
+  "ayca",
+  "kemal",
+  "mustafa",
+  "ayse",
+  "fatih",
+  "halil",
+  "umut",
+  "gökçe",
+  "mehmet",
+];
+
+const yeni = names.map((isim) => isim.toUpperCase());
+
+console.log(names); //map biz istemedikce diziyi kalici degistirmez.
+
+console.log(yeni); //eger map'i bir degiskene atarsak verileri kalici tutmus oluruz (ister mevcut diziyi degistiririz, ister yeni bir diziye atariz. Birada yeni diziye attik.)
+
+//* her elemanin ilk harfini dizide
+
+names = names.map((a) => a.slice(0, 1).toUpperCase() + a.slice(1));
+
+console.log(names); //diziyi kalici
