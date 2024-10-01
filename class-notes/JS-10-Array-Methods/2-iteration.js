@@ -130,3 +130,24 @@ console.log(yeni2);
 console.log(prices);
 
 prices.filter((a) => a < 200).forEach((a) => console.log(a));
+
+//* Örnek: prices dizisindeki 200'den kücük sayilari 2 ile carpip yazdiriniz:
+
+prices
+  .filter((a) => a < 200)
+  .map((a) => a * 2)
+  .forEach((b) => console.log(b));
+
+//* Örnek:
+const text = "Clarusway Online Career IT TraininG School ThankS for time";
+
+//! Yukaridaki string'i array'e cevirip bütün kelimelerin harflerini büyüt:
+
+text
+  .split(" ") //diziye ceirdik
+  .map((a) => a.toUpperCase()) // her bir elemani büyük harf yaptik
+  .forEach((a) => console.log(a)); // sonuclari console'a yazdirdik
+
+//! yukarida array'e döndürdügümüz string cümledeki, sadece T ile baslayan kelimelerin ilk harfini kücült, diger harflerini normal birakarak yazdir.
+
+text.split(" ").filter((a)=>)
