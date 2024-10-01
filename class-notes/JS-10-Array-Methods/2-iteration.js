@@ -150,4 +150,30 @@ text
 
 //! yukarida array'e döndürdügümüz string cümledeki, sadece T ile baslayan kelimelerin ilk harfini kücült, diger harflerini normal birakarak yazdir.
 
-text.split(" ").filter((a)=>)
+text
+  .split(" ") //diziye cevirdik
+  .filter((a) => a.startsWith("T")) //t ile baslayanlari dizide tuttuk(filtreledik)
+  .map((a) => a.slice(0, 1).toLowerCase() + a.slice(1)) // her elemanin sadece ilk harfini kücülttük
+  .forEach((a) => console.log(a)); //sonuclari console'a yazdirdik
+
+//* Örnek: n harfiyle biten isimleri tersten yazdırıp yeni bir diziye atın:
+
+const names2 = [
+  "ayca",
+  "kemal",
+  "mustafa",
+  "ayse",
+  "fatih",
+  "halil",
+  "erkan",
+  "umut",
+  "gökçe",
+  "mehmet",
+  "rengin",
+];
+
+const yeniDizi = names2
+  .filter((a) => a.endsWith("n"))
+  .map((a) => a.split("").reverse().join(""));
+
+console.log(yeniDizi);
