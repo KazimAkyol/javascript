@@ -177,3 +177,17 @@ const yeniDizi = names2
   .map((a) => a.split("").reverse().join(""));
 
 console.log(yeniDizi);
+
+//* ======================================================
+//*                      REDUCE tek bir eleman döndürür
+//*               reduce(accumulator, currentValue);
+//* ======================================================
+
+//* salaries dizisindeki maaşları toplayınız (reduce metodu kullanın):
+
+const salaries = [3000, 5000, 4000, 6000, 7500];
+
+const total = salaries.reduce((toplam, eleman) => toplam + eleman);
+
+console.log(salaries.reduce((toplam, eleman) => toplam + eleman));
+console.log(total); //2550
