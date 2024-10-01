@@ -1,12 +1,12 @@
 //!  ********** DO- WHILE *******
-// kontrol sonda yapıldığı için, en az bir defa işlem gerçekleşir.
+//* Kontrol sonda yapıldığı için, en az bir defa işlem gerçekleşir.
 
 //  do {
 //       calistirilacak kodlar
 //   }
 //   while(Koşul);
 
-//Kullanicinin sifresini kontrol eden program, dogru girene kadar soran bir program:
+//* Kullanicinin sifresini kontrol eden program, dogru girene kadar soran bir program:
 
 // let password = "1234.)";
 

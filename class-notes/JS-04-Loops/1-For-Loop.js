@@ -1,6 +1,6 @@
 //! ********* FOR - LOOP ************
-// Karar durumları gibi döngülerde günlük hayatta çok karşımıza çıkan yapılardır.
-//Tekrarlı olan işlerde farklı türlerde döngülerden birini kullanabiliriz
+//* Karar durumları gibi döngülerde günlük hayatta çok karşımıza çıkan yapılardır.
+//* Tekrarlı olan işlerde farklı türlerde döngülerden birini kullanabiliriz
 
 //? FOR -LOOP
 //? for (initialization;condition;increment/decrement){
@@ -21,21 +21,22 @@ for (let i = 20; i > 0; i--) {
   console.log(i);
 }
 
-// 1'den 20'ye kadar olan sayilari yazdiralim:
-//const sayi=+prompt("sayi giriniz")
+//* 1'den 20'ye kadar olan sayilari yazdiralim:
+
+const sayi = +prompt("sayi giriniz");
 
 for (let i = 1; i < 21; i++) {
   console.log(i);
 }
 
-// 1'den 20'ye kadar olan sayilarin tek mi cift mi oldugunu ve 5'e bölünenleri yazdiran program:
+//* 1'den 20'ye kadar olan sayilarin tek mi cift mi oldugunu ve 5'e bölünenleri yazdiran program:
 
 for (let i = 1; i < 21; i++) {
   i % 2 === 0 ? console.log(i, "cifttir") : console.log(i, "tektir");
   i % 5 === 0 ? console.log(i, "5'e bölünür") : null;
 }
 
-// 1'den 20'ye kadar olan sayilarin toplamini bulan program:
+//* 1'den 20'ye kadar olan sayilarin toplamini bulan program:
 
 let toplam = 0;
 
@@ -45,7 +46,7 @@ for (let i = 1; i <= 20; i++) {
 
 console.log(toplam);
 
-// 10 un faktöriyelini bulan program:
+//* 10 un faktöriyelini bulan program:
 
 // 10! = 10*9*8*7*6*5*4*3*2*1 = 1*2*3*4*5*6*7*8*9*10
 

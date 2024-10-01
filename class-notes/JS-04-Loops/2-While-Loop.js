@@ -1,5 +1,5 @@
 //!  ***** WHILE LOOP *******
-// For loop ile benzer şekilde sadece syntax farklılığı vardır.Birbirinin yerine kullanılabilir.
+//* For loop ile benzer şekilde sadece syntax farklılığı vardır.Birbirinin yerine kullanılabilir.
 //* "while" döngüsü, belirli bir koşul doğru olduğu sürece kod bloğunu tekrarlayan bir döngüdür. "While" döngüsü, başlangıçta belirtilen koşul doğru olduğu sürece çalışır ve koşul yanlış olduğunda döngüyü sonlandırır.
 //! NOT: Eğer koşul düzgün yapılandırılmamışsa, "while" döngüsü sonsuz bir döngü oluşturabilir ve bu durum sayfanızın veya uygulamanızın donmasına neden olabilir.
 
@@ -7,7 +7,7 @@
 //      çalıştırılacak kodlar
 //   }
 
-// 1den 10 a kadar olan sayıları yazdıran program:
+//* 1den 10 a kadar olan sayıları yazdıran program:
 
 //let i = 1;
 
@@ -16,7 +16,7 @@
 //i++;
 //}
 
-// Kullanicidan 100 ile 200 arasinda bir sayi girildigi muddetce sayi istemeyi devam ettiren bir program:
+//* Kullanicidan 100 ile 200 arasinda bir sayi girildigi muddetce sayi istemeyi devam ettiren bir program:
 
 //let number = 100;
 
@@ -35,7 +35,7 @@ console.log("100 ile 200 arasinda bir deger girmediniz");
 //cevap = prompt("Devam etmek istiyor musunuz (evet/hayir:");
 //}
 
-// ÖRNEK 4:
+//* Örnek:
 
 // 1-ürün girisi
 // 2-ürün listele
@@ -53,6 +53,7 @@ while (check === true) {
        2-ürün listele
        3-ürün sil
        4-cikis`);
+
   let tercih = Number(prompt("Tercihinizi Giriniz:"));
 
   switch (tercih) {
