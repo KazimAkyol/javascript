@@ -134,7 +134,7 @@ const yeni2 = prices.filter((a) => a < 200);
 console.log(yeni2); //[100, 180]
 console.log(prices); //[200, 500, 100, 180]
 
-prices.filter((a) => a < 200).forEach((a) => console.log(a));
+prices.filter((a) => a < 200).forEach((a) => console.log(a)); // array'den cikararak yazdi
 
 //* Örnek: prices dizisindeki 200'den kücük sayilari 2 ile carpip yazdiriniz:
 
@@ -143,21 +143,21 @@ prices
   .map((a) => a * 2)
   .forEach((b) => console.log(b)); // 200,360
 
-//* Örnek: Asagidaki string'i array'e cevirip bütün kelimelerin harflerini büyüt:
+//* Örnek: Asagidaki string'i array'e cevirip bütün kelimelerin harflerini büyütelim:
 
 const text = "Clarusway Online Career IT TraininG School ThankS for time";
 
 text
   .split(" ") //diziye cevirdik
-  .map((a) => a.toUpperCase()) // her bir elemani büyük harf yaptik
-  .forEach((a) => console.log(a)); // sonuclari console'a yazdirdik
+  .map((a) => a.toUpperCase()) //her bir elemani büyük harf yaptik
+  .forEach((a) => console.log(a)); //sonuclari console'a yazdirdik
 
 //* Yukarida array'e döndürdügümüz string cümledeki, sadece T ile baslayan kelimelerin ilk harfini kücült, diger harflerini normal birakarak yazdir:
 
 text
   .split(" ") //diziye cevirdik
   .filter((a) => a.startsWith("T")) //T ile baslayanlari dizide tuttuk(filtreledik)
-  .map((a) => a.slice(0, 1).toLowerCase() + a.slice(1)) // her elemanin sadece ilk harfini kücülttük
+  .map((a) => a.slice(0, 1).toLowerCase() + a.slice(1)) //her elemanin sadece ilk harfini kücülttük
   .forEach((a) => console.log(a)); //sonuclari console'a yazdirdik
 
 //* Örnek: n harfiyle biten isimleri tersten yazdırıp yeni bir diziye atın:

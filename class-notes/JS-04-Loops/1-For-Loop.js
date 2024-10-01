@@ -7,7 +7,7 @@
 
 //? }
 
-//bir kelimeyi 10 defa tekrar gösteren bir kod yazalim:
+//* Bir kelimeyi 10 defa tekrar gösteren bir kod yazalim:
 
 const kelime = "Günaydin Latte ve Dibek";
 
@@ -15,7 +15,7 @@ for (let i = 0; i < 10; i++) {
   console.log(kelime);
 }
 
-//Baslangic degeri hep 0, 1 gibi baslayip artmak zorunda degil, azaltarak da islem yapilabilir.
+//? Baslangic degeri hep 0, 1 gibi baslayip artmak zorunda degil, azaltarak da islem yapilabilir.
 
 for (let i = 20; i > 0; i--) {
   console.log(i);
@@ -28,7 +28,7 @@ for (let i = 1; i < 21; i++) {
   console.log(i);
 }
 
-// 1'den 20'ye kadar olan sayilarin tek mi cift mi oldugunu ve 5'e bölünenleri yazdiran  program:
+// 1'den 20'ye kadar olan sayilarin tek mi cift mi oldugunu ve 5'e bölünenleri yazdiran program:
 
 for (let i = 1; i < 21; i++) {
   i % 2 === 0 ? console.log(i, "cifttir") : console.log(i, "tektir");
@@ -51,8 +51,8 @@ console.log(toplam);
 
 let factoriel = 1;
 
-for (i=1; i<=10; i++) {
-    factoriel = factoriel * i;
-    console.log(factoriel);
+for (i = 1; i <= 10; i++) {
+  factoriel = factoriel * i;
+  console.log(factoriel);
 }
 console.log(factoriel);
