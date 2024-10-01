@@ -21,7 +21,7 @@ console.log(terminal); //undefined
 //* p => prices dizisinin her bir elemanı
 //* i => indis
 //* prices=> prices dizisidir. Farklı isim kullanılabilir:
-//* Herbir elemanı 2 katıyla çarp ve bütün dizi elemanlarını topla.
+//* Herbir elemanı 2 katıyla çarp ve bütün dizi elemanlarını topla:
 
 const prices2 = [100, 250, 50, 90];
 
@@ -73,7 +73,7 @@ const yeni = names.map((isim) => isim.toUpperCase());
 
 console.log(names); //map, biz istemedikce diziyi kalici degistirmez.
 
-console.log(yeni); //eger map'i bir degiskene atarsak verileri kalici tutmus oluruz (ister mevcut diziyi degistiririz, ister yeni bir diziye atariz. Burada yeni diziye attik.)
+console.log(yeni); //Eger map'i bir degiskene atarsak verileri kalici tutmus oluruz (ister mevcut diziyi degistiririz, ister yeni bir diziye atariz. Burada yeni diziye atadik.)
 
 //* her elemanin ilk harfini dizide kalici büyüt:
 
