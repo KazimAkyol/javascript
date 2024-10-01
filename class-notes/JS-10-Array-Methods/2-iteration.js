@@ -49,12 +49,10 @@ meyveler.forEach((meyve) => {
 
 //* ======================================================
 //*                       MAP METHOD
-//!map yapılan değişikliği bir diziye atıp, bunu döndürebilir,  foreach gibi tüketmez.
+//! map yapılan değişikliği bir diziye atıp, bunu döndürebilir, forEach gibi tüketmez.
 //* ======================================================
 
-//*-------------- ÖRNEK -------------------
-//* names dizisinin içindeki her ismi büyük harf olarak
-//* yeni bir diziye saklayalım.
+//* Örnek-1: names dizisinin içindeki her ismi büyük harf olarak yeni bir diziye saklayalım:
 
 let names = [
   "ayca",
@@ -70,11 +68,11 @@ let names = [
 
 const yeni = names.map((isim) => isim.toUpperCase());
 
-console.log(names); //map biz istemedikce diziyi kalici degistirmez.
+console.log(names); //map, biz istemedikce diziyi kalici degistirmez.
 
-console.log(yeni); //eger map'i bir degiskene atarsak verileri kalici tutmus oluruz (ister mevcut diziyi degistiririz, ister yeni bir diziye atariz. Birada yeni diziye attik.)
+console.log(yeni); //eger map'i bir degiskene atarsak verileri kalici tutmus oluruz (ister mevcut diziyi degistiririz, ister yeni bir diziye atariz. Burada yeni diziye attik.)
 
-//* her elemanin ilk harfini dizide kalici büyüt
+//* her elemanin ilk harfini dizide kalici büyüt:
 
 names = names.map((a) => a.slice(0, 1).toUpperCase() + a.slice(1));
 
@@ -101,10 +99,10 @@ fiyatlar.map((p, i, array) => {
 
 console.log(fiyatlar); //[150, 360, 75, 135]
 
-//* Örnek:
-//? tlPrices dizisindeki rakamlarin Euro ve dolar karsiliklarini hesaplatarak yeni dizilere kaydediniz:
-// toFixed(sayı) komutu virgüllü sayılarda kullanılır, aldığı sayı parametrei kadar virgülden sonra eleman bırakır
+//* Örnek: tlPrices dizisindeki rakamlarin Euro ve dolar karsiliklarini hesaplatarak yeni dizilere kaydediniz:
+//? toFixed(sayı) komutu virgüllü sayılarda kullanılır, aldığı sayı parametrei kadar virgülden sonra eleman bırakır.
 
+//! toFixed()= kullandığınız sayıları string e çevirir, tekrar number yapmak istersek, önlerine Number yazarız (ya da + koyarız)
 const tlPrices = [100, 150, 200, 80, 50];
 const dolar = 34.2;
 const euro = 38.0;
@@ -112,6 +110,12 @@ const euro = 38.0;
 const dolarPrices = tlPrices.map((a) => +(a / dolar).toFixed(2));
 
 console.log(dolarPrices);
+
+const euroPrices = tlPrices.map((a) => +(a / euro).toFixed(2));
+
+console.log(euroPrices);
+
+console.log(tlPrices);
 
 //* ======================================================
 //*                       FILTER METHOD
