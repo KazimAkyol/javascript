@@ -77,8 +77,56 @@ console.log(names); //map biz istemedikce diziyi kalici degistirmez.
 
 console.log(yeni); //eger map'i bir degiskene atarsak verileri kalici tutmus oluruz (ister mevcut diziyi degistiririz, ister yeni bir diziye atariz. Birada yeni diziye attik.)
 
-//* her elemanin ilk harfini dizide
+//* her elemanin ilk harfini dizide kalici büyüt
 
 names = names.map((a) => a.slice(0, 1).toUpperCase() + a.slice(1));
 
-console.log(names); //diziyi kalici
+console.log(names); //diziyi kalici degistirdik.
+
+//* örnek:
+//* fiyatlar dizisindeki ürün fiyatlarinın 250 TL altında olanlarına
+//* %50 zam, diğerlerine de %20 zam yapılmak isteniyor. Ayrıca
+//* zamli fiyatlar kalıcı olarak diziye işlenmek isteniyor fiyatlar[1]=eski fiyat*1.5 gibi
+//* 1. ürünün zamlı fiyati 150 TL gibi
+//* p => prices dizisinin her bir elemanı
+//* i => indis
+//* array=> fiyatlar dizisidir.
+
+const fiyatlar = [100, 300, 50, 90];
+
+fiyatlar.map((p, i, array) => {
+  if (p < 250) {
+    array[i] = p * 1.5;
+  } else {
+    array[i] = p * 1.2;
+  }
+});
+
+console.log(fiyatlar); //[150, 360, 75, 135]
+
+//* Örnek:
+//? tlPrices dizisindeki rakamlarin Euro ve dolar karsiliklarini hesaplatarak yeni dizilere kaydediniz:
+// toFixed(sayı) komutu virgüllü sayılarda kullanılır, aldığı sayı parametrei kadar virgülden sonra eleman bırakır
+
+const tlPrices = [100, 150, 200, 80, 50];
+const dolar = 34.2;
+const euro = 38.0;
+
+const dolarPrices = tlPrices.map((a) => +(a / dolar).toFixed(2));
+
+console.log(dolarPrices);
+
+//* ======================================================
+//*                       FILTER METHOD
+//* ======================================================
+//* prices array"inde fiyatı 200 TL den az olanlari ayri
+//* bir diziye saklayalim.
+
+const prices = [200, 500, 100, 180];
+
+const yeni2 = prices.filter((a) => a < 200);
+
+console.log(yeni2);
+console.log(prices);
+
+prices.filter((a) => a < 200).forEach((a) => console.log(a));
