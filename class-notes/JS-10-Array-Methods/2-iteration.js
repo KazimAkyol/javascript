@@ -1,44 +1,41 @@
 //* ======================================================
 //*                   FOREACH METHOD
-//! NOT: forEach metodu void bir metottur. (Yani herhangi bir değer döndürmez.log(forEach..)=undefined) terminal işlemdir, diziyi fonksiyon içinde yazdırır ve tüketir bitirir. ve siz extra bişey istemedikçe diziyi değiştirmez
-
-//*======================================================
+//! NOT: forEach metodu void bir metottur. (Yani herhangi bir değer döndürmez.log(forEach..)=undefined) terminal işlemdir, diziyi fonksiyon içinde yazdırır ve tüketir bitirir. ve siz extra bişey istemedikçe diziyi değiştirmez.
 
 //* Örnek-1:
 const prices1 = [100, 250, 50, 90];
 
-prices1.forEach((osman) => console.log(osman));
+prices1.forEach((osman) => console.log(osman)); //console'da sirasiyla alt alta yazdirir.
 
 console.log(prices1); //orijinal diziyi degistirmez.
 
 let toplam = 0;
 
-const terminal = prices1.forEach((a) => console.log((toplam += a)));
+const terminal = prices1.forEach((a) => console.log((toplam += a))); //her bir elemani bir sonrakiyle topladi ve o indis'e yazdirdi.
 
 console.log(terminal); //undefined
 
 //* Örnek-2:
-
 //* p => prices dizisinin her bir elemanı
 //* i => indis
-//* prices=> prices dizisidir. farklı isim kullanılabilir
-//*  herbir elemanı 2 katıyla çarp ve bütün dizi elemanlarını topla
+//* prices=> prices dizisidir. Farklı isim kullanılabilir:
+//* Herbir elemanı 2 katıyla çarp ve bütün dizi elemanlarını topla.
 
 const prices2 = [100, 250, 50, 90];
 
 let toplam1 = 0;
 
 prices2.forEach((p, i, prices) => {
-  //?
+  //? diziyi kalici olarak degistirdik
   prices[i] = p * 2;
 
-  //? dizinin elemanlarini toplayip yazdirdim
+  //? dizinin elemanlarini toplayip yazdirdik
   console.log((toplam1 += p));
 });
 
-console.log(prices2);
+console.log(prices2); //[200, 500, 100, 180]
 
-//* Örnek-3: Meyveler dizisindeki elemanların harf sayısı 3 ten büyük olan meyveleri büyük harfe çevir.
+//* Örnek-3: Meyveler dizisindeki elemanların, harf sayısı 3'ten büyük olan meyveleri büyük harfe çevir:
 
 const meyveler = ["elma", "erik", "muz", "karpuz"];
 
