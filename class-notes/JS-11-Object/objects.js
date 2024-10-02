@@ -115,3 +115,54 @@ const obj = {
 console.log(obj.fullName());
 console.log(obj.formattedName());
 
+//? 1.DOT NOTAION - Nokta Gösterimi
+
+console.log("Dot Notation ile erisim", personal.dateOfBirth);
+console.log(personal);
+
+//? 2.Köseli parantezler icinde özellik belirterek erisim
+// Degisken kullanimina olanak saglar.
+
+console.log("Özellik yöntemi ile erisim", personal["dateOfBirth"]);
+// Object kullaniminda buna örnek verilecek.
+
+console.log(personal.name);
+console.log(personal.workExperience[1]);
+personal.workExperience.forEach((work) => console.log(work));
+
+//? 3.Destructuring yöntemi ile erisim:
+
+const { name, lastName, isMarried } = personal;
+
+console.log(name);
+console.log(lastName);
+console.log(isMarried);
+//console.log(workExperience); Destructure islemine tabi olmadigi icin hata verir
+
+//*-------------------------------
+
+//! Objeler icine kolaylikla yeni deger ekleyebiliriz:
+personal.phoneNumber = "46-789-12-34";
+console.log(personal);
+
+//! Objeleri bir baska obje icine aktarabiliriz:
+const elemanListesi = personal;
+console.log("personal Listesi", personal);
+console.log("Eleman Listesi", elemanListesi);
+
+personal.title = "Full Stack Developer";
+console.log("*********Kopyalama sonrasi*********");
+console.log("personal Listesi", personal);
+console.log("Eleman Listesi", elemanListesi);
+
+//* Shallow copying (sig) kopyalama:
+// Yukaridaki sekilde yapildiginda degisimlarden etkilenir
+
+//* Kopyasinin etkilenmemesini istemiyorsak - Deep Copy yöntemi kullanilir.
+
+const deepCopyPersonal = JSON.parse(JSON.stringify(personal));
+console.log(deepCopyPersonal);
+personal.salary = 30000;
+console.log("---------------");
+console.log("Personal", personal);
+console.log("deep copy", deepCopyPersonal);
