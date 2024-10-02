@@ -6,21 +6,19 @@
 // ! 1.YÖNTEM  : FUNCTION DECLARATION
 // !-----------------------------------------------------------
 
-//? Bir fonksiyon belirli bir görevi gerçekleştirmek için tasarlanmış,
-//? yeniden kullanılabilir, (tek bir görev için tek fonksiyon olması daha iyidir)
-//? test etmesi kolaydır.
+//? Bir fonksiyon belirli bir görevi gerçekleştirmek için tasarlanmış, yeniden kullanılabilir, (tek bir görev için tek fonksiyon olması daha iyidir) test etmesi kolaydır.
 
 //! Fonksiyon tanımlama yöntemleri
-// Function Declaration (Fonksiyon Bildirimi):
-// Function Expression (Fonksiyon İfadesi):
-// Arrow Function (Ok Fonksiyonları):
-// Function Constructor (Fonksiyon Oluşturucusu):
+// Function Declaration (Fonksiyon Bildirimi)
+// Function Expression (Fonksiyon İfadesi)
+// Arrow Function (Ok Fonksiyonları)
+// Function Constructor (Fonksiyon Oluşturucusu)
 
-//! * --------Function-Declaration----------------------------*/
+//! * -------- Function-Declaration ----------------------------*/
 // 1-Fonksiyonlar function anahtar kelimesi ile tanımlanır.
-// 2-Function kelimesinin ardından fonksiyonun ismi verilir.
+// 2-function kelimesinin ardından fonksiyonun ismi verilir.
 // 3-Sonra da bir parantez açılıp kapatılır.
-//? Fonksiyonun çalışması için çağırmak gereklidir.Çağırılmadığında işleme alınmaz.Bu çağırma işlemine invoke yada call denir.
+//? Fonksiyonun çalışması için çağırmak gereklidir.Fonksiyon cağırılmadığında işleme alınmaz.Bu çağırma işlemine invoke yada call denir.
 
 //! Function declaration yöntemi ile fonksiyonun tanımlanması çağrılmasından önce veya sonra olabilir.
 
