@@ -20,15 +20,16 @@
 //   }
 // } while (userPassword !== password);
 
-//Kullanicidan sayi istiyoruz. Sayi girilmediyse tekrar girsin
+//* Kullanicidan sayi istiyoruz. Sayi girilmediyse tekrar girsin:
 
 let sayi;
 
 do {
-  sayi = prompt("Bir sayi girin:");
+  sayi = prompt("Bir sayi giriniz:");
 } while (isNaN(sayi));
 
-// sayi tahmini
+//* Sayi Tahmini:
+
 let devam = "";
 do {
   const sayi = Math.trunc(Math.random() * 50);
@@ -37,7 +38,7 @@ do {
 
   while (hak > 0) {
     hak--;
-    tahmin = +prompt("Bir sayı tahmin ediniz:");
+    tahmin = +prompt("Bir sayi tahmin ediniz:");
     if (tahmin === sayi) {
       console.log("Buldunuz");
       break;
@@ -47,6 +48,5 @@ do {
       console.log("Arttır");
     }
   }
-
-  devam = prompt("Devam etmek istermisin(E):");
+  devam = prompt("Devam etmek ister misin(E):");
 } while (devam === "E");
