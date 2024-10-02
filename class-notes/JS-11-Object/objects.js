@@ -221,3 +221,23 @@ console.log(devFilter);
 
 const filterSalary = Object.values(workerList).filter((p)=>p.salary > 30000);
 console.log(filterSalary);
+
+//* FOR IN
+
+//? JSON
+
+//* JSON ile ic ice obje karistirmayalim!!!
+
+// [{},{},{},{},{}]
+
+const team = [
+    {
+        id:1,
+        name:"Harold",
+        lastName: "Strevy",
+        dateOfBirth: 1998,
+        job:"developer",
+        salary: 10000,
+        drivingLicence: true,
+    },
+]
