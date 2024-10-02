@@ -2,9 +2,9 @@
 //!                                  OBJECTS                                  */
 /* -------------------------------------------------------------------------- */
 
-//* Diziler : index numaralari ile erisim saglaniyor. 0'dan baslayarak artan bir siralama.
+//* Dizilere index numaralari ile erisim saglaniyor. 0'dan baslayarak artan bir siralama.
 
-//! Diziler sirali belleklerdir ve sirali bir sekilde ulasilabilir. Ama daha karmasik veriler icin Object(nesne) kullanilir.
+//! Diziler sirali bellekler bölgeleridir ve sirali bir sekilde ulasilabilir. Ama daha karmasik veriler icin Object(nesne) kullanilir.
 
 const dizi = [1, 2, 3, 4, 5, 6];
 //console.log(dizi[0]);
@@ -12,6 +12,10 @@ const dizi = [1, 2, 3, 4, 5, 6];
 //! Objectlerde key-value (Property-value) degerlerini icerir. Bu o nesnenin özelliklerini belirtir.
 
 //! Herhangi bir veriye erisim icin property (key) adi kullanilir.
+
+/* -------------------------------------------------------------------------- */
+/*                       // Object Oluşturma Yöntemleri                       */
+/* -------------------------------------------------------------------------- */
 
 //? 1.Object() class'indan türetme:
 
@@ -24,17 +28,18 @@ car.isCrashed = true;
 console.log(car);
 
 const car1 = new Object();
-
 car1.brand = "Volvo";
-car1.brand = 2005;
+car1.model = 2005;
 car1.isCrashed = false;
 
 console.log(car1);
 
+/* --------------------------------------------------*/
+
 //? 2.Constructor metodu ile object olusturma:
 
 //* Sanki bir kalip olusturmus olduk
-function personelList(id, ad, maas) {
+function PersonelList(id, ad, maas) {
   this.id = id;
   this.ad = ad;
   this.maas = maas;
@@ -46,15 +51,16 @@ console.log(personal1);
 const personal2 = new personelList(1002, "Veli", 20000);
 console.log(personal2);
 
-//! ÖNEMLI
+//* Her nesne icin ayri bir kopya olusturulan metotlar, bellek kullanimini arttirabilir.
 
+//! ÖNEMLI !!!
 //? OBJECT LITERAL - En cok kullanacagimiz Yöntem:
 
 let personalYapisi = {}; //Bos bir obje olusturmak
 
 console.log(typeof personalYapisi);
 
-//* Objectler icinde
+//* Objectler icinde farkli veri türlerini barindirabiliriz. String,Number,Boolean,Dizi,Function,Object
 
 let personal = {
   name: "Henry",
@@ -167,16 +173,12 @@ console.log("---------------");
 console.log("Personal", personal);
 console.log("deep copy", deepCopyPersonal);
 
-
-
-
-
 //* for of
 
 let numberAndLetter = [1, "a", "b", 2, 3, 5, "c", "d"];
 
 for (const x of numberAndLetter) {
-    console.log(x);
+  console.log(x);
 }
 
 // for of sirali olan dizilerde kullanilir ama objectlerde daha komplex bir yapi oldugu icin for-of kullanilmaz.
@@ -187,11 +189,6 @@ for (const x of numberAndLetter) {
 
 // TypeError: workerList is not iterable hatasi aliriz
 
-
-
-
-
-
 console.log(Object.keys(workerList));
 console.log(Object.values(workerList));
 console.log(Object.entries(workerList));
@@ -201,25 +198,26 @@ let newValue = Object.entries(workerList);
 console.log(newValue[2]);
 
 for (const x of Object.keys(workerList)) {
-    console.log(x);
+  console.log(x);
 }
 
 for (const y of Object.values(workerList)) {
-    console.log(y);
+  console.log(y);
 }
 
 for (const [k, v] of Object.entries(workerList)) {
-    console.log(`${k} degeri icin maas ${v.salary}`);
+  console.log(`${k} degeri icin maas ${v.salary}`);
 }
 
-
-const devFilter = Object.values(workerList).filter((p)=>p.job === "developer");
+const devFilter = Object.values(workerList).filter(
+  (p) => p.job === "developer"
+);
 console.log(devFilter);
 
-const devName = Object.values(workerList).filter((p)=>p.name[0] === "F");
+const devName = Object.values(workerList).filter((p) => p.name[0] === "F");
 console.log(devFilter);
 
-const filterSalary = Object.values(workerList).filter((p)=>p.salary > 30000);
+const filterSalary = Object.values(workerList).filter((p) => p.salary > 30000);
 console.log(filterSalary);
 
 //* FOR IN
@@ -231,13 +229,13 @@ console.log(filterSalary);
 // [{},{},{},{},{}]
 
 const team = [
-    {
-        id:1,
-        name:"Harold",
-        lastName: "Strevy",
-        dateOfBirth: 1998,
-        job:"developer",
-        salary: 10000,
-        drivingLicence: true,
-    },
-]
+  {
+    id: 1,
+    name: "Harold",
+    lastName: "Strevy",
+    dateOfBirth: 1998,
+    job: "developer",
+    salary: 10000,
+    drivingLicence: true,
+  },
+];
