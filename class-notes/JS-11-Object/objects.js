@@ -77,12 +77,18 @@ let personal = {
   formattedName: function () {
     return `${this.name} ${this.lastName}'nin yasi ${this.calculateAge()}`;
   },
+  //* Objectler icinde arrow function kullanarak this metoduyla object icindeki degerlere ulasilmaz.
+
   arrowFunction: () => {
+    return this; //window objesine karsilik gelir. HTML root anlamindadir.
+  },
+  classicFunction: function () {
     return this;
   },
-  classisFunction: function () {
-    return this;
-  },
+
+  //* Arrow function üretilirken this keyword'ünden kurtulmak icin yapilmistir.
+  //* Arrow function'da this window objesine karsilik gelir.
+  //* window objesi icinde workExperiences isimli bir özellik bulamadigindan undefined
 };
 
 console.log(personal);
@@ -93,3 +99,19 @@ console.log(personal.selam());
 console.log(personal.formattedName());
 console.log(personal.arrowFunction());
 console.log(personal.classicFunction());
+
+const obj = {
+  name: "Mehmet",
+  age: 40,
+  fullName: function () {
+    //Klasik fonksiyon taniminda this objedeki elemanlardir
+    return this.age;
+  },
+  formattedName: () => {
+    return this.age;
+  },
+};
+
+console.log(obj.fullName());
+console.log(obj.formattedName());
+
