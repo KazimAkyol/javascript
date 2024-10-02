@@ -24,20 +24,20 @@
 
 console.log("******** 1- FUNCTION DECLARATION *********");
 
-//* örnek-1:
+//* Örnek-1:
 
 yazdir();
 
-//?fonksiyonun tanimlanmasi
+//? fonksiyonun tanimlanmasi:
 
 function yazdir() {
   console.log("merhaba, nasilsiniz?");
 }
 
-//? call - invoke fonksiyonu calistirma
+//? call - invoke fonksiyonunu calistirma:
 //yazdir
 
-//* örnek-2: (parametreli fonksiyon):
+//* Örnek-2: (parametreli fonksiyon):
 
 function adYazdir(a, b, c) {
   console.log(a);
@@ -48,7 +48,7 @@ function adYazdir(a, b, c) {
 adYazdir("kazim", "fatma", "gökhan");
 adYazdir("mehmet", "muhterem");
 
-//* örnek-3: (parametreli, dönüs degerli-return):
+//* Örnek-3: (parametreli, dönüs degerli-return):
 
 function yasHesapla(isim, yil) {
   console.log(
