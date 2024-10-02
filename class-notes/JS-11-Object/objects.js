@@ -166,3 +166,23 @@ personal.salary = 30000;
 console.log("---------------");
 console.log("Personal", personal);
 console.log("deep copy", deepCopyPersonal);
+
+
+
+
+
+//* for of
+
+let numberAndLetter = [1, "a", "b", 2, 3, 5, "c", "d"];
+
+for (const x of numberAndLetter) {
+    console.log(x);
+}
+
+// for of sirali olan dizilerde kullanilir ama objectlerde daha komplex bir yapi oldugu icin for-of kullanilmaz.
+
+// for (const x of workerList) {
+//     console.log(x);
+// }
+
+// TypeError: workerList is not iterable hatasi aliriz
