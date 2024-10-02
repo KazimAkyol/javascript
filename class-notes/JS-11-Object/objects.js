@@ -14,7 +14,7 @@ const dizi = [1, 2, 3, 4, 5, 6];
 //! Herhangi bir veriye erisim icin property (key) adi kullanilir.
 
 /* -------------------------------------------------------------------------- */
-/*                       // Object Oluşturma Yöntemleri                       */
+//*                       // Object Oluşturma Yöntemleri                      */
 /* -------------------------------------------------------------------------- */
 
 //? 1.Object() class'indan türetme:
@@ -45,10 +45,10 @@ function PersonelList(id, ad, maas) {
   this.maas = maas;
 }
 
-const personal1 = new personelList(1001, "Ali", 10000);
+const personal1 = new PersonelList(1001, "Ali", 10000);
 console.log(personal1);
 
-const personal2 = new personelList(1002, "Veli", 20000);
+const personal2 = new PersonelList(1002, "Veli", 20000);
 console.log(personal2);
 
 //* Her nesne icin ayri bir kopya olusturulan metotlar, bellek kullanimini arttirabilir.
@@ -120,7 +120,7 @@ console.log(obj.formattedName());
 /* -------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------- */
-/*                 Object içindeki özelliğe erişim yöntemleri                 */
+//*                 Object içindeki özelliğe erişim yöntemleri                */
 /* -------------------------------------------------------------------------- */
 
 //? 1.DOT NOTAION - Nokta Gösterimi
@@ -180,7 +180,7 @@ console.log("Personal", personal);
 console.log("deep copy", deepCopyPersonal);
 
 /* -------------------------------------------------------------------------- */
-/*                               OBJECT METHODS                               */
+//*                               OBJECT METHODS                              */
 /* -------------------------------------------------------------------------- */
 
 //? 1.İçiçe (nested) Object kullanımı
@@ -217,7 +217,7 @@ console.log(workerList[`person${x}`].name);
 
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
-/*                             // FOR - OF YAPISI                             */
+//*                             // FOR - OF YAPISI                            */
 /* -------------------------------------------------------------------------- */
 
 //* for of
@@ -243,35 +243,35 @@ for (const x of numberAndLetter) {
 // Object values
 // Object.entries
 
-let workerList1 = {
-  person1: {
-    name: "Fatma",
-    lastName: "Yilmaz",
-    dateOfBirth: 1999,
-    salary: 10000,
-    job: "developer",
-  },
-  person2: {
-    name: "Gökhan",
-    lastName: "Yilmaz",
-    dateOfBirth: 1999,
-    salary: 40000,
-    job: "developer",
-  },
-  person3: {
-    name: "Kazim",
-    lastName: "Yilmaz",
-    dateOfBirth: 1999,
-    salary: 20000,
-    job: "tester",
-  },
-};
+// let workerList = {
+//   person1: {
+//     name: "Fatma",
+//     lastName: "Yilmaz",
+//     dateOfBirth: 1999,
+//     salary: 10000,
+//     job: "developer",
+//   },
+//   person2: {
+//     name: "Gökhan",
+//     lastName: "Yilmaz",
+//     dateOfBirth: 1999,
+//     salary: 40000,
+//     job: "developer",
+//   },
+//   person3: {
+//     name: "Kazim",
+//     lastName: "Yilmaz",
+//     dateOfBirth: 1999,
+//     salary: 20000,
+//     job: "tester",
+//   },
+// };
 
-console.log(Object.keys(workerList1));
-console.log(Object.values(workerList1));
-console.log(Object.entries(workerList1));
+console.log(Object.keys(workerList));
+console.log(Object.values(workerList));
+console.log(Object.entries(workerList));
 
-let newValue = Object.entries(workerList1);
+let newValue = Object.entries(workerList);
 
 console.log(newValue[2]);
 
@@ -289,6 +289,8 @@ for (const [k, v] of Object.entries(workerList)) {
   console.log(`${k} degeri icin maas ${v.salary}`);
 }
 
+/* -------------------------------------------------------------------------- */
+
 const devFilter = Object.values(workerList).filter(
   (p) => p.job === "developer"
 );
@@ -300,13 +302,23 @@ console.log(devFilter);
 const filterSalary = Object.values(workerList).filter((p) => p.salary > 30000);
 console.log(filterSalary);
 
+/* -------------------------------------------------------------------------- */
+
 //* FOR IN
 
-//? JSON
+for (x in workerList) {
+  console.log("for in", x); //sadece key degerlerine ulasiriz
+  console.log(workerList[x].name); // workerList[person1].name
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+//*                   JSON -Javascript Object Notation                        */
+/* -------------------------------------------------------------------------- */
 
 //* JSON ile ic ice obje karistirmayalim!!!
 
-// [{},{},{},{},{}]
+// [{},{},{},{},{},{},{},{},{}]
 
 const team = [
   {
@@ -318,4 +330,29 @@ const team = [
     salary: 10000,
     drivingLicence: true,
   },
+  {
+    id: 2,
+    name: "Farold",
+    lastName: "Strevy",
+    dateOfBirth: 2002,
+    job: "developer",
+    salary: 40000,
+    drivingLicence: true,
+  },
+  {
+    id: 3,
+    name: "Katty",
+    lastName: "Perry",
+    dateOfBirth: 1998,
+    job: "developer",
+    salary: 30000,
+    drivingLicence: true,
+  },
 ];
+
+//! JSON ile farkli veri türleri barindirilabilir.
+// Dillerden bagimsizdir.
+// Nesnelerin (objelerin) temsil edilmesi icin anahtar-deger ciftlerini kullanir. Bu, verilerin daha iyi organize edilmesini ve iliskilendirilmesini saglar.
+// JSON, veri isleme acisindan hizlidir. Bu nedenle web uygulamalarinda ve servislerde yaygin olarak kullanilir.
+
+//* JSON yeni bir eleman ekleme:
