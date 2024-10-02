@@ -77,16 +77,13 @@ let personal = {
   calculateAge: function () {
     return new Date().getFullYear() - this.dateOfBirth;
   },
-  selam: function () {
-    return "Merhaba";
-  },
   formattedName: function () {
     return `${this.name} ${this.lastName}'nin yasi ${this.calculateAge()}`;
   },
   //* Objectler icinde arrow function kullanarak this metoduyla object icindeki degerlere ulasilmaz.
 
   arrowFunction: () => {
-    return this; //window objesine karsilik gelir. HTML root anlamindadir.
+    return this.workExperience; //window objesine karsilik gelir. HTML root anlamindadir.
   },
   classicFunction: function () {
     return this;
@@ -101,7 +98,6 @@ console.log(personal);
 console.log(personal.name);
 console.log(personal.dateOfBirth);
 console.log(personal.calculateAge());
-console.log(personal.selam());
 console.log(personal.formattedName());
 console.log(personal.arrowFunction());
 console.log(personal.classicFunction());
@@ -121,6 +117,12 @@ const obj = {
 console.log(obj.fullName());
 console.log(obj.formattedName());
 
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                 Object içindeki özelliğe erişim yöntemleri                 */
+/* -------------------------------------------------------------------------- */
+
 //? 1.DOT NOTAION - Nokta Gösterimi
 
 console.log("Dot Notation ile erisim", personal.dateOfBirth);
@@ -132,11 +134,14 @@ console.log(personal);
 console.log("Özellik yöntemi ile erisim", personal["dateOfBirth"]);
 // Object kullaniminda buna örnek verilecek.
 
+/* -------------------------------------------------------------------------- */
+//! NOT: object içinde array varsa array metodları da kullanılabilir.
+
 console.log(personal.name);
 console.log(personal.workExperience[1]);
 personal.workExperience.forEach((work) => console.log(work));
 
-//? 3.Destructuring yöntemi ile erisim:
+//? 3.Destructuring yöntemi ile erisim
 
 const { name, lastName, isMarried } = personal;
 
@@ -145,7 +150,7 @@ console.log(lastName);
 console.log(isMarried);
 //console.log(workExperience); Destructure islemine tabi olmadigi icin hata verir
 
-//*-------------------------------
+/* --------------------------------------------------*/
 
 //! Objeler icine kolaylikla yeni deger ekleyebiliriz:
 personal.phoneNumber = "46-789-12-34";
@@ -162,8 +167,9 @@ console.log("personal Listesi", personal);
 console.log("Eleman Listesi", elemanListesi);
 
 //* Shallow copying (sig) kopyalama:
-// Yukaridaki sekilde yapildiginda degisimlarden etkilenir
+// Yukaridaki sekilde yapildiginda degisimlerden etkilenir
 
+/* ------------------------------------------------------------------------*/
 //* Kopyasinin etkilenmemesini istemiyorsak - Deep Copy yöntemi kullanilir.
 
 const deepCopyPersonal = JSON.parse(JSON.stringify(personal));
@@ -172,6 +178,47 @@ personal.salary = 30000;
 console.log("---------------");
 console.log("Personal", personal);
 console.log("deep copy", deepCopyPersonal);
+
+/* -------------------------------------------------------------------------- */
+/*                               OBJECT METHODS                               */
+/* -------------------------------------------------------------------------- */
+
+//? 1.İçiçe (nested) Object kullanımı
+
+let workerList = {
+  person1: {
+    name: "Fatma",
+    lastName: "Yilmaz",
+    dateOfBirth: 1999,
+    salary: 50000,
+    job: "developer",
+  },
+  person2: {
+    name: "Gökhan",
+    lastName: "Yilmaz",
+    dateOfBirth: 1999,
+    salary: 40000,
+    job: "developer",
+  },
+  person3: {
+    name: "Kazim",
+    lastName: "Yilmaz",
+    dateOfBirth: 1999,
+    salary: 20000,
+    job: "tester",
+  },
+};
+
+console.log(workerList.person1.name);
+console.log(workerList["person3"].name);
+
+let x = 2;
+console.log(workerList[`person${x}`].name);
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                             // FOR - OF YAPISI                             */
+/* -------------------------------------------------------------------------- */
 
 //* for of
 
@@ -187,15 +234,48 @@ for (const x of numberAndLetter) {
 //     console.log(x);
 // }
 
-// TypeError: workerList is not iterable hatasi aliriz
+// TypeError: workerList is not iterable hatasi aliriz.
 
-console.log(Object.keys(workerList));
-console.log(Object.values(workerList));
-console.log(Object.entries(workerList));
+/* -------------------------------------------------------------------------- */
 
-let newValue = Object.entries(workerList);
+//! Object kendi icinde var olan özelliklerdir.
+// Object.keys
+// Object values
+// Object.entries
+
+let workerList1 = {
+  person1: {
+    name: "Fatma",
+    lastName: "Yilmaz",
+    dateOfBirth: 1999,
+    salary: 10000,
+    job: "developer",
+  },
+  person2: {
+    name: "Gökhan",
+    lastName: "Yilmaz",
+    dateOfBirth: 1999,
+    salary: 40000,
+    job: "developer",
+  },
+  person3: {
+    name: "Kazim",
+    lastName: "Yilmaz",
+    dateOfBirth: 1999,
+    salary: 20000,
+    job: "tester",
+  },
+};
+
+console.log(Object.keys(workerList1));
+console.log(Object.values(workerList1));
+console.log(Object.entries(workerList1));
+
+let newValue = Object.entries(workerList1);
 
 console.log(newValue[2]);
+
+/* -------------------------------------------------------------------------- */
 
 for (const x of Object.keys(workerList)) {
   console.log(x);
