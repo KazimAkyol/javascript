@@ -51,10 +51,10 @@ console.log(personal1);
 const personal2 = new PersonelList(1002, "Veli", 20000);
 console.log(personal2);
 
-//* Her nesne icin ayri bir kopya olusturulan metotlar, bellek kullanimini arttirabilir.
+//* Her nesne icin ayri bir kopya olusturulan metodlar, bellek kullanimini arttirabilir.
 
 //! ÖNEMLI !!!
-//? OBJECT LITERAL - En cok kullanacagimiz Yöntem:
+//? OBJECT LITERAL - En cok kullanacagimiz yöntem:
 
 let personalYapisi = {}; //Bos bir obje olusturmak
 
@@ -91,7 +91,7 @@ let personal = {
 
   //* Arrow function üretilirken this keyword'ünden kurtulmak icin yapilmistir.
   //* Arrow function'da this window objesine karsilik gelir.
-  //* window objesi icinde workExperiences isimli bir özellik bulamadigindan undefined
+  //* window objesi icinde workExperience isimli bir özellik bulamadigindan undefined
 };
 
 console.log(personal);
@@ -106,7 +106,7 @@ const obj = {
   name: "Mehmet",
   age: 40,
   fullName: function () {
-    //Klasik fonksiyon taniminda this objedeki elemanlardir
+    //Klasik fonksiyon taniminda this objedeki elemanlardir.
     return this.age;
   },
   formattedName: () => {
@@ -123,7 +123,7 @@ console.log(obj.formattedName());
 //*                 Object içindeki özelliğe erişim yöntemleri                */
 /* -------------------------------------------------------------------------- */
 
-//? 1.DOT NOTAION - Nokta Gösterimi
+//? 1.DOT NOTATION - Nokta Gösterimi
 
 console.log("Dot Notation ile erisim", personal.dateOfBirth);
 console.log(personal);
@@ -135,7 +135,8 @@ console.log("Özellik yöntemi ile erisim", personal["dateOfBirth"]);
 // Object kullaniminda buna örnek verilecek.
 
 /* -------------------------------------------------------------------------- */
-//! NOT: object içinde array varsa array metodları da kullanılabilir.
+
+//! NOT: Object içinde array varsa array metodları da kullanılabilir.
 
 console.log(personal.name);
 console.log(personal.workExperience[1]);
@@ -148,7 +149,7 @@ const { name, lastName, isMarried } = personal;
 console.log(name);
 console.log(lastName);
 console.log(isMarried);
-//console.log(workExperience); Destructure islemine tabi olmadigi icin hata verir
+//console.log(workExperience); Destructure islemine tabi olmadigi icin hata verir.
 
 /* --------------------------------------------------*/
 
