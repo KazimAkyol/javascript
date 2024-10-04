@@ -91,6 +91,69 @@ const {
 console.log(adi);
 console.log(kisi2Ad);
 
+//* Example
+const team = [
+  {
+    name: "Josh",
+    surname: "Barry",
+    job: "developer",
+    age: 30,
+  },
+  {
+    name: "John",
+    surname: "Barry",
+    job: "tester",
+    age: 45,
+  },
+  {
+    name: "Hazel",
+    surname: "Nut",
+    job: "team lead",
+    age: 40,
+  },
+];
+
+team.forEach((person) => {
+  console.log("Name:", person.name);
+  console.log("Surname:", person.surname);
+  console.log("Job:", person.job);
+  console.log("Age:", person.age);
+  console.log("*****************");
+});
+
+team.forEach((person) => {
+  const { name, surname, job, age } = person;
+  console.log("Name2:", person.name);
+  console.log("Surname2:", person.surname);
+  console.log("Job2:", person.job);
+  console.log("Age2:", person.age);
+  console.log("*****************");
+});
+
+team.forEach((person) => {
+  console.log("Name3:", person.name);
+  console.log("Surname3:", person.surname);
+  console.log("Job3:", person.job);
+  console.log("Age3:", person.age);
+  console.log("*****************");
+});
+
+//!--- FONKSIYONLARDA DESTRUCTURING KULLANIMI ---
+
+const objGöster = function () {
+  return {
+    name: "Hazel",
+    surname: "Nut",
+    job: "team lead",
+    age: 40,
+  };
+};
+
+console.log(objGöster());
+
+let { name, surname, job, age } = objGöster;
+console.log(age);
+
 //* =============================================
 //*  DESTRUCTURING (ARRAY)
 //* =============================================
