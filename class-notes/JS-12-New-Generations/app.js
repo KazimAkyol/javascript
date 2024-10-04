@@ -187,13 +187,48 @@ printDataDestr();
 const people = ["Fatma", "Gökhan", "Kazim", "Muhterem", "Harvey"];
 let fatma = people[0];
 console.log(fatma);
-const [a, b, c,, d] = people;
+const [a, b, c, , d] = people;
 console.log(a, b, c);
 console.log(d);
 
 //* ==============================================
 //*  REST (...)
 //* =============================================
+
+//? Rest operatoru kullanici tarafindan girilen degerleri dizi icerisine konumlandirir. Cesitli kullanim alanlari vardir.
+
+//! 1-
+
+//? ARRAY
+
+const araclar = ["Kamyon", "Tir", "Kamyonet", "Motosiklet", "Minibüs", "Taksi"];
+
+const [arac1, , arac2, arac3, ...binekaraclar] = araclar;
+
+console.log(arac3);
+console.log(binekaraclar);
+
+//? OBJECT
+
+const person = {
+  ad: "Hazel",
+  soyad: "Nut",
+  is: "Team Lead",
+  yas: 40,
+};
+
+const { ad, yas, ...geriKalan } = person;
+console.log(yas);
+console.log(geriKalan);
+
+//! 2- Bir fonksiyonun argumanlarini diziye cevirmek icin kullanilabilir.
+
+const topla = (a, b, ...kalan) => a + b;
+console.log(topla(1, 5, 7, 9, 3));
+
+const toplam = (...sayilar) => {
+  return sayilar.reduce((a, b) => a + b);
+};
 
 //* =============================================
 //*  SPREAD (...)
