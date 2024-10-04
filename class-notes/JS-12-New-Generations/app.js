@@ -230,9 +230,96 @@ const toplam = (...sayilar) => {
   return sayilar.reduce((a, b) => a + b);
 };
 
+console.log("Toplam:", toplam(1, 5, 7, 9, 3));
+//! REST (...) ile non-iterable olan sayilari iterable hale (diziye) cevirmis olduk.
+
 //* =============================================
 //*  SPREAD (...)
 //* =============================================
+
+//? Spread operatoru ise iterables olan bir elemani bireysel degerler haline getirir.
+
+const havaAraclari = ["ucak", "helikopter", "drone", "fuze"];
+const karaAraclari = ["araba", "bisiklet", "scooter"];
+
+const tasitlar = [havaAraclari, karaAraclari];
+console.log(tasitlar);
+
+const flatTasitlar = [...havaAraclari, ...karaAraclari];
+console.log(flatTasitlar);
+
+//* Örnek:
+
+const cumle = "Uzun ince bir yoldayim";
+const cumleDizisi = [...cumle];
+console.log(cumleDizisi);
+
+//* Örnek:
+
+const numbers = [2, 5, 8, 3, 4];
+console.log(Math.max(...numbers));
+
+//? nested
+const sahislar = {
+  sahis1: {
+    name: "Can",
+    surname: "Canan",
+    dob: "1990",
+    job: "developer",
+    salary: "140000",
+    drivingLicense: true,
+  },
+  sahis2: {
+    name: "John",
+    surname: "Sweet",
+    dob: "1990",
+    job: "tester",
+    salary: "110000",
+    drivingLicense: false,
+  },
+  sahis3: {
+    name: "Steve",
+    surname: "Job",
+    dob: "2000",
+    job: "developer",
+    salary: "90000",
+    drivingLicense: true,
+  },
+};
+
+//? JavaScript'te Objeler default olarak iterable degildir.
+//? Ama for in ve for of döngüleri ile itere edilebilirler.
+
+//?
+//?
+
+for (const s in sahislar) {
+  console.log(s);
+  console.log(sahislar[s]);
+  console.log(sahislar[s].salary);
+}
+
+console.log(Object.keys(sahislar));
+console.log(Object.values(sahislar));
+
+//Kullanisli Object Metodlari
+
+console.log(Object.keys(sahislar));
+console.log(Object.values(sahislar));
+console.log(Object.values(sahislar.sahis2));
+console.log(Object.entries(sahislar));
+console.log(Object.entries(sahislar.sahis1));
+
+for (const key of Object.keys(sahislar)) {
+  console.log(sahislar[key].salary);
+}
+
+console.log("***************");
+
+for (const v of Object.values(sahislar)) {
+  console.log(v);
+  console.log(v.name);
+}
 
 //! Stack and Heap Örnekleri:
 
