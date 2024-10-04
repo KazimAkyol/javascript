@@ -163,22 +163,22 @@ const data = {
   createdTime: "1980",
 };
 
-const printData = () => {
-  console.log(`${data.id} - ${data.desc} - ${data.createdTime}`);
+const printData = (p) => {
+  console.log(`${p.id} - ${p.desc} - ${p.createdTime}`);
 };
 
-const printDataDestr = () => {
-  const { id, desc, createdTime } = data;
+const printDataDestr = (p) => {
+  const { id, desc, createdTime } = p;
   console.log(`${id} - ${desc} - ${createdTime}`);
 };
 
 const printDataAir = ({ id, desc, createdTime }) => {
-  console.log(`${id} - ${desc} - ${createdTime}`); //! Noluyo HATA!!!
+  console.log(`${id} - ${desc} - ${createdTime}`);
 };
 
-printData();
-printDataDestr();
-//printDataAir();
+printData(data);
+printDataDestr(data);
+printDataAir(data);
 
 //* =============================================
 //*  DESTRUCTURING (ARRAY)
@@ -304,11 +304,11 @@ console.log(Object.values(sahislar));
 
 //Kullanisli Object Metodlari
 
-console.log(Object.keys(sahislar));
-console.log(Object.values(sahislar));
-console.log(Object.values(sahislar.sahis2));
-console.log(Object.entries(sahislar));
-console.log(Object.entries(sahislar.sahis1));
+console.log(Object.keys(sahislar)); //? objenin key'leri array olarak döner
+console.log(Object.values(sahislar)); //?
+console.log(Object.values(sahislar.sahis2)); //?
+console.log(Object.entries(sahislar)); //?
+console.log(Object.entries(sahislar.sahis1)); //?
 
 for (const key of Object.keys(sahislar)) {
   console.log(sahislar[key].salary);
