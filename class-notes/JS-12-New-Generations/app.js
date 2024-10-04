@@ -40,6 +40,7 @@ price += 5000;
 console.log(price);
 console.log(product.price);
 
+//? Key'ler isim degisiklikleriyle yapilir
 const {
   id: pro1Id,
   brand: pro1Brand,
@@ -49,7 +50,7 @@ const {
 
 console.log(pro1Brand, pro1Id, pro1Price, Pro1Type);
 
-//? NESTED DESTR
+//? NESTED DESTRUCTURING
 const insanlar = {
   kisi1: {
     kimlikNo: "1234567890",
@@ -82,7 +83,6 @@ console.log(insanlar["kisi2"]["meslek"]);
 // console.log(kimlikNo, adi, soyadi, meslek, maas);
 
 //? 2 Seviyyeli Destructuring
-
 const {
   kisi1: { adi, soyadi },
   kisi2: { adi: kisi2Ad, soyadi: kisi2Soyad },
@@ -91,7 +91,7 @@ const {
 console.log(adi);
 console.log(kisi2Ad);
 
-//* Example
+//* Örnek:
 const team = [
   {
     name: "Josh",
@@ -140,7 +140,7 @@ team.forEach((person) => {
 
 //!--- FONKSIYONLARDA DESTRUCTURING KULLANIMI ---
 
-const objGöster = function () {
+const objGoster = function () {
   return {
     name: "Hazel",
     surname: "Nut",
@@ -149,9 +149,9 @@ const objGöster = function () {
   };
 };
 
-console.log(objGöster());
+console.log(objGoster());
 
-let { name, surname, job, age } = objGöster();
+let { name, surname, job, age } = objGoster();
 console.log("Age:", age);
 console.log("Job:", job);
 
@@ -197,7 +197,7 @@ console.log(d);
 
 //? Rest operatoru kullanici tarafindan girilen degerleri dizi icerisine konumlandirir. Cesitli kullanim alanlari vardir.
 
-//! 1-
+//! 1-Bir diziyi veya objectteki bazi degerlerden geri kalanlarini ayri dizi ya da objelere kopyalanmasini saglayabilir.
 
 //? ARRAY
 
