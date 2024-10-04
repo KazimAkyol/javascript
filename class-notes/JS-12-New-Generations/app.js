@@ -77,7 +77,7 @@ console.log(insanlar["kisi2"]["meslek"]);
 // console.log(kisi1);
 // console.log(kisi1.adi);
 
-//? Level-2 Detructuring
+//? Level-2 Destructuring
 
 // const { kimlikNo, adi, soyadi, meslek, maas } = kisi1;
 // console.log(kimlikNo, adi, soyadi, meslek, maas);
@@ -138,7 +138,7 @@ team.forEach((person) => {
   console.log("*****************");
 });
 
-//!--- FONKSIYONLARDA DESTRUCTURING KULLANIMI ---
+//!--- Fonksiyonlarda Destructuring Kullanimi ---
 
 const objGoster = function () {
   return {
