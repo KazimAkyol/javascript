@@ -30,7 +30,7 @@ console.log(product.price);
 
 console.log("brand", product["brand"]);
 
-//? Destructuring Yöntemi
+//? destructuring yöntemi
 
 let { id, brand, type, price } = product;
 
@@ -202,11 +202,11 @@ console.log(d);
 //? ARRAY
 
 const araclar = ["Kamyon", "Tir", "Kamyonet", "Motosiklet", "Minibüs", "Taksi"];
-
-const [arac1, , arac2, arac3, ...binekaraclar] = araclar;
-
-console.log(arac3);
-console.log(binekaraclar);
+const [x, y, z, , ...kalanArac] = araclar;
+console.log(x);
+console.log(y);
+console.log(z);
+console.log(kalanArac);
 
 //? OBJECT
 
@@ -290,8 +290,8 @@ const sahislar = {
 //? JavaScript'te Objeler default olarak iterable degildir.
 //? Ama for in ve for of döngüleri ile itere edilebilirler.
 
-//?
-//?
+//? Objelerin key ve value'larini okumak icin built-in metodlar vardir.
+//? Bu metodlar aslinda objelerin key ve/veya valu'larini bir dizi olarak döndürür.
 
 for (const s in sahislar) {
   console.log(s);
@@ -299,16 +299,13 @@ for (const s in sahislar) {
   console.log(sahislar[s].salary);
 }
 
-console.log(Object.keys(sahislar));
-console.log(Object.values(sahislar));
-
 //Kullanisli Object Metodlari
 
-console.log(Object.keys(sahislar)); //? objenin key'leri array olarak döner
-console.log(Object.values(sahislar)); //?
-console.log(Object.values(sahislar.sahis2)); //?
-console.log(Object.entries(sahislar)); //?
-console.log(Object.entries(sahislar.sahis1)); //?
+console.log(Object.keys(sahislar)); //? objenin key'leri array olarak döner.
+console.log(Object.values(sahislar)); //? objenin value'lari array olarak döner.
+console.log(Object.values(sahislar.sahis2)); //? obje'nin value'lari array olarak döner.
+console.log(Object.entries(sahislar)); //? objenin key-value cifti array olarak döner.
+console.log(Object.entries(sahislar.sahis1)); //? objenin key-value cifti array olarak döner.
 
 for (const key of Object.keys(sahislar)) {
   console.log(sahislar[key].salary);
