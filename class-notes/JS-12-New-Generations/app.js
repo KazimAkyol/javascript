@@ -151,12 +151,45 @@ const objGöster = function () {
 
 console.log(objGöster());
 
-let { name, surname, job, age } = objGöster;
-console.log(age);
+let { name, surname, job, age } = objGöster();
+console.log("Age:", age);
+console.log("Job:", job);
+
+//? Fonksiyon Parametresi
+
+const data = {
+  id: "123",
+  desc: "This is top secret Information",
+  createdTime: "1980",
+};
+
+const printData = () => {
+  console.log(`${data.id} - ${data.desc} - ${data.createdTime}`);
+};
+
+const printDataDestr = () => {
+  const { id, desc, createdTime } = data;
+  console.log(`${id} - ${desc} - ${createdTime}`);
+};
+
+const printDataAir = ({ id, desc, createdTime }) => {
+  console.log(`${id} - ${desc} - ${createdTime}`); //! Noluyo HATA!!!
+};
+
+printData();
+printDataDestr();
+//printDataAir();
 
 //* =============================================
 //*  DESTRUCTURING (ARRAY)
 //* =============================================
+
+const people = ["Fatma", "Gökhan", "Kazim", "Muhterem", "Harvey"];
+let fatma = people[0];
+console.log(fatma);
+const [a, b, c,, d] = people;
+console.log(a, b, c);
+console.log(d);
 
 //* ==============================================
 //*  REST (...)
@@ -168,16 +201,16 @@ console.log(age);
 
 //! Stack and Heap Örnekleri:
 
-let a = 5;
-let b = 10;
-b = a;
-a = 22;
-console.log(`a = ${a} b = ${b}`);
+// let a = 5;
+// let b = 10;
+// b = a;
+// a = 22;
+// console.log(`a = ${a} b = ${b}`);
 
-let c = [1, 2, 3, 4, 5];
-let d = c;
+// let c = [1, 2, 3, 4, 5];
+// let d = c;
 
-d[0] = 9;
+// d[0] = 9;
 
-console.log(d);
-console.log(c);
+// console.log(d);
+// console.log(c);
