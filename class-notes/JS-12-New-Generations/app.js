@@ -159,7 +159,7 @@ console.log("Job:", job);
 
 const data = {
   id: "123",
-  desc: "This is top secret Information",
+  desc: "This is top secret information",
   createdTime: "1980",
 };
 
@@ -291,7 +291,7 @@ const sahislar = {
 //? Ama for in ve for of döngüleri ile itere edilebilirler.
 
 //? Objelerin key ve value'larini okumak icin built-in metodlar vardir.
-//? Bu metodlar aslinda objelerin key ve/veya valu'larini bir dizi olarak döndürür.
+//? Bu metodlar aslinda objelerin key ve/veya value'larini bir dizi olarak döndürür.
 
 for (const s in sahislar) {
   console.log(s);

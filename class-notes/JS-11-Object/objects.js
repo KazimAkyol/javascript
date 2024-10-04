@@ -168,10 +168,10 @@ console.log("personal Listesi", personal);
 console.log("Eleman Listesi", elemanListesi);
 
 //* Shallow copying (sig) kopyalama:
-// Yukaridaki sekilde yapildiginda degisimlerden etkilenir
+// Yukaridaki sekilde yapildiginda degisimlerden etkilenir.
 
 /* ------------------------------------------------------------------------*/
-//* Kopyasinin etkilenmemesini istemiyorsak - Deep Copy yöntemi kullanilir.
+//* Kopyasinin etkilenmesini istemiyorsak - Deep Copy yöntemi kullanilir.
 
 const deepCopyPersonal = JSON.parse(JSON.stringify(personal));
 console.log(deepCopyPersonal);
@@ -273,7 +273,6 @@ console.log(Object.values(workerList));
 console.log(Object.entries(workerList));
 
 let newValue = Object.entries(workerList);
-
 console.log(newValue[2]);
 
 /* -------------------------------------------------------------------------- */
