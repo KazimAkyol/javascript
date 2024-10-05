@@ -21,7 +21,7 @@ const kontrol2 = (sayi) => {
 };
 console.log(kontrol2(51));
 
-//*örnek-2 : Menu fonksiyon
+//* Örnek-2 : Menu fonksiyon
 //! ok(arrow) fonsiyonunda birden fazla ifade varsa, fonksiyonda süslü parantez kullanmaliyiz.
 
 const menu = () => {
@@ -38,7 +38,7 @@ const menu = () => {
 
 console.log(menu());
 
-//*örnek-3: Silindirin hacmini hesapla (pi*r**2*h):
+//* Örnek-3: Silindirin hacmini hesapla (pi*r**2*h):
 
 const hacimHesapla = (r, h) => Math.PI * r * r * h;
 

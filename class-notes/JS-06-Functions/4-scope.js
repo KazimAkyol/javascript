@@ -8,7 +8,7 @@ console.log("************ 4- SCOPE *************");
 let first = 5;
 let second = 34;
 let third = 456;
-// let second=9
+//let second = 9;
 
 console.log(first, second, third);
 
@@ -28,11 +28,11 @@ console.log(scopeFunction());
 
 console.log(first);
 console.log(second);
-// console.log(fourth);// süslü içinde kaldı
+//console.log(fourth); //süslü içinde kaldı
 
 //*********************** */
 
-let number = 11; //!global scope
+let number = 11; //!global-scope
 
 const fonksiyon = () => {
   let number = 56; //!function-scope
