@@ -3,7 +3,7 @@ console.log("***** Code Class - Loops *****");
 // && >>>>> and
 // || >>>>> or
 
-//AND OPERATÖRÜ
+//! AND OPERATÖRÜ
 
 //? her iki degerde true ise son true degeri döndürür, aksi takdirde ilk false degeri döndürür.
 

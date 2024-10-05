@@ -45,7 +45,9 @@ console.log(number); //11
 
 console.log(fonksiyon()); //57
 
-//! zorlamayla icerideki number'i fonksiyon return'ü sayesinde, globaldeki number number=fonksiyon()//golbal scope'taki number'i function scope'taki number console.log((number))//57
+//! zorlamayla icerideki number'i fonksiyon return'ü sayesinde globaldeki number degiskenine assign ettik
+
+number = fonksiyon() //global scope'taki number'i function scope'taki number'a esit hale getirdik.
 
 // const number=157 // Identifier 'number' has already been declared
 
@@ -60,12 +62,12 @@ console.log(fonksiyon()); //57
   console.log(sayi2); //101
 }
 
-console.log(number); //12
+console.log(number); //58
 //console.log(sayi2);//süslü icinde olan süslü icinde kalir
 
-//? VAR datatype
+//? VAR Datatype
 
-number2 = 100; //! hoisted (number2 ye sonradan type atadım ve type i her VAR  gibi oldu)
+number2 = 100; //! hoisted (number2'ye sonradan type atadım ve type'i her VAR gibi oldu)
 
 var number2 = 123;
 console.log(number2);
@@ -77,7 +79,7 @@ if (number2 == 105) {
 
   console.log(result);
 } else {
-  result = "SALUT"; //!global den gelen result
+  result = "SALUT"; //! global'den gelen result
 }
 
-console.log(result);
+console.log(result); //SALUT
