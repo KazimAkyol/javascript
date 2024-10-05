@@ -283,46 +283,47 @@ for (let i = 0; i <= 6; i++) {
 
 //! freeCodeCamp'ten calisildi ve buraya yazildi...
 
-// function twoNumberSum(array, targetSum) {
-//     let result = []
-//     // We use a nested loop to test every possible combination of numbers within the array
-//         for (let i = 0; i < array.length; i++) {
-//           for (let j = i+1; j < array.length; j++) {
-//               // If we find the right combination, we push both values into the result array and return it
-//               if (array[i] + array[j] === targetSum) {
-//                   result.push(array[i])
-//                   result.push(array[j])
-//                   return result
-//               }
-//           }
-//       }
-//       // Return the result array
-//       return result
-// }
+function twoNumberSum(array, targetSum) {
+  let result = [];
+  // We use a nested loop to test every possible combination of numbers within the array.
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      // If we find the right combination, we push both values into the result array and return it.
+      if (array[i] + array[j] === targetSum) {
+        result.push(array[i]);
+        result.push(array[j]);
+        return result;
+      }
+    }
+  }
+  // Return the result array
+  return result;
+}
 
-// console.log(twoNumberSum([9,1,3,4,5], 6)) // [1,5]
-// console.log(twoNumberSum([1,2,3,4,5], 10)) // []
+console.log(twoNumberSum([9, 1, 3, 4, 5], 6)); // [1,5]
+console.log(twoNumberSum([1, 2, 3, 4, 5], 10)); // []
 
 //! diger cözüm:
 
-// function twoNumberSum(array, targetSum) {
-//     // Sort the array and iterate it with one pointer at each extreme
-//     // At each iteration, check if the sum of the two pointers is bigger or smaller than the target
-//     // If it's bigger, move the right pointer to the left
-//     // If it's smaller, move the left pointer to the right
-//     let sortedArray = array.sort((a,b) => a-b)
-//     let leftLimit = 0
-//     let rightLimit = sortedArray.length-1
+function twoNumberSum(array, targetSum) {
+  // Sort the array and iterate it with one pointer at each extreme.
+  // At each iteration, check if the sum of the two pointers is bigger or smaller than the target.
+  // If it's bigger, move the right pointer to the left.
+  // If it's smaller, move the left pointer to the right.
+  let sortedArray = array.sort((a, b) => a - b);
+  let leftLimit = 0;
+  let rightLimit = sortedArray.length - 1;
 
-//     while (leftLimit < rightLimit) {
-//             const currentSum = sortedArray[leftLimit] + sortedArray[rightLimit]
+  while (leftLimit < rightLimit) {
+    const currentSum = sortedArray[leftLimit] + sortedArray[rightLimit];
 
-//             if (currentSum === targetSum) return [sortedArray[leftLimit], sortedArray[rightLimit]]
-//             else currentSum < targetSum ? leftLimit++ : rightLimit--
-//     }
+    if (currentSum === targetSum)
+      return [sortedArray[leftLimit], sortedArray[rightLimit]];
+    else currentSum < targetSum ? leftLimit++ : rightLimit--;
+  }
 
-//     return []
-// }
+  return [];
+}
 
-// console.log(twoNumberSum([9,1,3,4,5], 6)) // [1,5]
-// console.log(twoNumberSum([1,2,3,4,5], 10)) // []
+console.log(twoNumberSum([9, 1, 3, 4, 5], 6)); // [1,5]
+console.log(twoNumberSum([1, 2, 3, 4, 5], 10)); // []
