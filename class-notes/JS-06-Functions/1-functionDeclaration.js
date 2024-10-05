@@ -70,7 +70,6 @@ console.log((mehmet + muhterem + fatma) / 3); //31.333
 //* örnek-4: (tek-cift sorgulamasi):
 
 console.log(isEvenOdd(34));
-
 console.log(isEvenOdd(37));
 
 function isEvenOdd(sayi) {

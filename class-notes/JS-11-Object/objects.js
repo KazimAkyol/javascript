@@ -370,11 +370,11 @@ console.log(team);
 
 team.forEach((t) => console.log(`${t.name} ${t.lastName}`));
 
-//workerList.forEach((m) => console.log(m.name)); //* Objelerde map,forEach,filter,reduce kullanilmaz JSON bir dizi icinde oldugu icin dizi metodlari map,forEach,filter,reduce kullanilabiliyor.
+//workerList.forEach((m) => console.log(m.name)); //* Objelerde map,forEach,filter,reduce kullanilmaz. JSON bir dizi icinde oldugu icin dizi metodlari map,forEach,filter,reduce kullanilabiliyor.
 
 team.forEach((t) => console.log(`${t.name} ${t.lastName}`));
 
-//* Team objesindeki her bir elemanin maasina %10 zam yapilmis halini göster:
+//* Team objesindeki her bir elemanin maasina %10 zam yapilmis halini gösteriniz:
 
 const zam = team.map((m) => m.salary * 1.1);
 console.log(zam);
