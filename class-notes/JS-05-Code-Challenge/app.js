@@ -12,11 +12,12 @@ console.log(false && 1); // false
 console.log(1 && 3); //3
 console.log(0 && 1); // 0
 console.log(NaN && 1); //NaN
-console.log([] && 1); //Boolen degeri icine yazilinca console da görünür.
+console.log([] && 1); //Boolean degeri icine yazilinca console'da görünür.
 console.log(Boolean([])); //true
 
-//OR OPERATÖRÜ
-console.log("***OR***");
+//!OR OPERATÖRÜ
+
+console.log("*** OR ***");
 console.log(true || false); //true
 console.log(1 || false); //1
 console.log(0 || NaN); //NaN
@@ -35,18 +36,19 @@ if (sabah) {
 
 //! 1) 18 yasindan büyüklerin oy kullanabilecegini, 18 yasindan kücüklerin oy kullanamayacagini console a yazdiran kodu yaziniz: (if-else -- ternary)
 
-//let yas = +prompt("yasinizi giriniz");
+// let yas = +prompt("yasinizi giriniz");
 
-// if(yas < 18) {
-// console.log("Yasiniz 18'den kücüktür.Oy kullanamazsiniz");
+// if (yas < 18) {
+//   console.log("Yasiniz 18'den kücüktür.Oy kullanamazsiniz");
+// } else {
+//   console.log("Yasiniz 18'den büyüktür.Oy kullanabilirsiniz");
 // }
-// else{
-// console.log("Yasiniz 18'den büyüktür.Oy kullanabilirsiniz");
-// }
 
-//yas < 18 ? console.log("Yasiniz 18'den kücüktür.Oy kullanamazsiniz") : console.log("Yasiniz 18'den büyüktür.Oy kullanabilirsiniz");
+// yas < 18
+//   ? console.log("Yasiniz 18'den kücüktür.Oy kullanamazsiniz")
+//   : console.log("Yasiniz 18'den büyüktür.Oy kullanabilirsiniz");
 
-//!1/2 girilen yilin yüzyilini veren program 1788 > 18.yüzyil
+//! 1/2 girilen yilin yüzyilini veren program 1788 > 18.yüzyil:
 
 //1788/100
 //17,88
@@ -56,7 +58,7 @@ if (sabah) {
 // let x = Math.trunc(yil/100) + 1;
 // console.log(`${x}.yüzyil`);
 
-//! 2) Bir dersten  alinan notun harfini asagidaki duruma göre console a yazdiriniz
+//! 2) Bir dersten  alinan notun harfini asagidaki duruma göre console a yazdiriniz:
 
 //?  Not:
 //?  90'dan büyükse AA.
@@ -66,33 +68,26 @@ if (sabah) {
 //? - 50'den büyük yada 60'a eşitse CC,
 //? - 40'den büyük yada 50'a eşitse CD,
 //? - 30'den büyük yada 40'a eşitse DD,
-//? - 30'dan küçük yada eşitse FF,
+//? - 30'dan küçük yada eşitse FF.
 
 // let x = +prompt("Lütfen notunuzu giriniz");
 
-// if (x<0 || x>100) {
-//     console.log("Lütfen 1-100 arasinda bir deger giriniz");
-// }
-// else if (x>90) {
-//     console.log("AA");
-// }
-// else if (x>80) {
-//     console.log("AB");
-// }
-// else if (x>70) {
-//     console.log("BB");
-// }
-// else if (x>60) {
-//     console.log("BC");
-// }
-// else if (x>50) {
-//     console.log("CC");
-// }
-// else if (x>40) {
-//     console.log("DD");
-// }
-// else {
-//     console.log("FF");
+// if (x < 0 || x > 100) {
+//   console.log("Lütfen 1-100 arasinda bir deger giriniz");
+// } else if (x > 90) {
+//   console.log("AA");
+// } else if (x > 80) {
+//   console.log("AB");
+// } else if (x > 70) {
+//   console.log("BB");
+// } else if (x > 60) {
+//   console.log("BC");
+// } else if (x > 50) {
+//   console.log("CC");
+// } else if (x > 40) {
+//   console.log("DD");
+// } else {
+//   console.log("FF");
 // }
 
 //! 2.Cözüm:
@@ -100,7 +95,7 @@ if (sabah) {
 let dersNotu = 83;
 
 if (dersNotu < 0 || dersNotu > 100) {
-  console.log("Notunuz 100'den büyük 0'dan küçük olamaz");
+  console.log("Notunuz 100'den büyük, 0'dan küçük olamaz");
 } else if (dersNotu > 90) {
   console.log("Harfiniz AA'dir.");
 } else if (dersNotu > 80) {
@@ -119,7 +114,7 @@ if (dersNotu < 0 || dersNotu > 100) {
   console.log("Harfiniz FF'dir.");
 }
 
-//! 3) Artik yil sorusu
+//! 3) Artik yil sorusu:
 
 //? Artık yıl, bir yıldaki günlerin 365 yerine 366 gün olmasına denir. Bu fazladan gün (artık gün), normalde 28 gün olan Subat ayına 29 Şubat'ın eklenmesi ile elde edilir.  Bunun hesaplanması için aşağıdaki algoritma kullanılır.
 
@@ -137,7 +132,7 @@ if (y % 4 == 0 && y % 100 != 0) {
   console.log(`${y} artik yil degildir`);
 }
 
-//! 4) 1000 ile 2000 arasindaki 13'e bölümünden kalani 3 olan sayilari console a yazdiriniz
+//! 4) 1000 ile 2000 arasindaki 13'e bölümünden kalani 3 olan sayilari console a yazdiriniz:
 
 // let sayac = 0;
 
@@ -150,7 +145,7 @@ if (y % 4 == 0 && y % 100 != 0) {
 
 //console.log("kac tane", sayac);
 
-//! 5) Kullanicidan alinan 5 adet sayinin ortalamasini console a yazdiriniz
+//! 5) Kullanicidan alinan 5 adet sayinin ortalamasini console'a yazdiriniz:
 
 //? for ile
 
@@ -179,7 +174,7 @@ if (y % 4 == 0 && y % 100 != 0) {
 
 // console.log(`Girilen ${num} sayinin ortalamasi ${result / num} tir`);
 
-//! 6) Kullanıcıdan alınan sayıları negatif girilene kadar toplayan ve sonucunu console a yazdıran kodu yazınız.
+//! 6) Kullanıcıdan alınan sayıları negatif girilene kadar toplayan ve sonucunu console a yazdıran kodu yazınız:
 
 // let sum = 0;
 
@@ -193,7 +188,7 @@ if (y % 4 == 0 && y % 100 != 0) {
 
 // console.log(`Girilen sayilarin toplami ${sum}`);
 
-//! 7) Sizden 1'den 100'e kadar olan sayilari console a yazdirmaniz istenmektedir ancak 3'ün katlarina gelince 'Fizz', 5'in katlarina gelince 'Buzz' yazacak. Hem 3'ün hem de 5'in katina geldiginde ise 'FizzBuzz' yazdirmaniz istenmektedir.
+//! 7) Sizden 1'den 100'e kadar olan sayilari console'a yazdirmaniz istenmektedir.Ancak 3'ün katlarina gelince 'Fizz', 5'in katlarina gelince 'Buzz' yazacak. Hem 3'ün hem de 5'in katina geldiginde ise 'FizzBuzz' yazdirmaniz istenmektedir:
 
 for (let i = 1; i <= 100; i++) {
   if (i % 3 === 0 && i % 5 === 0) {
@@ -207,24 +202,25 @@ for (let i = 1; i <= 100; i++) {
   }
 }
 
-//! 8) Bir sayinin(number) basamak sayisini yazdiran kodu yaziniz.
+//! 8) Bir sayinin(number) basamak sayisini yazdiran kodu yaziniz:
 
 // let number = +prompt("sayi giriniz");
 
 // let digitCount = 0;
-// while (number !==0) {
-//     digitCount++
-//     number = Math.trunc(number/10);
+// while (number !== 0) {
+//   digitCount++;
+//   number = Math.trunc(number / 10);
 // }
 
 // console.log(`sayinin basamak sayisi ${digitCount}`);
 
-//! 9) Kullanicidan alinan n adet kadar olan Fibonacci dizisini aralarinda bosluk olan string sekilde console a yazdiriniz // 0 1 1 2 3 5 8 13
+//! 9) Kullanicidan alinan n adet kadar olan Fibonacci dizisini aralarinda bosluk olan string sekilde console a yazdiriniz: // 0 1 1 2 3 5 8 13
 
 // let a = 0;
 // let b = 1;
 // let strfibonacci = "0 1";
 // let n = +prompt("kac tane fibonacci sayisi istersiniz?");
+
 // for (let i = 0; i < n; i++) {
 //   c = a + b;
 //   strfibonacci += ` ${c}`;
