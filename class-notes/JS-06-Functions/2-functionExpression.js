@@ -2,16 +2,14 @@
 // ?                    FONKSİYONLAR
 // ?==========================================================
 
-//!----------------------------------------------------------
+//!-----------------------------------------------------------
 //! 2.YÖNTEM  : FUNCTION EXPRESSION
 //!-----------------------------------------------------------
-// //!Function expression ve arrow function yöntemlerinde
-// //! Önce fonksiyon tanimlanmalidir sonra cagrilmalidir.
-// //! Aksi takdirde hata alırsiniz.
+//! Function expression ve arrow function yöntemlerinde önce fonksiyon tanimlanmalidir sonra cagrilmalidir.Aksi takdirde hata alırsiniz.
 
 console.log("******** 2- EXPRESSION*******");
 
-//* Örnek1: (tek-çift kontrolü):
+//* Örnek-1: (tek-çift kontrolü):
 
 //isEvenOdd(34); Expression da fonksiyon tanimlanmadan cagiramayiz.
 
@@ -19,12 +17,12 @@ const isEvenOdd = function (sayi) {
   return sayi % 2 == 0 ? "cifttir" : "tektir";
 };
 
-//console.log(isEvenOdd(34));
+//console.log(isEvenOdd(34)); //cifttir
 
 const result = isEvenOdd(35);
-console.log(result);//tektir
+console.log(result); //tektir
 
-//*örnek-2:
+//* Örnek-2:
 
 const buyukBul = function (a, b, c) {
   let enBuyuk; //function scope
@@ -37,9 +35,9 @@ const buyukBul = function (a, b, c) {
   console.log(enBuyuk);
 };
 
-buyukBul(243, 475, 78);//475
+buyukBul(243, 475, 78); //475
 
-//*örnek-3: (arguments keyword'ü ile):
+//* Örnek-3: (arguments keyword'ü ile):
 
 const enBul = function () {
   let enBuyuk = arguments[0];
@@ -59,7 +57,7 @@ const enBul = function () {
 
 console.log(enBul(34, 111, 777, 678, 56, 2, 5678, 34, 6));
 
-//* örnek-4 bir fonsiyon oconden baska bir fonksiyon cagirilabilir
+//* Örnek-4: Bir fonsiyon oconden baska bir fonksiyon cagirilabilir.
 
 const usAl = function (a, b) {
   return a ** b;
@@ -88,13 +86,9 @@ Hesapla("üsalirmisin", 3, 5);
 Hesapla("cevrebulurmusun", 3, 5);
 Hesapla("alanbulurmusun", 3, 5);
 
-//*ornek5:--------------------------------------------------------------------------
-//Bir ülkedeki ortalama yaşam ömrü 95 yıl olduğuna göre,
-// doğum yılı girilen kişinin yaşını hesaplattıran
-// yaşına göre ortalama ... ömrünüz kaldı yazıp önerilerde bulunan program
-
-// 0-10 : " Sen bu değerleri önemseme hayatın tadını çıkar"
-// 10-20 : " Gezmek görmek istediğin yerler varsa yola çıkma zamanı.. "
+//* Örnek-5: Bir ülkedeki ortalama yaşam ömrü 95 yıl olduğuna göre, doğum yılı girilen kişinin yaşını hesaplattıran, yaşına göre ortalama ... ömrünüz kaldı yazıp önerilerde bulunan program:
+//* 0-10 : "Sen bu değerleri önemseme hayatın tadını çıkar"
+//* 10-20 : "Gezmek görmek istediğin yerler varsa yola çıkma zamanı.."
 
 /* -----------------------------------------------------------*/
 
@@ -104,7 +98,7 @@ const bilgilendirme = function (birth) {
   const kalanOmur = ortOmur - (2024 - birth);
 
   if (kalanOmur > 0 && kalanOmur <= 10) {
-    return "sen bu degerleri önemseme, hayatin tadini cikar";
+    return "Sen bu degerleri önemseme, hayatin tadini cikar";
   } else if (kalanOmur > 10 && kalanOmur <= 20) {
     return "Gezmek görmek istedigin yerler varsa yola cikma zamani";
   } else return `${kalanOmur} yil ömrün var istedigin gibi yasa`;

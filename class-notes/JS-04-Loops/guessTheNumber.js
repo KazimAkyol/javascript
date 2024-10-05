@@ -1,10 +1,10 @@
 //! SAYI TAHMIN OYUNU
 // 1'den 50'ye kadar olan sayilardan bilgisayar bir sayi tutacak
 // Kullanici bu sayiyi bulmaya calisacak
-// Kullanicinin isini kolaylastirmak icin kücük girdiyse ARTTIR, büyük girdiyse AZALT gibi yönlendirmelere yapalim
+// Kullanicinin isini kolaylastirmak icin kücük girdiyse ARTTIR, büyük girdiyse AZALT gibi yönlendirmeler yapalim
 // Buldugunda TEBRIKLER yazalim:
 
-let = devam = "";
+let devam = "";
 let hak = 5;
 
 do {
