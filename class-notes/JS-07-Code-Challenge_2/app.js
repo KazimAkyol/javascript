@@ -17,15 +17,11 @@ let topla = function (p1, p2) {
 
 console.log(topla(4, 6)); //10
 
-console.log("******** lock *********");
-
 const carp = (p1, p2) => {
   return p1 * p2;
 };
 
 console.log(carp(4, 5)); //20
-
-console.log("******** lock *********");
 
 let isim = "harvey watson";
 console.log(isim.lenght); //undefined
@@ -34,17 +30,13 @@ console.log(isim[1]); //a
 console.log(isim[2]); //r
 console.log(isim[isim.lenght - 1]); //undefined
 
-console.log("******** lock *********");
-
-//! 1) Celsius değerini Fahrenheit değerine dönüştüren bir fonksiyon yazınız: (Celsius × 9/5) + 32 = Fahrenheit
+//! 1) Celcius değerini Fahrenheit değerine dönüştüren bir fonksiyon yazınız: (Celsius × 9/5) + 32 = Fahrenheit
 
 function calcFahrenheit(celcius) {
   let fahrenheit = (celcius * 9) / 5 + 32;
   console.log(fahrenheit);
 }
 calcFahrenheit(30); //86
-
-console.log("******** lock *********");
 
 //! 2) Belirli bir string ifadenin tersini bulan fonksiyonu yazınız:
 
@@ -60,8 +52,6 @@ function reversString(str) {
 
 console.log(reversString(string)); // dlrow olleh
 
-console.log("******** lock *********");
-
 //! 3) Belirli bir string ifadenin palindrome olup olmadığını bulan fonksiyonu yazınız:
 
 const string1 = "selles";
@@ -75,8 +65,6 @@ function isPalindrome(str) {
 }
 
 console.log(isPalindrome(string1)); //true
-
-console.log("******** lock *********");
 
 //! 4) Belirli bir sayinin tam bölenlerinin toplamini bulan fonksiyonu yaziniz:
 
@@ -92,8 +80,6 @@ function sumDivisors(num) {
 
 console.log(sumDivisors(12)); //28
 
-console.log("******** lock *********");
-
 //! 5) Yarıçapı verilen bir dairenin alan ve çevresini bulan program:
 
 function circleValues(rad) {
@@ -104,8 +90,6 @@ console.log(circleValues(10)); //"Perimeters: 62.83, Area: 314.15"
 console.log(circleValues(15)); //"Perimeters: 94.24, Area: 706.85"
 console.log(circleValues(25)); //"Perimeters: 157.07 Area: 1963.49"
 
-console.log("******** lock *********");
-
 //! 6) Belirli vir sayinin asal olup olmadigini bulan fonksiyonu yaziniz:
 
 const isPrime = (num) => {
@@ -114,28 +98,23 @@ const isPrime = (num) => {
   for (let i = 2; i < num; i++) {
     if (num % i === 0) return false;
   }
-
   return true;
 };
 
 console.log(isPrime(71)); //output true
 
-console.log("******** lock *********");
-
 //! 7) ilk 2 parametreyi carpip 3.parametre üssüne alan fonsiyonu yaziniz:
 
 const transmogrifier = (val1, val2, val3) => {
   let result = Math.pow(val1 * val2, val3);
-  console.log(result);
+  console.log(result); //true
 };
 
 transmogrifier(3, 4, 2); //144
 
-console.log("******** lock *********");
-
 //! 8) Bir sayiyi tersine cevirecek bir fonksiyon yaziniz:
 //546
-//!1.Yöntem:
+//! 1.Yöntem:
 // function reverseNumber(num) {
 //   var reverse = 0;
 //   while (num != 0) {
@@ -146,9 +125,9 @@ console.log("******** lock *********");
 //   return reverse;
 // }
 
-// console.log(reverseNumber(546));
+// console.log(reverseNumber(546)); //645
 
-//!2.Yöntem:
+//! 2.Yöntem:
 
 // let numara = 5441681;
 // console.log(numara);
@@ -165,8 +144,6 @@ const ters = (sayi) => {
 
 console.log(ters(654)); //456
 console.log(ters(2024)); //4202
-
-console.log("******** lock *********");
 
 //! 9) 100-1000'e kadar olan sayilarin polindrom olanlarini belirten/yazan program:
 
@@ -186,8 +163,6 @@ for (let i = 100; i < 1000; i++) {
   x === null ? null : console.log(x);
 }
 
-console.log("******** lock *********");
-
 //! 10) Girilen bir sayinin pozitif bölenlerini bulan bir fonksiyon yaziniz:
 
 function findPositiveDivisors(num) {
@@ -197,7 +172,6 @@ function findPositiveDivisors(num) {
     if (num % i === 0) result.push(i);
     console.log("result", result);
   }
-
   return result;
 }
 
@@ -214,8 +188,6 @@ function findFactors(num) {
 }
 
 console.log(findFactors(12)); // output: [1, 2, 3, 4, 6, 12]
-
-console.log("******** lock *********");
 
 //! 11) Aşağıdaki isterleri sağlayan bir fal programı yazıniz:
 
@@ -242,8 +214,6 @@ function tellFortune(jobTitle, geoLocation, partner, numKids) {
 // tellFortune('stunt double', 'Japan', 'Ryan Gosling', 3000);
 // tellFortune('Elvis impersonator', 'Russia', 'The Oatmeal', 0);
 
-console.log("******** lock *********");
-
 //! 12) Mükemmel sayiyi bulan fonksiyonunu yaziniz:
 
 //? Bölen sayilarinin toplami orjinal sayinin 2 katina esitse bu mükemmel sayidir...
@@ -259,7 +229,7 @@ const mukSayi = (sayi) => {
     }
   }
   toplam += 1 + sayi;
-  //console.log(toplam)
+  //console.log(toplam);
 
   if (toplam == sayi * 2) {
     console.log("Mükemmel sayidir...");
@@ -268,13 +238,11 @@ const mukSayi = (sayi) => {
   }
 };
 
-mukSayi(50); // mükemmel sayi degildir
-mukSayi(28); // mükemmel sayidir
-
-console.log("******** lock *********");
+mukSayi(50); //mükemmel sayi degildir.
+mukSayi(28); //mükemmel sayidir.
 
 //! 13) Anapara tutarına dayalı bileşik faizi hesaplamak için bir fonksiyon yazın:
-// Fonksiyon `compoundInt()`, anapara tutarı, yıllık faiz oranı, yıllık bazda zaman ve faizin birim zamanda kaç kez bileştirileceği olarak n verilen bileşik faiz formülüne dayalı nihai bir tutar döndürür.
+//* Fonksiyon `compoundInt()`, anapara tutarı, yıllık faiz oranı, yıllık bazda zaman ve faizin birim zamanda kaç kez bileştirileceği olarak n verilen bileşik faiz formülüne dayalı nihai bir tutar döndürür.
 
 function compoundInt(principle, rate, time, n) {
   var interest = principle * Math.pow(1 + rate / n, n * time);
@@ -283,8 +251,6 @@ function compoundInt(principle, rate, time, n) {
 
 console.log(compoundInt(20000, 5, 2, 2)); //3021250
 console.log(compoundInt(150000, 25, 1, 2)); //27487500
-
-console.log("******** lock *********");
 
 //! 14) calculateSupply adında bir fonksiyon yazın:
 // 2 argüman alır: yaş, günlük miktar.
