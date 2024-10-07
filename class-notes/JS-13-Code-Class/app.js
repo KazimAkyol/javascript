@@ -162,5 +162,43 @@ console.log(totalPayment);
 //! 612453789 bu hale dönüştüren program:
 
 let string = "alti,bir,iki,dört,beş,üç,yedi,sekiz,dokuz";
+let stringNumber = [];
 
+const splitNumber = () => {
+  let newString = string.split(",");
+  console.log(newString);
 
+  for (let i = 0; i < newString.length; i++) {
+    if (newString[i] === "bir") stringNumber.push(1);
+    else if (newString[i] === "iki") stringNumber.push(2);
+    else if (newString[i] === "uc") stringNumber.push(3);
+    else if (newString[i] === "dört") stringNumber.push(4);
+    else if (newString[i] === "bes") stringNumber.push(5);
+    else if (newString[i] === "alti") stringNumber.push(6);
+    else if (newString[i] === "yedi") stringNumber.push(7);
+    else if (newString[i] === "sekiz") stringNumber.push(8);
+    else stringNumber.push(9);
+  }
+  return stringNumber.join("");
+};
+
+console.log(splitNumber(string));
+
+//! Bir dizi icindeki sayilari asal olanlarini filtreleyen bir fonksiyonu olusturun: (filter ile yapilmasi önerilen)
+
+const number1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let asalSayilar = numbers.filter((number) => {
+  if (number < 2) {
+    return false; // bu sayi asal sayi degildir
+  }
+
+  for (let i = 0; i < number.length; i++) {
+    if (number % i === 0) {
+      return false; // bu sayi asal sayi degildir
+    }
+  }
+  return true;
+});
+
+console.log(asalSayilar);
