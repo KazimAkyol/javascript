@@ -127,7 +127,7 @@ function removeDuplicated(arr) {
 console.log(removeDuplicated([1, 0, 1, 0, 1]));
 console.log(removeDuplicated(["the", "small", "cat", "the", "cat"]));
 
-//! Bir dizide ilk harfi A ile baslayan yeni bir diziye alan fonksiyon:
+//! 5. Bir dizide ilk harfi A ile baslayan yeni bir diziye alan fonksiyon:
 const words = ["Apple", "Orange", "Avocado", "Grape", "Apricot"];
 
 function filterWords(arr) {
@@ -137,21 +137,30 @@ function filterWords(arr) {
 
 // console.log(filterWords(word));
 
-//! bir dizide verilen  maaşlara %10 zam yapılacak ama hala 20000 altında kalanlara ek ödeme planlanacak
-// a- Kaç kişi zam olsa bile 20000 altında kalıyor
+//! 6. Bir dizide verilen  maaşlara %10 zam yapılacak ama hala 20000 altında kalanlara ek ödeme planlanacak:
+// a- Kaç kişi zam olsa bile 20000 altında kalıyor?
 let salaries = [18000, 13000, 17000, 24000, 18500, 21000, 19300];
 
 let belowUnder20K = salaries.filter((salary) => salary * 1.1 < 20000);
 console.log(belowUnder20K);
 
-// b- Maasi zamli halde 20000'in altinda kalanlara patronumuz belki ir güzellik yapar. 20000' altinda kalanlari 20000'e tamamlayabilir ama ne kadar bütce ayirmali
+// b- Maasi zamli halde 20000'in altinda kalanlara patronumuz belki ir güzellik yapar. 20000' altinda kalanlari 20000'e tamamlayabilir ama ne kadar bütce ayirmali?
 
-let totalBudget = 0;
+let addBudget = salaries.map((salary) => {
+  let increased = salary * 1.1;
+  return increased < 20000 ? 20000 - increased : 0;
+});
 
-for (let i = 0; i < salaries.length; i++) {
-  if (salaries[i] < 20000) {
-    totalBudget += 20000 - salaries[i];
-  }
-}
+console.log(addBudget);
+let totalPayment = addBudget.reduce((sum, payment) => sum + payment, 0);
 
-console.log("Patronun ayirmasi gereken toplam bütçe: " + totalBudget);
+console.log(totalPayment);
+
+// EXTRA QUESTIONS
+
+//! 7. Bu şekilde girilen stringi "altı,bir,iki,dört,beş,üç,yedi,sekiz,dokuz"
+//! 612453789 bu hale dönüştüren program:
+
+let string = "alti,bir,iki,dört,beş,üç,yedi,sekiz,dokuz";
+
+
