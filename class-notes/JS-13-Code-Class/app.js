@@ -202,3 +202,13 @@ let asalSayilar = numbers.filter((number) => {
 });
 
 console.log(asalSayilar);
+
+//! Bir diziyi tersine çeviren bir map fonksiyonu oluşturun:
+const originalArray = [1, 2, 3, 4, 5];
+
+const reversedArray = originalArray.map(
+  (value, index, array) => array[array.length - 1 - index]
+);
+
+console.log(reversedArray); // [5, 4, 3, 2, 1]
+
