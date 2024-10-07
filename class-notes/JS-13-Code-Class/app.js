@@ -86,4 +86,43 @@ console.log(countWords(sentence));
 
 console.log(sentence.split(/\s+/));
 
+//! 3. Size bir  cümle verildi. "Clarusway" kelimesini bulmanız ve şuna benzer bir cümle döndürmeniz gerekir:
+//? Clarusway'i bulamıyorsanız, "I can't find Clarusway :(" yazın.
+//? findClarusway("I am finding Clarusway !") ➞ "I found Clarusway at 4!"
 
+test: "I like Clarusway"; // Output : I found at Clarusway at 3!
+test: "I like bootcamps "; // Output  I can't find Clarusway :(
+
+function findClarusway(sentence) {
+  if (sentence.includes("Clarusway")) {
+    return `I found at Clarusway at ${sentence
+      .split(" ")
+      .indexOf("Clarusway")}`;
+  } else {
+    return "I can't find Clarusway";
+  }
+}
+
+let sentence1 = "I like Clarusway";
+
+console.log(findClarusway(sentence1));
+
+console.log(sentence1.split(" ").indexOf("Clarusway"));
+
+//! 4. Bir öğe dizisini alan, tüm yinelenen öğeleri kaldıran ve eski diziyle aynı sırada yeni bir dizi döndüren bir fonksiyon oluşturan program :
+
+// removeDuplicated([1,0,1,0,1]) // Output [1,0]
+// removeDuplicated(["the","small","cat","the","cat"]) // ouput["the","small","cat"]
+
+function removeDuplicated(arr) {
+  const duplicatedArray = [];
+  for (const i of arr) {
+    if (!duplicatedArray.includes(i)) {
+      duplicatedArray.push(i);
+    }
+  }
+  return duplicatedArray;
+}
+
+console.log(removeDuplicated([1, 0, 1, 0, 1]));
+console.log(removeDuplicated(["the", "small", "cat", "the", "cat"]));
