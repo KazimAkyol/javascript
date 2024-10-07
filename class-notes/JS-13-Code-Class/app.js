@@ -126,3 +126,32 @@ function removeDuplicated(arr) {
 
 console.log(removeDuplicated([1, 0, 1, 0, 1]));
 console.log(removeDuplicated(["the", "small", "cat", "the", "cat"]));
+
+//! Bir dizide ilk harfi A ile baslayan yeni bir diziye alan fonksiyon:
+const words = ["Apple", "Orange", "Avocado", "Grape", "Apricot"];
+
+function filterWords(arr) {
+  const newArr = arr.filter((word) => word(0) === "A");
+  return newArr;
+}
+
+// console.log(filterWords(word));
+
+//! bir dizide verilen  maaşlara %10 zam yapılacak ama hala 20000 altında kalanlara ek ödeme planlanacak
+// a- Kaç kişi zam olsa bile 20000 altında kalıyor
+let salaries = [18000, 13000, 17000, 24000, 18500, 21000, 19300];
+
+let belowUnder20K = salaries.filter((salary) => salary * 1.1 < 20000);
+console.log(belowUnder20K);
+
+// b- Maasi zamli halde 20000'in altinda kalanlara patronumuz belki ir güzellik yapar. 20000' altinda kalanlari 20000'e tamamlayabilir ama ne kadar bütce ayirmali
+
+let totalBudget = 0;
+
+for (let i = 0; i < salaries.length; i++) {
+  if (salaries[i] < 20000) {
+    totalBudget += 20000 - salaries[i];
+  }
+}
+
+console.log("Patronun ayirmasi gereken toplam bütçe: " + totalBudget);
