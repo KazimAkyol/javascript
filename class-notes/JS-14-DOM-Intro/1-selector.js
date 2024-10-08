@@ -71,4 +71,23 @@ document.querySelector("p").style.fontSize = "50px";
 //querySelector ile çağırdığınız (normalde birden fazla varsa) etiketin ilki gelir
 
 const paragraflar = document.querySelectorAll("p");
-console.log(paragraflar);
+console.log(paragraflar); // NodeList
+
+paragraflar[1].style.fontSize = "70px";
+
+// Bir NodeList ve bir HTMLcollection hemen hemen aynı şeydir.
+
+// Her ikisi de bir belgeden çıkarılan düğümlerin (öğelerin-node) dizi benzeri koleksiyonlarıdır (listeleridir). Düğümlere indeks numaraları ile erişilebilir. indeks 0'dan başlar.
+
+// Her ikisinin de listedeki (koleksiyon) öğelerin sayısını döndüren bir uzunluk özelliği (length) vardır.
+
+// getElementsByClassName()ve yöntemleri , getElementsByTagName() canlı bir HTMLCollection döndürür.
+
+// querySelectorAll(), statik bir NodeList döndürür.
+//!burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
+// Dizi Değil!
+// Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
+
+// Bir NodeList içinde döngü yapabilir ve düğümlerine index ine göre başvurabilirsiniz.
+
+// Ancak, bir NodeList'te push(), pop() veya join() gibi diziyi değiştiren Array yöntemlerini kullanamazsınız.
