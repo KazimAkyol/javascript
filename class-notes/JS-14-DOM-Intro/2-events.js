@@ -33,7 +33,6 @@ iki.onclick = () => {
 
 bir.ondblclick = () => {
   bir.src = "./img/bir.jpeg";
-
   iki.src = "./img/iki.webp";
 };
 
@@ -54,7 +53,9 @@ button.onclick = () => {
 
 button.addEventListener("click", () => {
   button.textContent = "TIKLANDI";
+
   badi.style.background = "aqua";
+
   document.querySelector("#par1").style.fontSize = "50px";
 });
 
