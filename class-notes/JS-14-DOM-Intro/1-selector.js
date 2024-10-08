@@ -2,7 +2,7 @@
 //*                   GETELEMENTBYID()
 //* ======================================================
 
-//*example1 buton style
+//* example-1: buton style
 
 const buton = document.getElementById("btn");
 
@@ -11,7 +11,7 @@ buton.style.height = "80px";
 buton.style.fontSize = "80px";
 buton.style.backgroundColor = "red";
 
-//* example-2 paragraf style
+//* example-2: paragraf style
 
 const paragraf = document.getElementById("par1");
 
@@ -39,7 +39,15 @@ resim[1].style.border = "2px solid red";
 
 const baslik = document.getElementsByClassName("HBIR");
 
+console.log(baslik); //dom selector-merhaba
+
 //* HTMLCollecton (arrayimsi)'larda ARRAY'i degistirmeyen metodlari kullanabilirsiniz
+
+//baslik[0].style.color = "red";
+//baslik[0].style.textAlign = "center";
+
+//baslik[1].style.color = "red";
+//baslik[1].style.textAlign = "center";
 
 for (let i = 0; i < 2; i++) {
   baslik[i].style.color = "red";
@@ -84,7 +92,9 @@ paragraflar[1].style.fontSize = "70px";
 // getElementsByClassName()ve yöntemleri , getElementsByTagName() canlı bir HTMLCollection döndürür.
 
 // querySelectorAll(), statik bir NodeList döndürür.
-//!burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
+
+//! burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
+
 // Dizi Değil!
 // Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
 

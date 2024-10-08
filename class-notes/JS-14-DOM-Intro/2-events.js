@@ -1,4 +1,5 @@
-//? METHOD-1 (SADECE JAVASCRİPT TE YAZILAN YOL) 1.yol
+//? METHOD-1 (SADECE JAVASCRİPT TE YAZILAN YOL)
+//! 1.yol
 //?---------------------------------------------------------------
 
 //* example-1: onmouseover, onmouseout
@@ -33,6 +34,7 @@ iki.onclick = () => {
 
 bir.ondblclick = () => {
   bir.src = "./img/bir.jpeg";
+
   iki.src = "./img/iki.webp";
 };
 
