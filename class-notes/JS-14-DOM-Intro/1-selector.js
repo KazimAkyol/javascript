@@ -4,7 +4,7 @@
 
 //*example1 buton style
 
-const button = document.getElementById("btn");
+const buton = document.getElementById("btn");
 
 buton.style.width = "200px";
 buton.style.height = "80px";
@@ -45,3 +45,30 @@ for (let i = 0; i < 2; i++) {
   baslik[i].style.color = "red";
   baslik[i].style.textAlign = "center";
 }
+
+baslik[0].innerHTML =
+  " H1'in ici <a href ='https://clarusway.com/'>DOM COK GÜZEL</a>";
+
+baslik[1].textContent = "HALLO";
+
+//* sadece içerik değişecekse textContent tercih edilir, ama innerHTML de etiketi değiştirebildiği gibi, sadece içeriği de değiştirebilir
+
+//* ======================================================
+//*                  QUERYSELECTOR,QUERYSELECTORALL
+//*======================================================
+
+document.querySelector("title").textContent = "DOM MANIPULASYON 💖";
+
+document.querySelector("#badi").style.backgroundImage =
+  "linear-gradient(green,pink)";
+
+document.querySelector(".HIKI").style.color = "pink";
+
+console.log(document.querySelector("p"));
+
+document.querySelector("p").style.fontSize = "50px";
+
+//querySelector ile çağırdığınız (normalde birden fazla varsa) etiketin ilki gelir
+
+const paragraflar = document.querySelectorAll("p");
+console.log(paragraflar);
