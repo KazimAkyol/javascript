@@ -1,5 +1,4 @@
-//? METHOD-1 (SADECE JAVASCRİPT TE YAZILAN YOL)
-//! 1.yol
+//? METHOD-1 (SADECE JAVASCRİPT TE YAZILAN YOL) 1.yol
 //?---------------------------------------------------------------
 
 //* example-1: onmouseover, onmouseout
@@ -49,3 +48,19 @@ button.onclick = () => {
 
   document.querySelector("#par1").style.fontSize = "50px";
 };
+
+//? METHOD-2 (sadece JAVASCRIPT'te yazilir - addEventListener()) 2.yol
+// ? ---------------------------------------------------------------
+
+button.addEventListener("click", () => {
+  button.textContent = "TIKLANDI";
+  badi.style.background = "aqua";
+  document.querySelector("#par1").style.fontSize = "50px";
+});
+
+//* example-4: (Mouse Over, Mouse Out)
+
+//? METHOD-3 (HTML-INLINE)
+//?---------------------------------------------------------------
+
+// kodlari html sayfasinda
