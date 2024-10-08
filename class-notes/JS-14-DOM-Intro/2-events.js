@@ -25,3 +25,25 @@ bir.onclick = () => {
   bir.src = "./img/logo2.png";
   iki.src = "./img/js_logo.png";
 };
+
+iki.onclick = () => {
+  bir.src = "./img/js_logo.png";
+  iki.src = "./img/logo2.png";
+};
+
+bir.ondblclick = () => {
+  bir.src = "./img/bir.jpeg";
+  iki.src = "./img/iki.webp";
+};
+
+//* example-3:
+
+const button = document.querySelector("#btn");
+
+button.onclick = () => {
+  button.textContent = "TIKLANDI";
+
+  badi.style.background = "aqua";
+
+  document.querySelector("#par1").style.fontSize = "50px";
+};
