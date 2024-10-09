@@ -1,20 +1,17 @@
 let rastgeleSayi = Math.ceil(Math.random() * 20);
 
-console.log(rastgeleSayi); // yukarida yazdigimiz Math komutunun calisip calismadigini console'da kontrol ettik
+console.log(rastgeleSayi);
 
 let mesaj = document.querySelector(".msg");
+let tahmin = document.querySelector(".guess");
 
-//! her check butonuna basinca olacaklar:
+//! her check butonuna basınca olacaklar:
 
 document.querySelector(".check").onclick = () => {
-  let tahmin = document.querySelector(".guess");
-
   if (tahmin.value == rastgeleSayi) {
-    document.querySelector(".body").style.backgroundColor = "green";
+    document.querySelector("body").style.backgroundColor = "green";
 
-    //console.log(mesaj);
-
-    mesaj.textContent = "Terbikler...";
+    mesaj.textContent = "Tebrikler...";
 
     document.querySelector(".number").textContent = rastgeleSayi;
   } else if (tahmin.value > rastgeleSayi) {
@@ -24,18 +21,32 @@ document.querySelector(".check").onclick = () => {
   }
 };
 
-//! soru isareti kutusuna tiklandiginda yeni yarismaci icin sayfayi hazirla:
+//! soru işareti kutusuna tıklandığında yeni yarışmacı için sayfayı hazırla:
 
 document.querySelector(".number").onclick = () => {
-  //*bilgisayar yeni bir sayı tutsun:
-  rastgeleSayi = Math.ceil(Math.random() * 20);
+  //*bilgisayar yeni bir sayı tutsun
+  rastgeleSayı = Math.ceil(Math.random() * 20);
 
-  //*body'nin rengi kirmizi olsun:
-  document.querySelector(".body").style.backgroundColor = "red";
+  //*bady nin rengi turuncu olsun
+  document.querySelector("body").style.backgroundColor = "red";
 
-  //* tahmin beliren kutuda tekrar ? olsun:
+  //* tahmin beliren  kutuda tekrar ? olsun
+
   document.querySelector(".number").textContent = "?";
 
-  //*mesaj kısmında "oyun yeni oyuncu için tekrar başliyor" yazsın:
-  mesaj.textContent = "oyun yeni oyuncu için tekrar başliyor";
+  //*mesaj kısmında "oyun yeni oyuncu için tekrar başlıyor" yazsın
+
+  mesaj.textContent = "oyun yeni oyuncu için tekrar başlıyor";
+};
+
+//! enter'a basılınca check butonuna basılmış gibi çalışsın:
+
+tahmin.onkeydown = (tus) => {
+  console.log(tus);
+
+  if (tus.key == "Enter") {
+    // if(tus.keyCode==13){
+
+    document.querySelector(".check").click();
+  }
 };
