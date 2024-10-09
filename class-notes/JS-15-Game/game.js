@@ -30,12 +30,12 @@ document.querySelector(".number").onclick = () => {
   //*bilgisayar yeni bir sayı tutsun:
   rastgeleSayi = Math.ceil(Math.random() * 20);
 
-  //*body'nin rengi turuncu olsun:
-  document.querySelector(".body").style.backgroundColor = "tomato";
+  //*body'nin rengi kirmizi olsun:
+  document.querySelector(".body").style.backgroundColor = "red";
 
   //* tahmin beliren kutuda tekrar ? olsun:
   document.querySelector(".number").textContent = "?";
 
-  //*mesaj kısmında "oyun yeni oyuncu için tekrar başlıyor" yazsın:
-  mesaj.textContent = "oyun yeni oyuncu için tekrar başlıyor";
+  //*mesaj kısmında "oyun yeni oyuncu için tekrar başliyor" yazsın:
+  mesaj.textContent = "oyun yeni oyuncu için tekrar başliyor";
 };
