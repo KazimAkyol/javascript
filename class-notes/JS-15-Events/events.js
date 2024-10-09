@@ -7,7 +7,7 @@ document.querySelector(".ara").onclick = () => {
 };
 
 //* audio calistir. play() komutu HTML'deki audi'yu calistirir
-ses1.play();
+//ses1.play();
 
 //* sesin volume'ünü 0 ile 1 arasinda degerler vererek ayarlayabiliriz
 
@@ -58,30 +58,63 @@ textInput.onkeyup = () => {
   //inputa veri girişi yaptığımızda, küçük input tikliyse benim büyük inputa girdiğim harfleri büyüt, aksi durumda küçült
 };
 
-//! listemin basina "Programlama Dilleri" h1 etiketi ekleme
+//!listemin başına "Programlama Dilleri" h1 etiketi ekleme
 
-//? HTML'de h1 etiketi olusturmak
+//? HTML'de h1 etiketi oluşturmak
 const baslik = document.createElement("h1");
 
-// <h1></h1>
+{
+  /* <h1></h1> */
+}
 
-//? baslik2 seklinde class ismi ekleyelim
+//? baslik2 şeklinde class ismi ekleyelim
 baslik.className = "baslik2";
 
-// <h1 class="baslik2"></h1>
+{
+  /* <h1 class="baslik2"></h1> */
+}
 
-//? Programlama Dilleri seklinde yazi olusturduk
+//? Programlama Dilleri şeklinde yazı oluşturduk
+
 const yazi = document.createTextNode("Programlama Dilleri");
 
-//? h1 elementi icin olusturdugum text'i h1'e child yapalim
+//? h1 elementi için oluşturduğum text i h1 e child yapalım
 
 baslik.appendChild(yazi);
 
-// <h1 class="baslik2">Programlama Dilleri</h1>
+{
+  /* <h1 class="baslik2">Programlama Dilleri</h1> */
+}
 
-//? Listemin üstündeki div'in sonrasina ekleyelim
+//? listemin üstündeki div in sonrasına ekleyelim
 
 document.querySelector("main").after(baslik);
 
 //!  "append" metodu ile seçtiğimiz Html etiketi bitmeden önceki son kısma ekleme yapabiliriz (<div>merhaba -buraya-  </div>).  "prepend" metodu ile seçtiğimiz Html etiketi başladıktan sonraki ilk kısma ekleme yapabiliriz  (<div> -buraya-  merhaba   </div>).  "after" metodu ile ile seçtiğimiz Html etiketi bittikten sonraki ilk kısma ekleme yapabiliriz (<div> merhaba </div>  -buraya-).
 //! *******kısayol**********
+
+const bolum = document.querySelector("section");
+
+bolum.innerHTML =
+  `<h1 class="baslik2">Programlama Dilleri</h1>` + bolum.innerHTML;
+//"<h1 class='baslik2'>Programlama Dilleri</h1>" + bolum.innerHTML;// bu sekilde de oluyor
+
+//! languages inputuna girilen verileri, ul'ye eklemek
+//! uzun yol
+
+const dil = document.querySelector(".languages");
+const liste = document.querySelector(".liste");
+
+document.querySelector(".ekle").onclick = () => {
+  //* yeni girilen satiri saklamak icin bir li olusturduk
+
+  const yeniLi = document.createElement("li");
+
+  //* olusturdugumuz textnode'u yeni li'ye bagladik
+
+  yeniLi: appendChild(text);
+
+  //* yeni eklenen satiri var olan listeye (ul) baglayalim
+
+  liste.appendChild(yeniLi);
+};
