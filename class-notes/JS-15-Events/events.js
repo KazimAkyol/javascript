@@ -57,3 +57,31 @@ textInput.onkeyup = () => {
   }
   //inputa veri girişi yaptığımızda, küçük input tikliyse benim büyük inputa girdiğim harfleri büyüt, aksi durumda küçült
 };
+
+//! listemin basina "Programlama Dilleri" h1 etiketi ekleme
+
+//? HTML'de h1 etiketi olusturmak
+const baslik = document.createElement("h1");
+
+// <h1></h1>
+
+//? baslik2 seklinde class ismi ekleyelim
+baslik.className = "baslik2";
+
+// <h1 class="baslik2"></h1>
+
+//? Programlama Dilleri seklinde yazi olusturduk
+const yazi = document.createTextNode("Programlama Dilleri");
+
+//? h1 elementi icin olusturdugum text'i h1'e child yapalim
+
+baslik.appendChild(yazi);
+
+// <h1 class="baslik2">Programlama Dilleri</h1>
+
+//? Listemin üstündeki div'in sonrasina ekleyelim
+
+document.querySelector("main").after(baslik);
+
+//!  "append" metodu ile seçtiğimiz Html etiketi bitmeden önceki son kısma ekleme yapabiliriz (<div>merhaba -buraya-  </div>).  "prepend" metodu ile seçtiğimiz Html etiketi başladıktan sonraki ilk kısma ekleme yapabiliriz  (<div> -buraya-  merhaba   </div>).  "after" metodu ile ile seçtiğimiz Html etiketi bittikten sonraki ilk kısma ekleme yapabiliriz (<div> merhaba </div>  -buraya-).
+//! *******kısayol**********
