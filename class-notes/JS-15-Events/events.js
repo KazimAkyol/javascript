@@ -1,4 +1,9 @@
+document.querySelector("h1").style.color = "red";
+document.querySelector("h1").style.textAlign = "center";
+
 let resim = document.querySelector(".resim");
+
+let ses1 = document.querySelector(".ses1");
 
 //! ara butonuna tiklandiginda:
 
@@ -6,17 +11,18 @@ document.querySelector(".ara").onclick = () => {
   resim.src = "./image/img.gif";
 };
 
-//* audio calistir. play() komutu HTML'deki audi'yu calistirir
-//ses1.play();
+// audio calistir. play() komutu HTML'deki audio'yu calistirir
+ses1.play();
 
-//* sesin volume'ünü 0 ile 1 arasinda degerler vererek ayarlayabiliriz
+// sesin volume'ünü 0 ile 1 arasinda degerler vererek ayarlayabiliriz
+ses1.volume = 0.5;
 
 //! baglat butonuna tiklandiginda:
 
 document.querySelector(".baglat").onclick = () => {
   resim.src = "./image/telbagla.gif";
 
-  //*audio'nun sesini kapatmak icin pause() komutu
+  //* audio'nun sesini kapatmak icin pause() komutu
   ses1.pause();
 };
 
@@ -39,7 +45,7 @@ resim.addEventListener("mouseover", () => {
 resim.addEventListener("mouseout", () => {
   resim.src = "./image/aslan2.jpeg";
 
-  document.querySelector(".ses2").play();
+  //document.querySelector(".ses2").play();
 });
 
 //! klavyeden input'a veri girisi yapilirken, checked'in tikli olmasina bagli olarak, elimizi klavyeden cektigimizde olacaklar
@@ -93,31 +99,32 @@ document.querySelector("main").after(baslik);
 //!  "append" metodu ile seçtiğimiz Html etiketi bitmeden önceki son kısma ekleme yapabiliriz (<div>merhaba -buraya-  </div>).  "prepend" metodu ile seçtiğimiz Html etiketi başladıktan sonraki ilk kısma ekleme yapabiliriz  (<div> -buraya-  merhaba   </div>).  "after" metodu ile ile seçtiğimiz Html etiketi bittikten sonraki ilk kısma ekleme yapabiliriz (<div> merhaba </div>  -buraya-).
 //! *******kısayol**********
 
-// const bolum = document.querySelector("section");
+const bolum = document.querySelector("section");
 
-// bolum.innerHTML =
-//   `<h1 class="baslik2">Programlama Dilleri</h1>` + bolum.innerHTML;
-// //"<h1 class='baslik2'>Programlama Dilleri</h1>" + bolum.innerHTML;// bu sekilde de oluyor
+bolum.innerHTML =
+  `<h1 class='baslik2'>Programlama Dilleri</h1>` + bolum.innerHTML;
 
-// //! languages inputuna girilen verileri, ul'ye eklemek
-// //! uzun yol
+//! languages inputuna girilen verileri, ul ye eklemek
+//! uzun yol:
 
-// const dil = document.querySelector(".languages");
-// const liste = document.querySelector(".liste");
+const dil = document.querySelector(".languages");
+const liste = document.querySelector(".liste");
 
-// document.querySelector(".ekle").onclick = () => {
-//   //* yeni girilen satiri saklamak icin bir li olusturduk
+// document.querySelector(".ekle").onclick=()=>{
+//* yeni girilen satiri saklamak icin bir li olusturduk.
 
 //   const yeniLi = document.createElement("li");
+//* yeni li icin textnode olusturduk
 
-//   //* olusturdugumuz textnode'u yeni li'ye bagladik
+//   const text = document.createTextNode(dil.value);
 
-//   yeniLi: appendChild(text);
+//* olusturdugumuz texnode'u yeni li'ye bagladik.
+//   yeniLi.appendChild(text);
 
-//   //* yeni eklenen satiri var olan listeye (ul) baglayalim
+//* yeni eklenen satiri var olan listeye (ul) baglayalim.
 
 //   liste.appendChild(yeniLi);
-// };
+// }
 
 document.querySelector(".ekle").onclick = () => {
   liste.innerHTML = liste.innerHTML + `<li>${dil.value}</li>`;
@@ -128,5 +135,10 @@ document.querySelector(".ekle").onclick = () => {
 
 //! sil komutuna basinca ul listesinden li elemani silmek
 
-document.querySelector(".sil").onclick = () => {};
+document.querySelector(".sil").onclick = () => {
+  liste.removeChild(liste.lastElementChild); // ul'nin son cocugunu siler
 
+  liste.removeChild(liste.firstElementChild); // ul'nin ilk cocugunu siler
+
+  liste.removeChild(liste.children[2]); // ul'nin 2 indexli cocugunu siler
+};
