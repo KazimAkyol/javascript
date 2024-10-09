@@ -93,28 +93,40 @@ document.querySelector("main").after(baslik);
 //!  "append" metodu ile seçtiğimiz Html etiketi bitmeden önceki son kısma ekleme yapabiliriz (<div>merhaba -buraya-  </div>).  "prepend" metodu ile seçtiğimiz Html etiketi başladıktan sonraki ilk kısma ekleme yapabiliriz  (<div> -buraya-  merhaba   </div>).  "after" metodu ile ile seçtiğimiz Html etiketi bittikten sonraki ilk kısma ekleme yapabiliriz (<div> merhaba </div>  -buraya-).
 //! *******kısayol**********
 
-const bolum = document.querySelector("section");
+// const bolum = document.querySelector("section");
 
-bolum.innerHTML =
-  `<h1 class="baslik2">Programlama Dilleri</h1>` + bolum.innerHTML;
-//"<h1 class='baslik2'>Programlama Dilleri</h1>" + bolum.innerHTML;// bu sekilde de oluyor
+// bolum.innerHTML =
+//   `<h1 class="baslik2">Programlama Dilleri</h1>` + bolum.innerHTML;
+// //"<h1 class='baslik2'>Programlama Dilleri</h1>" + bolum.innerHTML;// bu sekilde de oluyor
 
-//! languages inputuna girilen verileri, ul'ye eklemek
-//! uzun yol
+// //! languages inputuna girilen verileri, ul'ye eklemek
+// //! uzun yol
 
-const dil = document.querySelector(".languages");
-const liste = document.querySelector(".liste");
+// const dil = document.querySelector(".languages");
+// const liste = document.querySelector(".liste");
+
+// document.querySelector(".ekle").onclick = () => {
+//   //* yeni girilen satiri saklamak icin bir li olusturduk
+
+//   const yeniLi = document.createElement("li");
+
+//   //* olusturdugumuz textnode'u yeni li'ye bagladik
+
+//   yeniLi: appendChild(text);
+
+//   //* yeni eklenen satiri var olan listeye (ul) baglayalim
+
+//   liste.appendChild(yeniLi);
+// };
 
 document.querySelector(".ekle").onclick = () => {
-  //* yeni girilen satiri saklamak icin bir li olusturduk
+  liste.innerHTML = liste.innerHTML + `<li>${dil.value}</li>`;
 
-  const yeniLi = document.createElement("li");
-
-  //* olusturdugumuz textnode'u yeni li'ye bagladik
-
-  yeniLi: appendChild(text);
-
-  //* yeni eklenen satiri var olan listeye (ul) baglayalim
-
-  liste.appendChild(yeniLi);
+  // ekle'ye basilip li eklenince input'un ici bosalsin
+  dil.value = "";
 };
+
+//! sil komutuna basinca ul listesinden li elemani silmek
+
+document.querySelector(".sil").onclick = () => {};
+
