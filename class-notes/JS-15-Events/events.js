@@ -48,5 +48,12 @@ const textInput = document.querySelector("#textbox");
 const checkInput = document.querySelector("#checkbox");
 
 textInput.onkeyup = () => {
-    
-}
+  // checked=metodu checkbox inputun tikli olup olmadığını kontrol eder. tıklanmışsa true döndürür
+  if (checkInput.checked) {
+    //console.log(textInput.value);
+    textInput.value = textInput.value.toUpperCase();
+  } else {
+    textInput.value = textInput.value.toLowerCase();
+  }
+  //inputa veri girişi yaptığımızda, küçük input tikliyse benim büyük inputa girdiğim harfleri büyüt, aksi durumda küçült
+};
