@@ -4,8 +4,8 @@ const selectionArticle = document.querySelector(".selection");
 
 //! Secilen Elemanlarin Tasiyicilari
 
-const yourChoiseDiv = document.getElementById("your-choise");
-const pcChoiesDiv = document.getElementById("pc-choise");
+const yourChoiceDiv = document.getElementById("your-choice");
+const pcChoiceDiv = document.getElementById("pc-choice");
 
 //! Variables
 
@@ -17,12 +17,23 @@ let pcSelectImg = document.createElement("img");
 selectionArticle.addEventListener("click", (e) => {
   console.log(e.target.id);
 
-  userSelectImg.src = "./assets/rock.png";
-  userSelectImg.alt = "rock";
-  yourChoiseDiv.appendChild(userSelectImg);
+  if (e.target.id) {
+    userSelectImg.src = `./assets/${e.target.id}.png`;
+    userSelectImg.alt = e.target.id;
+    yourChoiceDiv.appendChild(userSelectImg);
+    createPcSelection();
+  }
 });
 
 //! Functions
+
+const createPcSelection = () => {
+  const pcArr = ["rock", "paper", "scissor"];
+  const pcRandom = pcArr[Math.floor(Math.random() * 3)];
+  pcSelectImg.src = `/assets/scissor.png`;
+  pcSelectImg.alt = "rock";
+  pcChoiceDiv.appendChild(pcSelectImg);
+};
 
 //! Ilkel Yöntemler
 // const rockImg = document.getElementById("rock");
