@@ -52,7 +52,6 @@ body {
   position: absolute;
   left: 50%;
   bottom: 0;
-
   width: 180px;
   padding: 25px;
   background: #eee;
@@ -62,6 +61,7 @@ body {
   transform: translate(-50%, 50%);
   /* çizginin üzerinde görünsün diye */
 }
+
 main {
   height: 600px;
   color: #eee;
@@ -69,6 +69,7 @@ main {
   justify-content: space-around;
   align-items: center;
 }
+
 .right {
   width: 400px;
   font-size: 20px;
@@ -80,6 +81,7 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
 .guess {
   background: none;
   border: 5px solid #eee;
@@ -93,6 +95,7 @@ main {
   margin-bottom: 20px;
   padding: 50px;
 }
+
 .msg {
   margin-bottom: 150px;
 }

@@ -25,16 +25,16 @@ document.querySelector(".check").onclick = () => {
 
 document.querySelector(".number").onclick = () => {
   //* bilgisayar yeni bir sayı tutsun
-  rastgeleSayı = Math.ceil(Math.random() * 20);
+  rastgeleSayi = Math.ceil(Math.random() * 20);
 
-  //* body nin rengi turuncu olsun
+  //* body nin rengi kirmizi olsun
   document.querySelector("body").style.backgroundColor = "red";
 
   //* tahmin beliren kutuda tekrar ? olsun
 
   document.querySelector(".number").textContent = "?";
 
-  //*mesaj kısmında "oyun yeni oyuncu için tekrar başlıyor" yazsın
+  //* mesaj kısmında "oyun yeni oyuncu için tekrar başlıyor" yazsın
 
   mesaj.textContent = "oyun yeni oyuncu için tekrar başliyor";
 };
