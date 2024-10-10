@@ -7,10 +7,29 @@ const selectionArticle = document.querySelector(".selection");
 const yourChoiceDiv = document.getElementById("your-choice");
 const pcChoiceDiv = document.getElementById("pc-choice");
 
+//! Message
+
+const messagePar = document.querySelector(".message");
+
+//! Score Card
+
+const scoreCardSection = document.querySelector(".score-card");
+const pcScoreSpan = document.getElementById(".pc-score");
+const yourScoreSpan = document.getElementById(".your-score");
+const domTopScore = document.getElementById("top-score");
+
 //! Variables
 
 let userSelectImg = document.createElement("img");
 let pcSelectImg = document.createElement("img");
+let pcArr;
+let pcRandom;
+
+//! Colors
+
+const YELLOW = "#ffc538";
+const RED = "#fb778b";
+const GREEN = "#5ab7ac";
 
 //! Event Listeners
 
@@ -30,9 +49,24 @@ selectionArticle.addEventListener("click", (e) => {
 const createPcSelection = () => {
   const pcArr = ["rock", "paper", "scissor"];
   const pcRandom = pcArr[Math.floor(Math.random() * 3)];
-  pcSelectImg.src = `/assets/scissor.png`;
+  pcSelectImg.src = `/assets/${pcRandom}.png`;
   pcSelectImg.alt = "rock";
   pcChoiceDiv.appendChild(pcSelectImg);
+  calculateResult();
+};
+
+const calculateResult = () => {
+  // Esitlik Durumu:
+  if (userSelectImg.alt == pcRandom) {
+    draw();
+  } else {
+  }
+};
+
+const draw = () => {
+  messagePar.textContent = "It's a draw";
+  scoreCardSection.style.colors = YELLOW;
+  messagePar.style.backgroundColors = YELLOW;
 };
 
 //! Ilkel Yöntemler
