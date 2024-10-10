@@ -20,7 +20,7 @@ const domTopScore = document.getElementById("top-score");
 
 //! Modal
 
-const modalCardSelector = 
+//const modalCardSelector =
 
 //! Variables
 
@@ -47,6 +47,14 @@ selectionArticle.addEventListener("click", (e) => {
     createPcSelection();
   }
 });
+
+//playAgainButton.addEventListener("click", ()=> {
+//console.log("Playagain butonuna tiklandi")
+//modalCardSection,classList.toggle("show")
+//modalCardSection.classList.toggle("remove")
+//modalCardSection.style.display = "none";
+//window.location.reload();
+//})
 
 //! Functions
 
@@ -99,6 +107,15 @@ const youWin = () => {
   messagePar.style.backgroundColors = GREEN;
   yourScoreSpan.textContent++;
 };
+
+const topScoreCheck = () => {
+  console.log("topscore kontrol edildi");
+};
+
+//! local storagr veri yazma okuma
+
+localStorage.setItem("highScore", 100); //? veri yazma
+console.log(localStorage.getItem("highScore")); //? veri okuma
 
 //! Ilkel Yöntemler
 // const rockImg = document.getElementById("rock");
