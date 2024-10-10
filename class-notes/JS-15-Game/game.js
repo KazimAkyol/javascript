@@ -24,19 +24,19 @@ document.querySelector(".check").onclick = () => {
 //! soru işareti kutusuna tıklandığında yeni yarışmacı için sayfayı hazırla:
 
 document.querySelector(".number").onclick = () => {
-  //*bilgisayar yeni bir sayı tutsun
+  //* bilgisayar yeni bir sayı tutsun
   rastgeleSayı = Math.ceil(Math.random() * 20);
 
-  //*bady nin rengi turuncu olsun
+  //* body nin rengi turuncu olsun
   document.querySelector("body").style.backgroundColor = "red";
 
-  //* tahmin beliren  kutuda tekrar ? olsun
+  //* tahmin beliren kutuda tekrar ? olsun
 
   document.querySelector(".number").textContent = "?";
 
   //*mesaj kısmında "oyun yeni oyuncu için tekrar başlıyor" yazsın
 
-  mesaj.textContent = "oyun yeni oyuncu için tekrar başlıyor";
+  mesaj.textContent = "oyun yeni oyuncu için tekrar başliyor";
 };
 
 //! enter'a basılınca check butonuna basılmış gibi çalışsın:
