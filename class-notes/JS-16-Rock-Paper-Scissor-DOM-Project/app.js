@@ -18,6 +18,10 @@ const pcScoreSpan = document.getElementById(".pc-score");
 const yourScoreSpan = document.getElementById(".your-score");
 const domTopScore = document.getElementById("top-score");
 
+//! Modal
+
+const modalCardSelector = 
+
 //! Variables
 
 let userSelectImg = document.createElement("img");
@@ -56,10 +60,23 @@ const createPcSelection = () => {
 };
 
 const calculateResult = () => {
+  // console.log("user",userSelectImg.alt)
+  // console.log("pc",pcSelectImg.alt)
+
   // Esitlik Durumu:
   if (userSelectImg.alt == pcRandom) {
     draw();
   } else {
+    if (userSelectImg.alt === "rock") {
+      pcRandom === "paper" ? youLost() : youWin();
+    } else if (userSelectImg.alt === "scissor") {
+      pcRandom === "rock" ? youLost() : youWin();
+    } else if (userSelectImg.alt === "paper") {
+      pcRandom === "scissor" ? youLost() : youWin();
+    }
+  }
+  if (pcScoreSpan.textContent === "10" || yourScoreSpan.textContent === "10") {
+    openModal();
   }
 };
 
@@ -67,6 +84,20 @@ const draw = () => {
   messagePar.textContent = "It's a draw";
   scoreCardSection.style.colors = YELLOW;
   messagePar.style.backgroundColors = YELLOW;
+};
+
+const youLost = () => {
+  messagePar.textContent = "You Lost";
+  scoreCardSection.style.color = RED;
+  messagePar.style.backgroundColors = RED;
+  pcScoreSpan.textContent++;
+};
+
+const youWin = () => {
+  messagePar.textContent = "You Win";
+  scoreCardSection.style.color = GREEN;
+  messagePar.style.backgroundColors = GREEN;
+  yourScoreSpan.textContent++;
 };
 
 //! Ilkel Yöntemler
