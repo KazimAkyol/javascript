@@ -16,6 +16,7 @@
   --ff-comfortaa: "Comfortaa", cursive;
   --ff-oswald: "Oswald", sans-serif;
 }
+
 body {
   background-color: var(--black);
   font-family: var(--ff-comfortaa);
@@ -34,6 +35,7 @@ main.container {
 }
 
 /** --------- SCORE-CARD --------- */
+
 section.score-card {
   display: flex;
   flex-direction: column;
@@ -43,6 +45,7 @@ section.score-card {
   border-radius: 5px;
   padding: 0.5rem;
 }
+
 .score-card .top {
   font-family: var(--ff-oswald);
   color: var(--red);
@@ -51,6 +54,7 @@ section.score-card {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
+
 .score-card .score {
   color: var(--grey);
   font-size: 1.8rem;
@@ -66,6 +70,7 @@ section.score-card {
 }
 
 /** --------- IMAGES --------- */
+
 article.selection {
   display: flex;
   gap: 0.8rem;
@@ -80,6 +85,7 @@ article.selection {
 }
 
 /** --------- CHOICES --------- */
+
 .choice-section {
   margin-top: 3rem;
   text-align: center;
@@ -94,6 +100,7 @@ article.choices {
   display: flex;
   justify-content: center;
 }
+
 /*? RESULT  */
 .message {
   font-family: "Oswald", sans-serif;
@@ -109,6 +116,7 @@ section.modal-card {
   display: none;
   width: 90%;
 }
+
 .modal-card.show {
   position: fixed;
   top: 50%;
@@ -119,6 +127,7 @@ section.modal-card {
   justify-content: center;
   color: white;
 }
+
 article.modal {
   background-color: var(--red);
   text-align: center;
@@ -128,6 +137,7 @@ article.modal {
   font-size: 1.5rem;
   border-radius: 20px;
 }
+
 .modal button {
   font-family: var(--ff-comfortaa);
   font-size: 1.3rem;
@@ -138,6 +148,7 @@ article.modal {
   margin-top: 1rem;
   cursor: pointer;
 }
+
 .modal button:hover {
   transform: translate(3px, 0px);
   transition: all 0.5s;

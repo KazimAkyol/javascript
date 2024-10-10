@@ -2,21 +2,24 @@
 
 const selectionArticle = document.querySelector(".selection");
 
-//Seçilen elemanların Taşıyıcıları
+//! Seçilen Elemanların Taşıyıcıları
+
 const yourChoiseDiv = document.getElementById("your-choice");
 const pcChoiseDiv = document.getElementById("pc-choice");
 
-// Message
+//! Message
 
 const messagePar = document.querySelector(".message");
 
-//Score card
+//! Score card
+
 const scoreCardSection = document.querySelector(".score-card");
 const pcScoreSpan = document.getElementById("pc-score");
 const yourScoreSpan = document.getElementById("your-score");
 const domTopScore = document.getElementById("top-score");
 
-// Modal
+//! Modal
+
 const modalCardSection = document.querySelector(".modal-card");
 const finalMEssagePar = document.getElementById("final-message");
 const playAgainButton = document.getElementById("play-again");
@@ -28,7 +31,7 @@ let pcSelectImg = document.createElement("img");
 let pcArr;
 let pcRandom;
 
-// Colors
+//! Colors
 
 const YELLOW = "#ffc538";
 const RED = "#fb778b";
@@ -37,7 +40,7 @@ const GREEN = "#5ab7ac";
 //! Event Listeners
 
 selectionArticle.addEventListener("click", (e) => {
-  //   console.log(e.target.id);
+  // console.log(e.target.id);
 
   if (e.target.id) {
     userSelectImg.src = `./assets/${e.target.id}.png`;
@@ -48,9 +51,9 @@ selectionArticle.addEventListener("click", (e) => {
 });
 
 playAgainButton.addEventListener("click", () => {
-  console.log("Playagain butonuna tıklandı");
-  //   modalCardSection.classList.toggle("show")
-  //   modalCardSection.classList.toggle("remove")
+  console.log("Playagain butonuna tiklandi");
+  // modalCardSection.classList.toggle("show");
+  // modalCardSection.classList.toggle("remove");
   modalCardSection.style.display = "none";
   window.location.reload();
 });
@@ -89,7 +92,7 @@ const calculateResult = () => {
 };
 
 const draw = () => {
-  messagePar.textContent = "Its a draw";
+  messagePar.textContent = "It's a draw";
   scoreCardSection.style.color = YELLOW;
   messagePar.style.backgroundColor = YELLOW;
 };
@@ -110,7 +113,7 @@ const youWin = () => {
 };
 
 const openModal = () => {
-  console.log("Modal Açıldı");
+  console.log("Modal Açildi");
   modalCardSection.classList.add("show");
   if (yourScoreSpan.textContent === "10") {
     finalMEssagePar.textContent = "💃 You Win";
@@ -124,12 +127,13 @@ const openModal = () => {
 };
 
 const topScoreCheck = () => {
-  console.log("toscore kontrol edildi");
+  console.log("topscore kontrol edildi");
 };
 
-//! local storage veri yazma okuma
-localStorage.setItem("highScore", 5); //?veri yazma
-console.log(localStorage.getItem("highScore")); //?veri okuma
+//! Local storage veri yazma - okuma
+
+localStorage.setItem("highScore", 5); //? veri yazma
+console.log(localStorage.getItem("highScore")); //? veri okuma
 
 // console.log(localStorage.getItem("highScore"));
 
@@ -140,6 +144,7 @@ console.log(localStorage.getItem("highScore")); //?veri okuma
 // }
 
 //! Ilkel Yöntemler
+
 // const rockImg = document.getElementById("rock");
 // const paperImg = document.getElementById("paper");
 // const scissorImg = document.getElementById("scissor");
