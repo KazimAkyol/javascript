@@ -10,118 +10,91 @@ const ustEkranDiv = document.querySelector(".previous-display");
 const altEkranDiv = document.querySelector(".current-display");
 
 //?operator değişkenleri (*******bu şekil global tutmayıp sürekli textcontent te değişiklik yaparsak işlem girildikten sonra, if ile üst ekrana geçer ya sayılar, işlem sonrası bir daha altta sayı göremeyiz ve sürekli uzun uzun yazmamak için, ve işlem e diğer fonksiyonlardan erişemeyiz)
+
 let ustEkranText = "";
 let altEkranText = "";
- let islem = "";
-
-
+let islem = "";
 
 //?*********** herhangi bir number a basılınca
 
 numberButtons.forEach((number) => {
- number.onclick=()=>{
-    if (number.value == ) {
-        
-    }
+  number.onclick = () => {
+    //!ekranı hazırla
 
+    //?basılan numaraları arka arkaya ekle
 
+    //updateEkran(number.textContent);
 
-  //!ekranı hazırla
-   
+    altEkranText += number.textContent;
 
-   //?basılan numaraları arka arkaya ekle
-
-   altEkranText = ["div0", "div1", "div2", "div3", "div4", "div5", "div6", "div7", "div8", "div9"];
-  
-
-   updateEkran();
- }
-
+    updateEkran();
+  };
 });
-
-
 
 //!BURADA YAPILANLARI EKRANA BASTIR
 
 const updateEkran = () => {
-
-
- 
+  altEkranDiv.textContent = altEkranText;
 
   //?işlem girilince
-// üstekranda altta yazan rakam + işlem gözükmeli
-  
-}
+  // üstekranda altta yazan rakam + işlem gözükmeli
+  if (islem) {
+    ustEkranDiv.textContent = `${ustEkranText} ${islem}`;
+  } else ustEkranDiv.textContent = "";
+};
 //?**************HERHANGİ BİR İŞLEME TIKLANDIĞINDA
 
 operationButtons.forEach((op) => {
   op.onclick = () => {
- 
+    islem = op.textContent;
+    ustEkranText = altEkranText;
 
+    altEkranText = "";
 
-
-  
-
-    updateEkran()
+    updateEkran();
   };
 });
 //?**************eşittir butonuna tıklandığında
 
 equalButtons.onclick = () => {
-
-hesapla()
-updateEkran()
+  hesapla();
+  updateEkran();
 };
 
 //! HESAPLA FONKSİYONU
 
 const hesapla = () => {
-  switch (islem === true) {
+  switch (islem) {
     case "+":
-      sonuc = ""
+      sonuc = altEkranText + ustEkranText;
       break;
     case "-":
-      sonuc =""
+      sonuc = altEkranText - ustEkranText;
       break;
     case "x":
-      sonuc = ""
+      sonuc = "";
       break;
     case "÷":
-      sonuc =""
+      sonuc = "";
       break;
     default:
       break;
   }
-
-
+  altEkranText = sonuc;
+  // islem yapildiktan sonra yukarida rakam kaliyor ve sonucun önünde eksi kaliyor. Bunu düzelt
 };
 
 //?AC butonuna basıldığında
-document.querySelector(".ac").onclick=()=>{
-
-
-updateEkran()
-
-}
-
+document.querySelector(".ac").onclick = () => {
+  updateEkran();
+};
 
 //? PM butonuna basıldığında
-document.querySelector(".pm").onclick=()=>{
-
-
-  updateEkran()
-}
-
-
+document.querySelector(".pm").onclick = () => {
+  updateEkran();
+};
 
 //?percent % butonuna basıldığında
-document.querySelector(".percent").onclick=()=>{
-
-
-  updateEkran()
-
-
-
-
-}
-
+document.querySelector(".percent").onclick = () => {
+  updateEkran();
+};
