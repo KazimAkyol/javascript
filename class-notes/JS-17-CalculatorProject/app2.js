@@ -11,9 +11,9 @@ const altEkranDiv = document.querySelector(".current-display");
 
 //?operator değişkenleri (*******bu şekil global tutmayıp sürekli textcontent te değişiklik yaparsak işlem girildikten sonra, if ile üst ekrana geçer ya sayılar, işlem sonrası bir daha altta sayı göremeyiz ve sürekli uzun uzun yazmamak için, ve işlem e diğer fonksiyonlardan erişemeyiz)
 
-let ustEkranText = "";
-let altEkranText = "";
 let islem = "";
+let altEkranText = "";
+let ustEkranText = "";
 
 //?*********** herhangi bir number a basılınca
 
@@ -23,9 +23,10 @@ numberButtons.forEach((number) => {
 
     //?basılan numaraları arka arkaya ekle
 
-    //updateEkran(number.textContent);
+    altEkranSayi += number.textContent;
+    // altEkranSayi = altEkranSayi + number.textContent;
 
-    altEkranText += number.textContent;
+    //altEkranText += number.textContent;
 
     updateEkran();
   };
@@ -34,22 +35,22 @@ numberButtons.forEach((number) => {
 //!BURADA YAPILANLARI EKRANA BASTIR
 
 const updateEkran = () => {
-  altEkranDiv.textContent = altEkranText;
+  altEkranDiv.textContent = altEkranSayi;
 
   //?işlem girilince
   // üstekranda altta yazan rakam + işlem gözükmeli
   if (islem) {
-    ustEkranDiv.textContent = `${ustEkranText} ${islem}`;
-  } else ustEkranDiv.textContent = "";
+    ustEkranDiv.textContent = ustEkranSayi + islem;
+  }
 };
 //?**************HERHANGİ BİR İŞLEME TIKLANDIĞINDA
 
 operationButtons.forEach((op) => {
   op.onclick = () => {
     islem = op.textContent;
-    ustEkranText = altEkranText;
+    ustEkranSayi = altEkranSayi;
 
-    altEkranText = "";
+    altEkranSayi = "";
 
     updateEkran();
   };
@@ -64,23 +65,25 @@ equalButtons.onclick = () => {
 //! HESAPLA FONKSİYONU
 
 const hesapla = () => {
+  let sonuc;
   switch (islem) {
     case "+":
-      sonuc = altEkranText + ustEkranText;
+      sonuc = altEkranSayi + ustEkranSayi;
       break;
     case "-":
-      sonuc = altEkranText - ustEkranText;
+      sonuc = altEkranSayi - ustEkranSayi;
       break;
     case "x":
-      sonuc = "";
+      sonuc = altEkranSayi * ustEkranSayi;
       break;
     case "÷":
-      sonuc = "";
+      sonuc = altEkranSayi / ustEkranSayi;
       break;
     default:
       break;
   }
-  altEkranText = sonuc;
+  altEkranSayi = sonuc;
+  ustEkranSayi = "";
   // islem yapildiktan sonra yukarida rakam kaliyor ve sonucun önünde eksi kaliyor. Bunu düzelt
 };
 

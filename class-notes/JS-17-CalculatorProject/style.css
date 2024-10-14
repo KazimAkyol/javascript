@@ -35,6 +35,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .previous-display {
   opacity: 0.5;
   font-size: 30px;
