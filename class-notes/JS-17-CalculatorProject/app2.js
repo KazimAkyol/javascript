@@ -6,8 +6,8 @@ const numberButtons = document.querySelectorAll(".num");
 const operationButtons = document.querySelectorAll(".operator");
 const equalButtons = document.querySelector(".equal");
 const ustEkranDiv = document.querySelector(".previous-display");
-
 const altEkranDiv = document.querySelector(".current-display");
+
 let ustEkranSayi = "";
 let altEkranSayi = "";
 let islem = "";
@@ -33,7 +33,7 @@ const ekranaHazirlik = (number) => {
     return;
   }
 
-  //? kullanıcı herhangi bir yerde . girmişken, tekrar nokta girmeye kalkarsa giremesin
+  //? kullanıcı herhangi bir yerde . girmişken, tekrar nokta girmeye calisirsa giremesin
 
   if (number == "." && altEkranSayi.includes(".")) return;
 
@@ -45,7 +45,7 @@ const ekranaHazirlik = (number) => {
 
   if (altEkranSayi === "0" && number === "0") return;
 
-  //? bütün sartlari basari ile gectiyse  basılan numaraları arka arkaya ekle
+  //? bütün sartlari basari ile gectiyse basılan numaraları arka arkaya ekle
 
   altEkranSayi += number;
 };
@@ -53,7 +53,7 @@ const ekranaHazirlik = (number) => {
 //! burada yapilanlari ekrana bastir
 
 const updateEkran = () => {
-  //? ilk sayılar altekranda görünsün
+  //? ilk sayılar altekran'da görünsün
 
   altEkranDiv.textContent = altEkranSayi;
 
@@ -71,12 +71,12 @@ const updateEkran = () => {
 
 operationButtons.forEach((op) => {
   op.onclick = () => {
-    //? altekran boşken, hiçbir şekilde sayı girişi yapılmamışsa, operatöre basılmasın. boş return yapmaya çalıştığımız işlemi yaptırmaz.
+    //? altekran boşken, hiçbir şekilde sayı girişi yapılmamışsa, operatöre basılmasın. Boş return yapmaya çalıştığımız işlemi yaptırmaz.
     //? return fonksiyon içerisinde her yerde kullanılabilir. Kod return satırına eriştiğinde fonksiyon durur ve değer fonksiyonun çağırıldığı yere geri gönderilir. Bir fonksiyon içerisinde birden fazla return fonksiyonu da olabilir ve return değer döndürmek zorunda değildir.
 
     if (altEkranSayi === "") return;
 
-    //?arka arkaya işlem yapılırsa (eşittire basmadan hesaplama yapılsın)
+    //?arka arkaya işlem yapılırsa (eşittir'e basmadan hesaplama yapılsın)
     if (altEkranSayi && ustEkranSayi) hesapla();
 
     islem = op.textContent;
@@ -142,7 +142,7 @@ document.querySelector(".pm").onclick = () => {
   updateEkran();
 };
 
-//?percent % butonuna basıldığında
+//?percent (%) butonuna basıldığında
 document.querySelector(".percent").onclick = () => {
   //* ekranda sayi yokken percent'e basilmasin
 
