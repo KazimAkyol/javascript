@@ -9,11 +9,9 @@ const ustEkranDiv = document.querySelector(".previous-display");
 
 const altEkranDiv = document.querySelector(".current-display");
 
-//?operator değişkenleri (*******bu şekil global tutmayıp sürekli textcontent te değişiklik yaparsak işlem girildikten sonra, if ile üst ekrana geçer ya sayılar, işlem sonrası bir daha altta sayı göremeyiz ve sürekli uzun uzun yazmamak için, ve işlem e diğer fonksiyonlardan erişemeyiz)
-
 let islem = "";
-let altEkranText = "";
-let ustEkranText = "";
+let altEkranSayi = "";
+let ustEkranSayi = "";
 
 //?*********** herhangi bir number a basılınca
 
@@ -21,12 +19,9 @@ numberButtons.forEach((number) => {
   number.onclick = () => {
     //!ekranı hazırla
 
-    //?basılan numaraları arka arkaya ekle
-
+    //? basılan numaraları arka arkaya ekle
     altEkranSayi += number.textContent;
     // altEkranSayi = altEkranSayi + number.textContent;
-
-    //altEkranText += number.textContent;
 
     updateEkran();
   };
@@ -35,10 +30,12 @@ numberButtons.forEach((number) => {
 //!BURADA YAPILANLARI EKRANA BASTIR
 
 const updateEkran = () => {
+  //?ilk sayılar altekranda görünsün
   altEkranDiv.textContent = altEkranSayi;
 
   //?işlem girilince
   // üstekranda altta yazan rakam + işlem gözükmeli
+
   if (islem) {
     ustEkranDiv.textContent = ustEkranSayi + islem;
   }
@@ -47,7 +44,12 @@ const updateEkran = () => {
 
 operationButtons.forEach((op) => {
   op.onclick = () => {
+    if (altEkranSayi === "") return;
+
+    //? arka arkaya islem yapilirsa (esittir'e basmadan hesaplama yapilsin)
+    if (altEkranSayi && ustEkranSayi) hesapla();
     islem = op.textContent;
+
     ustEkranSayi = altEkranSayi;
 
     altEkranSayi = "";
@@ -55,10 +57,12 @@ operationButtons.forEach((op) => {
     updateEkran();
   };
 });
+
 //?**************eşittir butonuna tıklandığında
 
 equalButtons.onclick = () => {
   hesapla();
+
   updateEkran();
 };
 
@@ -82,9 +86,10 @@ const hesapla = () => {
     default:
       break;
   }
+
   altEkranSayi = sonuc;
   ustEkranSayi = "";
-  // islem yapildiktan sonra yukarida rakam kaliyor ve sonucun önünde eksi kaliyor. Bunu düzelt
+  //  islem=""
 };
 
 //?AC butonuna basıldığında
