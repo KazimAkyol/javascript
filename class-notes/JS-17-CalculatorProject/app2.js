@@ -12,13 +12,25 @@ let ustEkranSayi = "";
 let altEkranSayi = "";
 let islem = "";
 
-//?*********** herhangi bir number a basılınca
+//* herhangi bir number'a basılınca
 
 numberButtons.forEach((number) => {
   number.onclick = () => {
-    //!ekranı hazırla
+    //! ekranı hazırla
 
-    //?kullanıcı herhangi bir yerde . girmişken, tekrar nokta girmeye kalkarsa giremesin
+    //? kullanici o girerse
+
+    if (
+      altEkranSayi === "0" &&
+      number.textContent !== "0" &&
+      number.textContent !== "."
+    ) {
+      altEkranSayi = number.textContent;
+
+      return;
+    }
+
+    //? kullanıcı herhangi bir yerde . girmişken, tekrar nokta girmeye kalkarsa giremesin
 
     if (number.textContent == "." && altEkranSayi.includes(".")) return;
 
@@ -26,7 +38,12 @@ numberButtons.forEach((number) => {
 
     if (altEkranSayi === "0" && number.textContent === "0") return;
 
+    //? ekrana 10 basamakli sayi girilebilsin, 11.basamak girilmesin
+
+    if (altEkranSayi.length == 10) return;
+
     //? basılan numaraları arka arkaya ekle
+
     altEkranSayi += number.textContent;
     // altEkranSayi = altEkranSayi + number.textContent;
 
@@ -34,14 +51,20 @@ numberButtons.forEach((number) => {
   };
 });
 
-//!BURADA YAPILANLARI EKRANA BASTIR
+//! burada yapilanlari ekrana bastir
 
 const updateEkran = () => {
-  //?ilk sayılar altekranda görünsün
-  altEkranDiv.textContent = altEkranSayi;
+  //? ilk sayılar altekranda görünsün
 
-  //?işlem girilince
-  // üstekranda altta yazan rakam + işlem gözükmeli
+  altEkranDiv.textContent = altEkranSayi;
+  console.log(typeof altEkranSayi);
+
+  //   if (altEkranSayi.toString().length > 9) {
+  //     altEkranSayi = altEkranSayi.toString().slice(0, 9);
+  //   }
+
+  //? işlem girilince
+  // üstekran'da altta yazan rakam + işlem gözükmeli
 
   if (islem) {
     ustEkranDiv.textContent = ustEkranSayi + " " + islem;
@@ -49,7 +72,7 @@ const updateEkran = () => {
     ustEkranDiv.textContent = "";
   }
 };
-//?**************HERHANGİ BİR İŞLEME TIKLANDIĞINDA
+//* herhangi bir isleme tiklandiginda
 
 operationButtons.forEach((op) => {
   op.onclick = () => {
@@ -84,16 +107,16 @@ const hesapla = () => {
   let sonuc;
   switch (islem) {
     case "+":
-      sonuc = Number(altEkranSayi) + Number(ustEkranSayi);
+      sonuc = Number(ustEkranSayi) + Number(altEkranSayi);
       break;
     case "-":
       sonuc = ustEkranSayi - altEkranSayi;
       break;
     case "x":
-      sonuc = altEkranSayi * ustEkranSayi;
+      sonuc = ustEkranSayi * altEkranSayi;
       break;
     case "÷":
-      sonuc = altEkranSayi / ustEkranSayi;
+      sonuc = ustEkranSayi / altEkranSayi;
       break;
     default:
       break;
@@ -105,17 +128,31 @@ const hesapla = () => {
   islem = "";
 };
 
-//?AC butonuna basıldığında
+//? AC butonuna basıldığında
 document.querySelector(".ac").onclick = () => {
+  ustEkranSayi = "";
+  altEkranSayi = "";
+  islem = "";
   updateEkran();
 };
 
-//? PM butonuna basıldığında
+//? PM (+-) butonuna basıldığında
 document.querySelector(".pm").onclick = () => {
+  //* ekranda sayi yokken PM'e basilmasin
+
+  if (altEkranSayi !== "") {
+    altEkranSayi = altEkranSayi * -1;
+  }
+
   updateEkran();
 };
 
-//?percent % butonuna basıldığında
+//? percent (%) butonuna basıldığında
 document.querySelector(".percent").onclick = () => {
-  updateEkran();
+  //* ekranda sayi yokken percent'e basilmasin
+
+  if (altEkranSayi !== "") {
+    altEkranSayi = altEkranSayi / 100;
+    updateEkran();
+  }
 };
