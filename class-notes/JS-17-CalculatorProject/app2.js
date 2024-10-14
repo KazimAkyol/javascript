@@ -8,16 +8,23 @@ const equalButtons = document.querySelector(".equal");
 const ustEkranDiv = document.querySelector(".previous-display");
 
 const altEkranDiv = document.querySelector(".current-display");
-
-let islem = "";
-let altEkranSayi = "";
 let ustEkranSayi = "";
+let altEkranSayi = "";
+let islem = "";
 
 //?*********** herhangi bir number a basılınca
 
 numberButtons.forEach((number) => {
   number.onclick = () => {
     //!ekranı hazırla
+
+    //?kullanıcı herhangi bir yerde . girmişken, tekrar nokta girmeye kalkarsa giremesin
+
+    if (number.textContent == "." && altEkranSayi.includes(".")) return;
+
+    //? kullanici ilk basta 0 girer, ardindan tekrar 0 girerse, girilmesin, tek 0 döndürsün
+
+    if (altEkranSayi === "0" && number.textContent === "0") return;
 
     //? basılan numaraları arka arkaya ekle
     altEkranSayi += number.textContent;
@@ -37,17 +44,23 @@ const updateEkran = () => {
   // üstekranda altta yazan rakam + işlem gözükmeli
 
   if (islem) {
-    ustEkranDiv.textContent = ustEkranSayi + islem;
+    ustEkranDiv.textContent = ustEkranSayi + " " + islem;
+  } else {
+    ustEkranDiv.textContent = "";
   }
 };
 //?**************HERHANGİ BİR İŞLEME TIKLANDIĞINDA
 
 operationButtons.forEach((op) => {
   op.onclick = () => {
+    //? altekran boşken, hiçbir şekilde sayı girişi yapılmamışsa, operatöre basılmasın. boş return yapmaya çalıştığınız işlemi yaptırmaz.
+    //? return fonksiyon içerisinde her yerde kullanılabilir. Kod return satırına eriştiğinde fonksiyon durur ve değer fonksiyonun çağırıldığı yere geri gönderilir. Bir fonksiyon içerisinde birden fazla return fonksiyonu da olabilir. return değer döndürmek zorunda değildir.
+
     if (altEkranSayi === "") return;
 
-    //? arka arkaya islem yapilirsa (esittir'e basmadan hesaplama yapilsin)
+    //?arka arkaya işlem yapılırsa (eşittire basmadan hesaplama yapılsın)
     if (altEkranSayi && ustEkranSayi) hesapla();
+
     islem = op.textContent;
 
     ustEkranSayi = altEkranSayi;
@@ -57,7 +70,6 @@ operationButtons.forEach((op) => {
     updateEkran();
   };
 });
-
 //?**************eşittir butonuna tıklandığında
 
 equalButtons.onclick = () => {
@@ -72,10 +84,10 @@ const hesapla = () => {
   let sonuc;
   switch (islem) {
     case "+":
-      sonuc = altEkranSayi + ustEkranSayi;
+      sonuc = Number(altEkranSayi) + Number(ustEkranSayi);
       break;
     case "-":
-      sonuc = altEkranSayi - ustEkranSayi;
+      sonuc = ustEkranSayi - altEkranSayi;
       break;
     case "x":
       sonuc = altEkranSayi * ustEkranSayi;
@@ -87,9 +99,10 @@ const hesapla = () => {
       break;
   }
 
+  // hesaplama yapıldıktan sonra ekranda olmasını istediklerimi vs code da güncelleyip updateEkran() ı çağırmalıyım
   altEkranSayi = sonuc;
   ustEkranSayi = "";
-  //  islem=""
+  islem = "";
 };
 
 //?AC butonuna basıldığında
