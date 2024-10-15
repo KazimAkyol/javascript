@@ -72,9 +72,11 @@ sepettekiler.forEach((urun) => {
 
 del();
 function del() {
-  document
-    .querySelectorAll(".remove-ürün")
-    .forEach((dl) => dl.addEventListener("click", () => {})); // dl nin parentini silme js de
+  document.querySelectorAll(".remove-ürün").forEach((dl) =>
+    dl.addEventListener("click", () => {
+      `$(this).parent("div").remove()`; // dl nin parentini silme js de
+    })
+  );
 }
 
 //! adet arttirma - azaltma

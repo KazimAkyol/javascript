@@ -2,24 +2,24 @@
 // ?                 STRINGLER
 // ?=========================================================
 
-//!String Tanimlama
+//! String Tanimlama
 
 const str1 = "Clarusway DE-10";
 const str2 = `Hello world!`;
 
 console.log(str2); // Hello world!
 
-// String constructor ile String olusturma
+//* String constructor ile String olusturma
 
 const str3 = new String("World");
-console.log(str3); //"World"
+console.log(str3); // "World"
 
 const str4 = "🐝";
-console.log(str4);
+console.log(str4); // 🐝
 
 //! Normalde primitive veri tiplerinin property veya metodu olmaz.
 //! Ancak Javascript otomatik olarak primitive String'leri String object'lerine dönüştürür. Bu sayede, String object'lerine ait olan fonksiyonlar veya özellikleri primitive string ile kullanmak mümkün olur.
-//!Ayrıca 2 tür arasında çevrim yapmakta mümkündür.
+//! Ayrıca 2 tür arasında çevrim yapmakta mümkündür.
 
 //* -------------------------------------------------------------------------- */
 //*                         STRING YAPISI VE INDEXLEME                         */
@@ -27,89 +27,89 @@ console.log(str4);
 
 let kelime = "Clarusway";
 
-console.log(kelime[0]); //C
-console.log(kelime[1]); //l
-console.log(kelime[2]); //a
+console.log(kelime[0]); // C
+console.log(kelime[1]); // l
+console.log(kelime[2]); // a
 
 for (let i = 0; i <= 8; i++) {
-  console.log(kelime[i]); //Clarusway
+  console.log(kelime[i]); // Clarusway
 }
 
-// Stringler, parca olarak degistiremezsiniz
-// You cannot mutate a string, since it is a primitive value:
-//immutable
+//* Stringler, parca olarak degistirilmez.
+//* You cannot mutate a string, since it is a primitive value: immutable
 
 kelime[7] = "o";
 console.log(kelime); //Clarusway
 
-//! ************STRING PROPERTY ************
-// Property bir stringin kendi özelliğidir, bir method(fonksiyon) değildir.
-// Parantez açıp kapatmaya gerek yoktur
+//! ************ STRING PROPERTY ************
+//! Property bir stringin kendi özelliğidir, bir method(fonksiyon) değildir.
+//! Parantez açıp kapatmaya gerek yoktur.
 
 //?length
-//prototype
+//* prototype
 
-//! ************STRING METHODS ************
-// charAt()             Returns the character at the specified index.
-// charCodeAt()	        Returns the Unicode of the character at the specified index.
-// concat()	            Joins two or more strings, and returns a new string.
-// endsWith()	        Checks whether a string ends with a specified substring.
-// fromCharCode()	    Converts Unicode values to characters.
-// includes()	        Checks whether a string contains the specified substring.
-// indexOf()	        Returns the index of the first occurrence of the specified value in a string.
-// lastIndexOf()	    Returns the index of the last occurrence of the specified value in a string.
-// localeCompare()	    Compares two strings in the current locale.
-// match()	            Matches a string against a regular expression, and returns an array of all matches.
-// repeat()	            Returns a new string which contains the specified number of copies of the original string.
-// replace()	        Replaces the occurrences of a string or pattern inside a string with another string, and return a new string without modifying the original string.
-// search()	             Searches a string against a regular expression, and returns the index of the first match.
-// slice()	            Extracts a portion of a string and returns it as a new string.
-// split()	            Splits a string into an array of substrings.
-// startsWith()	        Checks whether a string begins with a specified substring.
-// substr()	            Extracts the part of a string between the start index and a number of characters after it.
-// substring()	        Extracts the part of a string between the start and end indexes.
-// toLocaleLowerCase()	Converts a string to lowercase letters, according to host machine's current locale.
-// toLocaleUpperCase()	Converts a string to uppercase letters, according to host machine's current locale.
-// toLowerCase()	    Converts a string to lowercase letters.
-// toString()	        Returns a string representing the specified object.
-// toUpperCase()	    Converts a string to uppercase letters.
-// trim()	            Removes whitespace from both ends of a string.
-// valueOf()	        Returns the primitive value of a String object.
+//! ************ STRING METHODS ************
+//* charAt()             Returns the character at the specified index.
+//* charCodeAt()	        Returns the Unicode of the character at the specified index.
+//* concat()	            Joins two or more strings, and returns a new string.
+//* endsWith()	        Checks whether a string ends with a specified substring.
+//* fromCharCode()	    Converts Unicode values to characters.
+//* includes()	        Checks whether a string contains the specified substring.
+//* indexOf()	        Returns the index of the first occurrence of the specified value in a string.
+//* lastIndexOf()	    Returns the index of the last occurrence of the specified value in a string.
+//* localeCompare()	    Compares two strings in the current locale.
+//* match()	            Matches a string against a regular expression, and returns an array of all matches.
+//* repeat()	            Returns a new string which contains the specified number of copies of the original string.
+//* replace()	        Replaces the occurrences of a string or pattern inside a string with another string, and return a new string without modifying the original string.
+//* search()	             Searches a string against a regular expression, and returns the index of the first match.
+//* slice()	            Extracts a portion of a string and returns it as a new string.
+//* split()	            Splits a string into an array of substrings.
+//* startsWith()	        Checks whether a string begins with a specified substring.
+//* substr()	            Extracts the part of a string between the start index and a number of characters after it.
+//* substring()	        Extracts the part of a string between the start and end indexes.
+//* toLocaleLowerCase()	Converts a string to lowercase letters, according to host machine's current locale.
+//* toLocaleUpperCase()	Converts a string to uppercase letters, according to host machine's current locale.
+//* toLowerCase()	    Converts a string to lowercase letters.
+//* toString()	        Returns a string representing the specified object.
+//* toUpperCase()	    Converts a string to uppercase letters.
+//* trim()	            Removes whitespace from both ends of a string.
+//* valueOf()	        Returns the primitive value of a String object.
 
 // *=========================================================
 // *               lenght - Property
 // *=========================================================
 
-//? Lenght => Bir stringin bosluklarda dahil kac karaktaerden olustugunu verir.
+//? Lenght => Bir string'in bosluklarda dahil kac karakterden olustugunu verir.
 
 const metin = "Clarusway🚗";
-console.log(metin.length); //11
+console.log(metin.length); //1 1
 
-//Emojiler 2 karakter uzunlugundadir.
+//* Emojiler 2 karakter uzunlugundadir.
 
 for (let i = 0; i <= metin.length - 1; i++) {
   console.log(metin[i]);
 }
 
 let emoji = "🚗";
-console.log(emoji.length); //2
+console.log(emoji.length); // 2
 
-//! ************STRING METHODS ************
-// String metodları () kullanılır. (Arkaplanda fonksiyonlardır)
+//! ************ STRING METHODS ************
+//* String metodları () kullanılır. (Arka planda fonksiyonlardır.)
 //? Chaining yani zincirleme olarak birden fazla metod birlikte kullanılabilir.
 
 // *=========================================================
 // *   toLowerCase() toUpperCase() immutable=değiştirmez
 // *=========================================================
+
 //? Karakterleri büyük harfe dönüştürme => .toUpperCase()
 
 console.log(metin.toUpperCase()); //CLARUSWAY🚗
 console.log(metin); //Clarusway🚗
-//Degisim gecicidir. Tamamen degistirmiyor, degistirip kaydetmek istiyorsak yeni bir degere atamaliyiz.
+//* Degisim gecicidir. Tamamen degistirmiyor, degistirip kaydetmek istiyorsak yeni bir degere atamaliyiz.
 let yeniMetin = metin.toUpperCase();
 console.log(yeniMetin); //CLARUSWAY🚗
 
-//? Karakterleri kücük harfe dönüstürme => .toLowercase()
+//? Karakterleri kücük harfe dönüstürme => .toLowerCase()
 
 console.log(yeniMetin.toLowerCase());
 let yeniMetin2 = yeniMetin.toLowerCase();
@@ -131,7 +131,7 @@ console.log(text1 + " " + text2); //Merhaba Javascript
 let text = "Merhaba";
 
 text += " clarusway";
-console.log(text); //Merhaba clarusway
+console.log(text); //Merhabaclarusway
 
 // let a = 5;
 // let b = 4;
@@ -158,7 +158,7 @@ console.log(newStr);
 // *               Template Literals
 // *=========================================================
 
-// ES6 ile tanıtılan bu yöntem, backtick işareti (`) kullanarak string birleştirmeyi kolaylaştırır ve değişkenleri doğrudan string içinde kullanmanıza olanak tanır.
+//* ES6 ile tanıtılan bu yöntem, backtick işareti (`) kullanarak string birleştirmeyi kolaylaştırır ve değişkenleri doğrudan string içinde kullanmanıza olanak tanır.
 
 let str5 = "Merhaba";
 let str6 = "Dünya";
@@ -173,17 +173,19 @@ console.log(`${str5}
     "Nasilsin?"`); //seklinde yazilabilir
 
 //! String Parcalama Metodlari
-//split()
-//substring()
-//substr()
-//slice()
+
+//* split()
+//* substring()
+//* substr()
+//* slice()
+
 // *=========================================================
 // *                 split() immutable
 // *=========================================================
-// Stringi belirtilen şekilde parçalara ayırır ve parçalarını bir diziye aktarır
-// str.split(seperator)
-// separator : ayraç
-// Parçaladığı elemanları bir diziye aktarır.
+//* Stringi belirtilen şekilde parçalara ayırır ve parçalarını bir diziye aktarır
+//* str.split(seperator)
+//* separator : ayraç
+//* Parçaladığı elemanları bir diziye aktarır.
 
 const metin1 = "Clarusway IT Bootcamp DE10";
 console.log(metin1.split(" "));
@@ -200,8 +202,8 @@ for (let i = 0; i < parcalanmisMetin.length; i++) {
   //console.log(parcalanmisMetin[i]);
 }
 
-//Cümleyi harf harf parcalamak icin
-console.log(metin1.split("")); //tirnak icerisinde bosluk birakilmadigi icin yazilan kelimeleri harf harf console'a yazdirir.
+//* Cümleyi harf harf parcalamak icin
+console.log(metin1.split("")); // tirnak icerisinde bosluk birakilmadigi icin yazilan kelimeleri harf harf console'a yazdirir.
 
 //! Verilen tarih bilgisini gün/ay/yil olarak ayirma:
 
@@ -225,15 +227,16 @@ console.log(newMonth);
 /* -------------------------------------------------------------------------- */
 /*                               //? Join metodu                              */
 /* -------------------------------------------------------------------------- */
-// String metodu değildir.
-// Javascript dilinde join metodu, bir dizi elemanı string olarak birleştirir. Join metodu dizi (array) alarak bunu virgül gibi bir karakter ile ayırarak string'e dönüştürür.
+//* String metodu değildir.
+//* Javascript dilinde join metodu, bir dizi elemanı string olarak birleştirir. Join metodu dizi (array) alarak bunu virgül gibi bir karakter ile ayırarak string'e dönüştürür.
+
 console.log(newMonth.join("-"));
 
 /* -------------------------------------------------------------------------- */
 //?                               Reverse Metodu                              */
 /* -------------------------------------------------------------------------- */
-// String metodu değildir.
-// Reverse methodu ile bir diziyi tersine çevirebilmekteyiz. Dizi içerisindeki ilk değeri son, son değeri ise ilk sıraya şeklinde sıralayabilmekteyiz.
+//* String metodu değildir.
+//* Reverse metodu ile bir diziyi tersine çevirebilmekteyiz. Dizi içerisindeki ilk değeri son, son değeri ise ilk sıraya şeklinde sıralayabilmekteyiz.
 
 //! Bir kelimeyi tersten yazdıran program:
 
@@ -247,7 +250,7 @@ let kelime2 = "madam";
 let mesaj =
   kelime2 === kelime2.split("").reverse().join("")
     ? "Polindromdur"
-    : "Plondrom degildir";
+    : "Polindrom degildir";
 
 console.log(mesaj); //Polindromdur
 
@@ -260,31 +263,32 @@ console.log(mesaj); //Polindromdur
 // Slice(başlangıç index numarası, bitiş index numarası(bu numara dahil değildir))
 
 let sentence = "Merhaba Cohort DE-10";
-console.log(sentence.slice(8, 14)); //Cohort
-console.log(sentence.slice(8)); //Cohort DE-10
+console.log(sentence.slice(8, 14)); // Cohort
+console.log(sentence.slice(8)); // Cohort DE-10
 
-console.log(sentence.slice(-5)); //DE-10
-console.log(sentence.slice(-12, -6)); //Cohort
+console.log(sentence.slice(-5)); // DE-10
+console.log(sentence.slice(-12, -6)); // Cohort
 
 // *=========================================================
 // *               substring
 // *=========================================================
-//! substring(başlangıç index numarası, bitiş index numarası)
-//Slicedan farkı negatif sayı kullanılmaz.
 
-console.log(sentence.substring(8, 14)); //Cohort
+//! substring(başlangıç index numarası, bitiş index numarası)
+//* Slice'dan farkı negatif sayı kullanılmaz.
+
+console.log(sentence.substring(8, 14)); // Cohort
 
 // *=========================================================
 // *               substr
 // *=========================================================
 //! substr(başlangıç index numarası, kaç adet karakter alınacağı)
 
-console.log(sentence.substr(15, 2)); //DE
+console.log(sentence.substr(15, 2)); // DE
 
 /* -------------------------------------------------------------------------- */
 /*                      //!String içinde arama işlemleri                      */
 /* -------------------------------------------------------------------------- */
-// includes, indexOf, search ,match  metodlarını kullanabiliriz.
+//* includes, indexOf, search ,match  metodlarını kullanabiliriz.
 
 // *=========================================================
 // *               includes
@@ -296,14 +300,14 @@ let cumle = "to be or not To be, Thats is The question";
 console.log(cumle.toUpperCase().includes("TO BE")); //true
 
 //! Bir site adresi güvenli mi degil mi?
-//! https : s means secure
+//! https: s means secure
 
 let url = "https://clarusway.com/";
 
 let msg = url.includes("https")
   ? "Bu site güvenlidir"
   : "bu site güvenli degildir";
-console.log(msg); //Bu site güvenlidir
+console.log(msg); // Bu site güvenlidir
 
 // *=========================================================
 // *               indexOf
@@ -311,9 +315,9 @@ console.log(msg); //Bu site güvenlidir
 
 //? indexOf (aranacak metin, konum) Bir karakter yada karakter grubunun kaçıncı sırada olduğunu yani index numarasını verir. Eğer o karakter yoksa olmadığını -1 değeri vererek gösterir. Büyük küçük harfe duyarlıdır. Sadece ilk gördüğünün index numarasını verir.
 
-console.log(cumle.indexOf("be")); //3
-console.log(cumle.indexOf("The")); //29
-// parantez icinde yazilan/aratilan karakter yoksa -1 döndürür
+console.log(cumle.indexOf("be")); // 3
+console.log(cumle.indexOf("The")); // -1
+//* parantez icinde yazilan/aratilan karakter yoksa -1 döndürür
 console.log(cumle.lastIndexOf("be")); //16
 
 // *=========================================================
@@ -321,7 +325,7 @@ console.log(cumle.lastIndexOf("be")); //16
 // *=========================================================
 
 //? search() bir string icindeki aranan elemanin ilk index numarasini yazar. Bulamzsa -1 döndürür.
-// Büyük kücük harfe duyarlidir.
+//* Büyük kücük harfe duyarlidir.
 console.log(cumle.search("be")); //3
 
 //!REGEX - regular expression
@@ -356,7 +360,7 @@ console.log(variable.search(/[^A-Z]/));
 // *=========================================================
 
 //? match metodu, bir dizi icindeki bir düzenli ifadeye (Regex) uyari kisimlari bulur ve bir dizi olarak döner.
-//Bir dizi döndürür.
+//* Bir dizi döndürür.
 
 let phone = "My phone is 123-456-7890";
 
@@ -371,13 +375,13 @@ console.log(emails);
 // *=========================================================
 // *               startsWith(), endsWith() -- case sensitive
 // *=========================================================
-// startsWith :.. ile başlıyormu (True , false)
-// endsWith :.. ile başlıyormu (True , false)
+//* startsWith :.. ile başlıyormu (True , false)
+//* endsWith :.. ile başlıyormu (True , false)
 
 console.log(phone.startsWith("My")); //true
 console.log(phone.endsWith("890")); //true
 
-//! Stringde Degisiklik Yapma
+//! String'de Degisiklik Yapma
 
 // *=========================================================
 // *               Replace -immutable
