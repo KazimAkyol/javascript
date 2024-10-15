@@ -21,14 +21,37 @@
     <title>Checkout</title>
   </head>
   <body>
-
-    <h1 class="text-center text-danger m-4"></h1>
+    <h1 class="text-center text-danger m-4">Checkout Page</h1>
 
     <main class="container d-flex justify-content-center">
-        <section class="bg-light w-75"></section>
+      <section class="bg-light w-75">
+        <article id="urun-rowlari"></article>
+
+        <article id="odeme-table">
+          <table class="table">
+            <tbody>
+              <tr class="text-end">
+                <th class="text-start">Ara Toplam</th>
+                <td>$<span class="aratoplam">0.00</span></td>
+              </tr>
+              <tr class="text-end">
+                <th class="text-start">Vergi(%18)</th>
+                <td>$<span class="vergi">0.00</span></td>
+              </tr>
+              <tr class="text-end">
+                <th class="text-start">Kargo</th>
+                <td>$<span class="kargo">0.00</span></td>
+              </tr>
+              <tr class="text-end">
+                <th class="text-start">Toplam</th>
+                <td>$<span class="toplam">0.00</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
     </main>
-
-
+    <script src="./checkout.js"></script>
   </body>
 </html>
 
