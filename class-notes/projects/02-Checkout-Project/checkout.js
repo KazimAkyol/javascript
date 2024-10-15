@@ -70,11 +70,13 @@ sepettekiler.forEach((urun) => {
 
 //! remove fonksiyonu
 
+const kaldir = document.querySelector("#urun-rowlari");
+
 del();
 function del() {
   document.querySelectorAll(".remove-ürün").forEach((dl) =>
     dl.addEventListener("click", () => {
-      `$(this).parent("div").remove()`; // dl nin parentini silme js de
+      kaldir.removeChild(kaldir.lastElementChild); //!!!!!!!!!! // dl nin parentini silme js de
     })
   );
 }
