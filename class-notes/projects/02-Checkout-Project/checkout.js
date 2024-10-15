@@ -8,8 +8,8 @@ const vergi = 0.18;
 
 let sepettekiler = [
   { name: "Vintage Backpack", price: 34.99, adet: 1, img: "./img/photo1.png" },
-  { name: "Levi Shoes", price: 40.99, adet: 1, img: "./img/photo2.png" },
-  { name: "Antique Clock", price: 69.99, adet: 1, img: "./img/photo3.jpg" },
+  { name: "Levi Shoes", price: 54.99, adet: 1, img: "./img/photo2.png" },
+  { name: "Antique Clock", price: 94.99, adet: 1, img: "./img/photo3.jpg" },
 ];
 
 sepettekiler.forEach((urun) => {
@@ -28,7 +28,9 @@ sepettekiler.forEach((urun) => {
         
         <div class="ürün-price">
             <p class="text-warning h2">$
-                <span class="indirim-price">${(price * 0.7).toFixed(2)} </span>
+                <span class="indirim-price">${(price * 0.789).toFixed(
+                  2
+                )} </span>
                     <span class="h5 text-dark text-decoration-line-through">${price}</span>
                 </p>
                 </div>
@@ -56,7 +58,7 @@ sepettekiler.forEach((urun) => {
                 <div class="mt-2">
                 Ürün Toplam: $<span class="ürün-toplam">${(
                   price *
-                  0.7 *
+                  0.789 *
                   adet
                 ).toFixed(2)} </span>
         </div>
@@ -64,4 +66,72 @@ sepettekiler.forEach((urun) => {
     </div>
   </div>
 </div> `;
+});
+
+//! remove fonksiyonu
+
+del();
+function del() {
+  document
+    .querySelectorAll(".remove-ürün")
+    .forEach((dl) => dl.addEventListener("click", () => {})); // dl nin parentini silme js de
+}
+
+//! adet arttirma - azaltma
+
+document.querySelectorAll(".adet-controller").forEach((dl) => {
+  const arttir = dl.lastElementChild;
+  const azalt = dl.firstElementChild;
+  const adet1 = dl.children[1];
+
+  arttir.onclick = () => {
+    console.log(dl.closest(".card").querySelector(".card-title").textContent);
+    const deger = dl.closest(".card").querySelector(".card-title").textContent;
+    console.log(deger);
+    adet1.textContent = +adet1.textContent + 1;
+    adet1.closest(".card").querySelector(".ürün-toplam").textContent =
+      Number(adet1.textContent) *
+      Number(
+        adet1.closest(".card").querySelector(".indirim-price").textContent
+      );
+    console.log(dl.closest(".card").querySelector("#ürün-adet").innerHTML);
+    sepettekiler = sepettekiler.filter((dl) => dl.name != deger);
+    console.log(sepettekiler);
+    console.log(dl.closest(".card").querySelector("img").src, "resim");
+    sepettekiler.push({
+      name: deger,
+      price: dl.closest(".card").querySelector(".h5").textContent,
+      adet: adet1.textContent,
+      img: dl.closest(".card").querySelector("img").src,
+    });
+    console.log(sepettekiler, "son");
+  };
+
+  azalt.onclick = () => {
+    adet1.textContent = adet1.textContent - 1;
+    adet1.closest(".card").querySelector(".ürün-toplam").textContent =
+      Number(adet1.textContent) *
+      Number(
+        adet1.closest(".card").querySelector(".indirim-price").textContent
+      );
+    console.log(dl.closest(".card").querySelector(".card-title").textContent);
+    const deger = dl.closest(".card").querySelector(".card-title").textContent;
+    console.log(deger);
+    console.log(dl.closest(".card").querySelector("#ürün-adet").innerHTML);
+    sepettekiler = sepettekiler.filter((dl) => dl.name != deger);
+    console.log(sepettekiler);
+    console.log(dl.closest(".card").querySelector("img").src, "resim");
+
+    if (adet1.textContent == 0) {
+      er.closest(".card").remove();
+    } else {
+      sepettekiler.push({
+        name: deger,
+        price: dl.closest(".card").querySelector(".h5").textContent,
+        adet: adet1.textContent,
+        img: dl.closest(".card").querySelector("img").src,
+      });
+      console.log(sepettekiler, "son");
+    }
+  };
 });
