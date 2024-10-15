@@ -13,8 +13,8 @@
 
 .photo1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: inherit;
 }
 
 .photo2 {
@@ -27,6 +27,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.img {
+    border-radius: 15px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: red;
+  border: none;
+  width: 70px;
+  height: 20px;
+  border-radius: 3px;
 }
 
 input[type="button"] {
