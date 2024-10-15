@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.photo1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="button"] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  font-size: 1em;
+  background: #ff6766;
+  color: #e7e7e7;
+}
