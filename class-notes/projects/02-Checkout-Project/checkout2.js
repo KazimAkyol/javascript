@@ -86,9 +86,36 @@ document.querySelectorAll(".adet-controller").forEach((kutu) => {
 
   //? + butonuna tiklandiginda
   arti.onclick = () => {
-    
     //* ekranda adet degistirme
+
     adet.textContent = +textContent + 1;
+
+    //* ürüntoplam kismini güncelleme (tiklanan adet veya arti üzerinden sülalesinin oldugu card'a gidiyorum ve tüm html(document) yerine, tikladigim sülalaeden, ihtiyacim olan ürüntoplam span'ini getirdim textcontent'ine gerekli sonucu bastirdim)
+
+    adet.closest(".card").querySelector(".ürün-toplam").textContent =
+      adet.closest(".card").querySelector(".indirim-price").textContent *
+      adet.textContent;
+  };
+
+  //? - butonuna tiklandiginda
+  eksi.onclick = () => {
+    //* ekranda adet degistirme
+
+    adet.textContent = +textContent - 1;
+
+    //* ürüntoplam kismini güncelleme (tiklanan adet veya arti üzerinden sülalesinin oldugu card'a gidiyorum ve tüm html(document) yerine, tikladigim sülalaeden, ihtiyacim olan ürüntoplam span'ini getirdim textcontent'ine gerekli sonucu bastirdim)
+
+    adet.closest(".card").querySelector(".ürün-toplam").textContent =
+      adet.closest(".card").querySelector(".indirim-price").textContent *
+      adet.textContent;
+
+    //* adet.context < 1 iken ürünü sorarak sil komutu
+
+    if (adet.textContent < 1) {
+      alert("sileyim mi?");
+
+      adet.closest(".card").remove();
+    }
   };
 });
 
