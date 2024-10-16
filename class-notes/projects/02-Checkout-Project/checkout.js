@@ -139,3 +139,15 @@ document.querySelectorAll(".adet-controller").forEach((dl) => {
     }
   };
 });
+
+const urunToplam = document.querySelectorAll(".ürün-toplam");
+//total Calculator
+const araToplam = Array.from(urunToplam).reduce(
+  (a, b) => a + Number(b.textContent),
+  0
+);
+document.querySelector(".aratoplam").textContent = araToplam;
+document.querySelector(".kargo").textContent = kargo;
+document.querySelector(".vergi").textContent = (araToplam * vergi).toFixed(2);
+const toplam = (document.querySelector(".toplam").textContent =
+  araToplam + (araToplam * vergi).toFixed(2) + kargo);
