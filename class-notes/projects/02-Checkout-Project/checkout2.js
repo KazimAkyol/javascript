@@ -13,24 +13,24 @@ let sepettekiler = [
 
 //! ekrana bastir
 
-sepettekiler.forEach((urun) => {
-  const { name, price, adet, img } = urun;
-
-  document.querySelector("#urun-rowlari").innerHTML = `
+sepettekiler.forEach((a) => {
+  document.querySelector("#urun-rowlari").innerHTML += `
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-lg-3 col-md-5">
-      <img src= class=" w-100 rounded-start" alt="..." />
+      <img src=${a.img} class=" w-100 rounded-start" alt="..." />
     </div>
 
     <div class="col-md-7 ">
       <div class="card-body">
-        <h5 class="card-title"> </h5>
+        <h5 class="card-title">${a.name}</h5>
 
         <div class="ürün-price">
           <p class="text-warning h2">
-            $<span class="indirim-price"> </span>
-            <span class="h5 text-dark text-decoration-line-through"> </span>
+            $<span class="indirim-price">${(a.price * 0.789).toFixed(2)}}</span>
+            <span class="h5 text-dark text-decoration-line-through">${
+              a.price
+            }</span>
           </p>
         </div>
 
@@ -39,9 +39,7 @@ sepettekiler.forEach((urun) => {
             <button class="btn btn-secondary btn-sm minus">
               <i class="fas fa-minus"></i>
             </button>
-            <p class="d-inline mx-4" id="ürün-adet">
-            
-            </p>
+            <p class="d-inline mx-4" id="ürün-adet">${a.adet}</p>
             <button class="btn btn-secondary btn-sm plus">
               <i class="fas fa-plus"></i>
             </button>
@@ -55,10 +53,54 @@ sepettekiler.forEach((urun) => {
         </div>
 
         <div class="mt-2">
-          Ürün Toplam: $<span class="ürün-toplam"> </span>
+          Ürün Toplam: $<span class="ürün-toplam">${(
+            a.price *
+            0.789 *
+            a.adet
+          ).toFixed(2)}</span>
         </div>
       </div>
     </div>
   </div>
 </div>`;
 });
+
+hesaplaCardTotal();
+
+document.querySelectorAll(".remove-ürün").forEach((btn) => {
+  btn.onclick = () => {
+    // tiklanan ögenin 5.dereceden  parent'ini silmek
+    // btn.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+
+    //* kisayol
+    btn.closest(".card").remove();
+  };
+});
+
+//! adet arttirma - azaltma
+
+document.querySelectorAll(".adet-controller").forEach((kutu) => {
+  const eksi = kutu.firstElementChild; // children[0]
+  const arti = kutu.lastElementChild; // children2[]
+  const adet = kutu.children[1];
+
+  //? + butonuna tiklandiginda
+  arti.onclick = () => {
+    
+    //* ekranda adet degistirme
+    adet.textContent = +textContent + 1;
+  };
+});
+
+const urunToplam = document.querySelectorAll(".ürün-toplam");
+
+//! querySelectorAll(), statik bir NodeList döndürür.
+//! burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
+//* Dizi Değil!
+//* Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
+//* Bir NodeList içinde döngü yapabilir ve düğümlerine index ine göre başvurabilirsiniz.
+//* Ancak, bir NodeList'te push(), pop() veya join() ve reduce gibi Array yöntemlerini kullanamazsınız.
+
+//? Reduce tam olarak Array istiyor, nodelist yeterli değil
+
+// Array.from(urunToplam).reduce((toplam,eleman)=>)

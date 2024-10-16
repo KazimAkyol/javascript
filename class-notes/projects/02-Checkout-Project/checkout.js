@@ -30,9 +30,7 @@ sepettekiler.forEach((urun) => {
         
         <div class="ürün-price">
             <p class="text-warning h2">$
-                <span class="indirim-price">${(price * 0.789).toFixed(
-                  2
-                )} </span>
+                <span class="indirim-price">${(price * 0.789).toFixed(2)}</span>
                     <span class="h5 text-dark text-decoration-line-through">${price}</span>
                 </p>
                 </div>
