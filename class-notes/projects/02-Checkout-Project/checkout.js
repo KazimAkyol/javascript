@@ -12,6 +12,8 @@ let sepettekiler = [
   { name: "Antique Clock", price: 94.99, adet: 1, img: "./img/photo3.jpg" },
 ];
 
+//! ekrana bastir
+
 sepettekiler.forEach((urun) => {
   const { name, price, adet, img } = urun;
 
