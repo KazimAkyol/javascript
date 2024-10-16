@@ -7,16 +7,17 @@
 // const vergi = 0.18;
 
 let sepettekiler = [
-  { name: "Vintage Backpack", price: 34.99, adet: 1, img: "./img/photo1.png" },
-  { name: "Levi Shoes", price: 40.99, adet: 1, img: "./img/photo2.png" },
-  { name: "Antique Clock", price: 69.99, adet: 1, img: "./img/photo3.jpg" },
+  { name: "Vintage Backbag", price: 34.99, adet: 1, img: "./img/photo1.png" },
+  { name: "Levi Shoes", price: 54.99, adet: 1, img: "./img/photo2.png" },
+  { name: "Antique Clock", price: 94.99, adet: 1, img: "./img/photo3.jpg" },
 ];
 
 //! ekrana bastir
 
 sepettekiler.forEach((a) => {
-  document.querySelector("#urun-rowlari").innerHTML += `
-  <div class="card mb-3" style="max-width: 540px;">
+  document.querySelector(
+    "#urun-rowlari"
+  ).innerHTML += `<div class="card mb-3" style="max-width: 540px;">
    <div class="row g-0">
 
     <div class="col-lg-3 col-md-5">
@@ -29,7 +30,7 @@ sepettekiler.forEach((a) => {
 
         <div class="ürün-price">
           <p class="text-warning h2">
-            $<span class="indirim-price">${(a.price * 0.789).toFixed(2)}}</span>
+            $<span class="indirim-price">${(a.price * 0.789).toFixed(2)}</span>
             <span class="h5 text-dark text-decoration-line-through">${
               a.price
             }</span>
@@ -73,7 +74,7 @@ hesaplaCardTotal();
 
 document.querySelectorAll(".remove-ürün").forEach((btn) => {
   btn.onclick = () => {
-    // tiklanan ögenin 5.dereceden  parent'ini silmek
+    // tiklanan ögenin 5.dereceden parent'ini silmek
     // btn.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
 
     //* kisayol
@@ -92,14 +93,14 @@ document.querySelectorAll(".remove-ürün").forEach((btn) => {
 
 document.querySelectorAll(".adet-controller").forEach((kutu) => {
   const eksi = kutu.firstElementChild; // children[0]
-  const arti = kutu.lastElementChild; // children2[]
+  const arti = kutu.lastElementChild; // children[2]
   const adet = kutu.children[1];
 
   //? + butonuna tiklandiginda
   arti.onclick = () => {
     //* ekranda adet degistirme
 
-    adet.textContent = +textContent + 1;
+    adet.textContent = +adet.textContent + 1;
 
     //* ürüntoplam kismini güncelleme (tiklanan adet veya arti üzerinden sülalesinin oldugu card'a gidiyorum ve tüm html(document) yerine, tikladigim sülaleden, ihtiyacim olan ürüntoplam span'ini getirdim textcontent'ine gerekli sonucu bastirdim)
 
@@ -114,7 +115,7 @@ document.querySelectorAll(".adet-controller").forEach((kutu) => {
   eksi.onclick = () => {
     //* ekranda adet degistirme
 
-    adet.textContent = +textContent - 1;
+    adet.textContent = +adet.textContent - 1;
 
     //* ürüntoplam kismini güncelleme (tiklanan adet veya arti üzerinden sülalesinin oldugu card'a gidiyorum ve tüm html(document) yerine, tikladigim sülalaeden, ihtiyacim olan ürüntoplam span'ini getirdim textcontent'ine gerekli sonucu bastirdim)
 
@@ -143,16 +144,17 @@ function hesaplaCardTotal() {
   //! burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
   //* Dizi Değil!
   //* Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
-  //* Bir NodeList içinde döngü yapabilir ve düğümlerine index ine göre başvurabilirsiniz.
+  //* Bir NodeList içinde döngü yapabilir ve düğümlerine index'ine göre başvurabilirsiniz.
   //* Ancak, bir NodeList'te push(), pop() veya join() ve reduce gibi Array yöntemlerini kullanamazsınız.
 
-  //!2.yol
+  //! 2.yol
   // console.log(
   //   Number(urunToplam[0].textContent) +
   //     +urunToplam[1].textContent +
   //     +urunToplam[2].textContent
+  // );
 
-  //? Reduce tam olarak Array istiyor, nodelist yeterli değil
+  //? Reduce tam olarak Array istiyor, Nodelist yeterli değil
 
   const araToplam = Array.from(urunToplam).reduce(
     (topl, item) => topl + Number(item.textContent),
