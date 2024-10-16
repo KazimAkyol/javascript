@@ -1,9 +1,10 @@
 //* ===================================================
 //*                 Checkout Page Solution
-//*  map filter, dest,spread ===================================================
+//*  map filter, dest,spread ==========================
+
 //!table da kullanılacak değişkenler
-const kargo = 15.0;
-const vergi = 0.18;
+// const kargo = 15.0;
+// const vergi = 0.18;
 
 let sepettekiler = [
   { name: "Vintage Backpack", price: 34.99, adet: 1, img: "./img/photo1.png" },
@@ -15,8 +16,8 @@ let sepettekiler = [
 
 sepettekiler.forEach((a) => {
   document.querySelector("#urun-rowlari").innerHTML += `
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
+  <div class="card mb-3" style="max-width: 540px;">
+   <div class="row g-0">
     <div class="col-lg-3 col-md-5">
       <img src=${a.img} class=" w-100 rounded-start" alt="..." />
     </div>
@@ -67,6 +68,8 @@ sepettekiler.forEach((a) => {
 
 hesaplaCardTotal();
 
+//! silme
+
 document.querySelectorAll(".remove-ürün").forEach((btn) => {
   btn.onclick = () => {
     // tiklanan ögenin 5.dereceden  parent'ini silmek
@@ -74,6 +77,14 @@ document.querySelectorAll(".remove-ürün").forEach((btn) => {
 
     //* kisayol
     btn.closest(".card").remove();
+
+    //* tikladigin ürünü diziden de sil
+
+    sepettekiler = sepettekiler.filter(
+      (a) => a.name != btn,
+      closest(".card").querySelector("h5").textContent
+    );
+    console.log(sepettekiler); // kontrol edilebilir, silindikten sonra
   };
 });
 
@@ -109,6 +120,8 @@ document.querySelectorAll(".adet-controller").forEach((kutu) => {
       adet.closest(".card").querySelector(".indirim-price").textContent *
       adet.textContent;
 
+    hesaplaCardTotal();
+
     //* adet.context < 1 iken ürünü sorarak sil komutu
 
     if (adet.textContent < 1) {
@@ -118,6 +131,8 @@ document.querySelectorAll(".adet-controller").forEach((kutu) => {
     }
   };
 });
+
+//! ödenecek tutari hesaplayan
 
 const urunToplam = document.querySelectorAll(".ürün-toplam");
 
