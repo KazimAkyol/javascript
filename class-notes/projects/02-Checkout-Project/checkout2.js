@@ -18,6 +18,7 @@ sepettekiler.forEach((a) => {
   document.querySelector("#urun-rowlari").innerHTML += `
   <div class="card mb-3" style="max-width: 540px;">
    <div class="row g-0">
+
     <div class="col-lg-3 col-md-5">
       <img src=${a.img} class=" w-100 rounded-start" alt="..." />
     </div>
@@ -81,8 +82,7 @@ document.querySelectorAll(".remove-ürün").forEach((btn) => {
     //* tikladigin ürünü diziden de sil
 
     sepettekiler = sepettekiler.filter(
-      (a) => a.name != btn,
-      closest(".card").querySelector("h5").textContent
+      (a) => a.name != btn.closest(".card").querySelector("h5").textContent
     );
     console.log(sepettekiler); // kontrol edilebilir, silindikten sonra
   };
@@ -101,11 +101,13 @@ document.querySelectorAll(".adet-controller").forEach((kutu) => {
 
     adet.textContent = +textContent + 1;
 
-    //* ürüntoplam kismini güncelleme (tiklanan adet veya arti üzerinden sülalesinin oldugu card'a gidiyorum ve tüm html(document) yerine, tikladigim sülalaeden, ihtiyacim olan ürüntoplam span'ini getirdim textcontent'ine gerekli sonucu bastirdim)
+    //* ürüntoplam kismini güncelleme (tiklanan adet veya arti üzerinden sülalesinin oldugu card'a gidiyorum ve tüm html(document) yerine, tikladigim sülaleden, ihtiyacim olan ürüntoplam span'ini getirdim textcontent'ine gerekli sonucu bastirdim)
 
     adet.closest(".card").querySelector(".ürün-toplam").textContent =
       adet.closest(".card").querySelector(".indirim-price").textContent *
       adet.textContent;
+
+    hesaplaCardTotal();
   };
 
   //? - butonuna tiklandiginda
@@ -122,7 +124,7 @@ document.querySelectorAll(".adet-controller").forEach((kutu) => {
 
     hesaplaCardTotal();
 
-    //* adet.context < 1 iken ürünü sorarak sil komutu
+    //* adet 1 iken eksiye basilirsa ürünün sülalesi silinsin
 
     if (adet.textContent < 1) {
       alert("sileyim mi?");
@@ -132,17 +134,41 @@ document.querySelectorAll(".adet-controller").forEach((kutu) => {
   };
 });
 
-//! ödenecek tutari hesaplayan
+//! ödenecek tutari hesaplayan fonksiyon
 
-const urunToplam = document.querySelectorAll(".ürün-toplam");
+function hesaplaCardTotal() {
+  const urunToplam = document.querySelectorAll(".ürün-toplam");
 
-//! querySelectorAll(), statik bir NodeList döndürür.
-//! burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
-//* Dizi Değil!
-//* Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
-//* Bir NodeList içinde döngü yapabilir ve düğümlerine index ine göre başvurabilirsiniz.
-//* Ancak, bir NodeList'te push(), pop() veya join() ve reduce gibi Array yöntemlerini kullanamazsınız.
+  //! querySelectorAll(), statik bir NodeList döndürür.
+  //! burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
+  //* Dizi Değil!
+  //* Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
+  //* Bir NodeList içinde döngü yapabilir ve düğümlerine index ine göre başvurabilirsiniz.
+  //* Ancak, bir NodeList'te push(), pop() veya join() ve reduce gibi Array yöntemlerini kullanamazsınız.
 
-//? Reduce tam olarak Array istiyor, nodelist yeterli değil
+  //!2.yol
+  // console.log(
+  //   Number(urunToplam[0].textContent) +
+  //     +urunToplam[1].textContent +
+  //     +urunToplam[2].textContent
 
-// Array.from(urunToplam).reduce((toplam,eleman)=>)
+  //? Reduce tam olarak Array istiyor, nodelist yeterli değil
+
+  const araToplam = Array.from(urunToplam).reduce(
+    (topl, item) => topl + Number(item.textContent),
+    0
+  );
+
+  //* ara toplam
+  document.querySelector(".aratoplam").textContent = araToplam;
+
+  //* vergi
+  document.querySelector(".vergi").textContent = araToplam * 0.18;
+
+  //* kargo
+  document.querySelector(".kargo").textContent = 15.0;
+
+  //* sontoplam
+  document.querySelector(".toplam").textContent =
+    araToplam + araToplam * 0.18 + 15.0;
+}
