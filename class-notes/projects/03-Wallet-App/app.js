@@ -4,7 +4,7 @@
 
 let veri = ["tarih", "miktar", "harcamaAlani"];
 
-let container = document.getElementsByClassName(".container")[0];
+const harcamaFonu = document.querySelector(".harcama-formu");
 
 //! veri girdisi
 
@@ -18,10 +18,23 @@ const ekleBtn = document.getElementById(".ekle-btn");
 
 const harcamaTablosu = document.getElementById(".harcama-tablosu");
 
+// veri.forEach(() => {
+//   container.innerHTML += `${}.index: ${}`;
+// });
+
+input.value();
+
 //! veri kaydetme,ekleme
 
-// veri.forEach((eleman, index) => {
-//   container.innerHTML += `${index}.index: ${eleman}`;
+document.querySelectorAll(."harcama-fonu").forEach((input.value)=>{
+     
+    onsubmit = () => {
+
+    }
+})
+
+// ekleBtn.addEventListener("click", () => {
+//   veri.push(input.value);
 // });
 
 //! veri silme
