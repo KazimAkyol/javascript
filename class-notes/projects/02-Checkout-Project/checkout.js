@@ -14,24 +14,26 @@ let sepettekiler = [
 
 //! ekrana bastir
 
-sepettekiler.forEach((urun) => {
-  const { name, price, adet, img } = urun;
-
+sepettekiler.forEach((a) => {
   document.querySelector("#urun-rowlari").innerHTML += ` 
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-lg-3 col-md-5">
-      <img src=${img} class=" w-100 rounded-start" alt="..."/>
+      <img src=${a.img} class=" w-100 rounded-start" alt="..."/>
     </div>
 
     <div class="col-md-7 ">
      <div class="card-body">
-       <h5 class="card-title">${name}</h5>
+       <h5 class="card-title">${a.name}</h5>
         
         <div class="ürün-price">
             <p class="text-warning h2">$
-                <span class="indirim-price">${(price * 0.789).toFixed(2)}</span>
-                    <span class="h5 text-dark text-decoration-line-through">${price}</span>
+                <span class="indirim-price">${(a.price * 0.789).toFixed(
+                  2
+                )}</span>
+                    <span class="h5 text-dark text-decoration-line-through">${
+                      a.price
+                    }</span>
                 </p>
                 </div>
 
@@ -41,7 +43,7 @@ sepettekiler.forEach((urun) => {
                     <button class="btn btn-secondary btn-sm minus">
                     <i class="fas fa-minus"></i>
                     </button>
-                    <p class="d-inline mx-4" id="ürün-adet">${adet}</p>
+                    <p class="d-inline mx-4" id="ürün-adet">${a.adet}</p>
                     <button class="btn btn-secondary btn-sm plus">
                       <i class="fas fa-plus"></i>
                     </button>
@@ -57,7 +59,7 @@ sepettekiler.forEach((urun) => {
 
                 <div class="mt-2">
                 Ürün Toplam: $<span class="ürün-toplam">${(
-                  price *
+                  a.price *
                   0.789 *
                   adet
                 ).toFixed(2)} </span>
@@ -68,20 +70,26 @@ sepettekiler.forEach((urun) => {
 </div> `;
 });
 
-//! remove fonksiyonu
+//! silme
 
-const kaldir = document.querySelector("#urun-rowlari");
+document.querySelectorAll(".remove-ürün").forEach((btn) => {
+  btn.onclick = () => {
+    // tiklanan ögenin 5.dereceden parent'ini silmek
+    // btn.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
 
-del();
-function del() {
-  document.querySelectorAll(".remove-ürün").forEach((dl) =>
-    dl.addEventListener("click", () => {
-      kaldir.removeChild(kaldir.lastElementChild); //!!!!!!!!!! // dl nin parentini silme js de
-    })
-  );
-}
+    //* kisayol
+    btn.closest(".card").remove();
 
-//! adet arttirma - azaltma
+    //* tikladigin ürünü diziden de sil
+
+    sepettekiler = sepettekiler.filter(
+      (a) => a.name != btn.closest(".card").querySelector("h5").textContent
+    );
+    console.log(sepettekiler); // kontrol edilebilir, silindikten sonra
+  };
+});
+
+//! adet arttirma - azaltma (buradaki cözüm daha karisik !!!)
 
 document.querySelectorAll(".adet-controller").forEach((dl) => {
   const arttir = dl.lastElementChild;

@@ -92,8 +92,8 @@ document.querySelectorAll(".remove-ürün").forEach((btn) => {
 //! adet arttirma - azaltma
 
 document.querySelectorAll(".adet-controller").forEach((kutu) => {
-  const eksi = kutu.firstElementChild; // children[0]
-  const arti = kutu.lastElementChild; // children[2]
+  const eksi = kutu.firstElementChild; // children[0] seklinde de yazilabilir, cünkü arttirma-azaltma butonunda eksi 0.sirada
+  const arti = kutu.lastElementChild; // children[2] seklinde de yazilabilir, cünkü arttirma-azaltma butonunda arti 2.sirada
   const adet = kutu.children[1];
 
   //? + butonuna tiklandiginda
