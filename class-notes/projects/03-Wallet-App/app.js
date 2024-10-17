@@ -1,13 +1,29 @@
+//* Wallet-App
+
+//! veri tanimlama
+
+let veri = ["tarih", "miktar", "harcamaAlani"];
+
+let container = document.getElementsByClassName(".container")[0];
+
 //! veri girdisi
 
-const tarih = document.querySelector(".tarih").innerHTML;
-const miktar = document.querySelector(".miktar").innerHTML;
-const harcamaAlani = document.querySelector(".harcama-alani").innerHTML;
+const tarih = document.getElementById(".tarih");
+const miktar = document.getElementById(".miktar");
+const harcamaAlani = document.getElementById(".harcama-alani");
 
-//! veri kaydetme
+const kaydet = document.getElementById(".kaydet");
+const gelirInput = document.getElementById(".gelir-input");
+const ekleBtn = document.getElementById(".ekle-btn");
 
-document.querySelectorAll(".harcama-formu").forEach(())
+const harcamaTablosu = document.getElementById(".harcama-tablosu");
 
-//! veri ekleme
+//! veri kaydetme,ekleme
 
-//! 
+// veri.forEach((eleman, index) => {
+//   container.innerHTML += `${index}.index: ${eleman}`;
+// });
+
+//! veri silme
+
+//! toplam bulma
