@@ -26,9 +26,9 @@ const kalanTable = document.getElementById("kalan");
 
 //? Variables
 
-let gelirim = 0;
+let gelirim = Number(localStorage.getItem("gehalt")) || 0;
 
-let harcamaListesi = [];
+let harcamaListesi = JSON.parse(localStorage.getItem("einkaufen")) || [];
 
 //! ekle formu (yesil-kirmizi)
 
@@ -40,6 +40,10 @@ ekleFormu.onsubmit = (e) => {
   gelirinizTable.textContent = gelirim;
 
   gelirInput.value = "";
+
+  localStorage.setItem("gehalt", gelirim);
+
+  hesaplaVeGuncelle();
 };
 
 //! ilk harcama formu doldurma (arka plani sari olan yer)
@@ -55,6 +59,10 @@ harcamaFormu.onsubmit = (e) => {
   };
 
   harcamaListesi.push(yeniHarcama);
+
+  //* localStorage'a kaydet
+
+  localStorage.setItem("einkaufen", JSON.stringify(harcamaListesi));
 
   //* ekrana bastir
 
@@ -92,6 +100,10 @@ const harcamayiDomaYaz = (yeniHarcama) => {
       //* diziden sil
 
       harcamaListesi = harcamaListesi.filter((a) => a.id != sil.id);
+
+      //* localStorage'de de sil
+
+      localStorage.setItem("einkaufen", JSON.stringify(harcamaListesi));
     };
   });
 };
@@ -107,3 +119,7 @@ const hesaplaVeGuncelle = () => {
 
   kalanTable.textContent = gelirim - giderler;
 };
+
+//! localStorage kullandigimizda refresh'te ekranda localdeki kayitli bilgiler gelsin diye yazilan komut
+
+harcamaListesi.forEach((a) => harcamayiDomaYaz(a));
