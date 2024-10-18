@@ -1,42 +1,25 @@
-//* Wallet-App
+//? Selectors
 
-//! veri tanimlama
+//! Harcama Tablosu
 
-let veri = ["tarih", "miktar", "harcamaAlani"];
+const harcamaFormu = document.getElementById("harcama-formu");
+const tarihInput = document.getElementById("tarih");
+const miktarInput = document.getElementById("miktar");
+const harcamaAlaniInput = document.getElementById("harcama-alani");
 
-const harcamaFonu = document.querySelector(".harcama-formu");
+//! ekle formu
 
-//! veri girdisi
+const ekleBtn = document.getElementById("ekle-btn");
+const gelirInput = document.getElementById("gelir-input");
+const ekleFormu = document.getElementById("ekle-formu");
 
-const tarih = document.getElementById(".tarih");
-const miktar = document.getElementById(".miktar");
-const harcamaAlani = document.getElementById(".harcama-alani");
+//! harcama tablosu
 
-const kaydet = document.getElementById(".kaydet");
-const gelirInput = document.getElementById(".gelir-input");
-const ekleBtn = document.getElementById(".ekle-btn");
+const harcamaBody = document.getElementById("harcama-body");
+const temizleBtn = document.getElementById("temizle-btn");
 
-const harcamaTablosu = document.getElementById(".harcama-tablosu");
+//! sonuc tablosu
 
-// veri.forEach(() => {
-//   container.innerHTML += `${}.index: ${}`;
-// });
-
-input.value();
-
-//! veri kaydetme,ekleme
-
-document.querySelectorAll(."harcama-fonu").forEach((input.value)=>{
-     
-    onsubmit = () => {
-
-    }
-})
-
-// ekleBtn.addEventListener("click", () => {
-//   veri.push(input.value);
-// });
-
-//! veri silme
-
-//! toplam bulma
+let gelirinizTable = document.getElementById("geliriniz");
+const giderinizTable = document.getElementById("gideriniz");
+const kalanTable = document.getElementById("kalan");
