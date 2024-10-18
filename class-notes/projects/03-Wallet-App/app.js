@@ -1,6 +1,6 @@
 //? Selectors
 
-//! Harcama Tablosu
+//! harcama formu
 
 const harcamaFormu = document.getElementById("harcama-formu");
 const tarihInput = document.getElementById("tarih");
@@ -23,3 +23,29 @@ const temizleBtn = document.getElementById("temizle-btn");
 let gelirinizTable = document.getElementById("geliriniz");
 const giderinizTable = document.getElementById("gideriniz");
 const kalanTable = document.getElementById("kalan");
+
+//? Variables
+
+let gelirim = 0;
+
+let harcamaListesi;
+
+//! ekle formu (yesil-kirmizi)
+
+ekleFormu.onsubmit = (e) => {
+  e.preventDefault(); //submit'in default hareketini bekletmek icin
+
+  gelirim = gelirim + Number(gelirInput.value);
+
+  gelirinizTable.textContent = gelirim;
+
+  gelirInput.value = "";
+};
+
+//! ilk harcama formu doldurma (arka plani sari olan yer)
+
+harcamaFormu.onsubmit=(e)=>{
+    e.preventDefault()
+
+    
+}
