@@ -60,6 +60,13 @@ harcamaFormu.onsubmit = (e) => {
 
   harcamaListesi.push(yeniHarcama);
 
+  // harcamaListesi.push({
+  //   tarih: tarihInput.value,
+  //   miktar: miktarInput.value,
+  //   alan: harcamaAlaniInput.value,
+  //   id: new Date().getTime(),
+  // });
+
   //* localStorage'a kaydet
 
   localStorage.setItem("einkaufen", JSON.stringify(harcamaListesi));
@@ -71,6 +78,8 @@ harcamaFormu.onsubmit = (e) => {
   //* inputlari temizle
 
   harcamaFormu.reset();
+
+  hesaplaVeGuncelle();
 };
 
 //! harcamayi doma yazma metodu
@@ -80,11 +89,13 @@ const harcamayiDomaYaz = (yeniHarcama) => {
 
   harcamaBody.innerHTML += ` 
   <tr>
-      <td class="bg-warning">${tarih}</td>
+      <td class="bg-warning bir">${tarih}</td>
       <td class="bg-warning">${alan}</td>
       <td class="bg-warning">${miktar}</td>
 
-      <td class="bg-warning"> <i id=${id} class="fa-solid fa-trash-can text-danger"> </i></td>
+      <td class="bg-warning">
+      <i id=${id} class="fa-solid fa-trash-can text-danger"></i>
+      </td>
     </tr>`;
 
   //! silme
