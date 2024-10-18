@@ -59,6 +59,10 @@ harcamaFormu.onsubmit = (e) => {
   //* ekrana bastir
 
   harcamayiDomaYaz(yeniHarcama);
+
+  //* inputlari temizle
+
+  harcamaFormu.reset();
 };
 
 //! harcamayi doma yazma metodu
@@ -66,11 +70,28 @@ harcamaFormu.onsubmit = (e) => {
 const harcamayiDomaYaz = (yeniHarcama) => {
   const { id, miktar, tarih, alan } = yeniHarcama; // destruction
 
-  harcamaBody.innerHTML += ` <tr>
-      <td class="bg-warning">${yeniHarcama.tarih}</td>
-      <td class="bg-warning">${yeniHarcama.alan}</td>
-      <td class="bg-warning">${yeniHarcama.miktar}</td>
+  harcamaBody.innerHTML += ` 
+  <tr>
+      <td class="bg-warning">${tarih}</td>
+      <td class="bg-warning">${alan}</td>
+      <td class="bg-warning">${miktar}</td>
 
-      <td class="bg-warning"> <i class="fa-solid fa-trash-can text-danger"> </i></td>
+      <td class="bg-warning"> <i id=${id} class="fa-solid fa-trash-can text-danger"> </i></td>
     </tr>`;
+
+  //! silme
+
+  document.querySelectorAll(".fa-trash-can").forEach((sil) => {
+    sil.onclick = () => {
+      //* ekrandan sil
+
+      sil.parentElement.parentElement.remove();
+
+      // sil.closest("tr").remove(); // parent'ini silmenin 2.yolu
+
+      //* diziden sil
+
+      harcamaListesi = harcamaListesi.filter((a) => a.id != sil.id);
+    };
+  });
 };
