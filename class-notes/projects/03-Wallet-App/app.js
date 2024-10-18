@@ -28,7 +28,7 @@ const kalanTable = document.getElementById("kalan");
 
 let gelirim = 0;
 
-let harcamaListesi;
+let harcamaListesi = [];
 
 //! ekle formu (yesil-kirmizi)
 
@@ -44,8 +44,33 @@ ekleFormu.onsubmit = (e) => {
 
 //! ilk harcama formu doldurma (arka plani sari olan yer)
 
-harcamaFormu.onsubmit=(e)=>{
-    e.preventDefault()
+harcamaFormu.onsubmit = (e) => {
+  e.preventDefault();
 
-    
-}
+  const yeniHarcama = {
+    tarih: tarihInput.value,
+    miktar: miktarInput.value,
+    alan: harcamaAlaniInput.value,
+    id: new Date().getTime(),
+  };
+
+  harcamaListesi.push(yeniHarcama);
+
+  //* ekrana bastir
+
+  harcamayiDomaYaz(yeniHarcama);
+};
+
+//! harcamayi doma yazma metodu
+
+const harcamayiDomaYaz = (yeniHarcama) => {
+  const { id, miktar, tarih, alan } = yeniHarcama; // destruction
+
+  harcamaBody.innerHTML += ` <tr>
+      <td class="bg-warning">${yeniHarcama.tarih}</td>
+      <td class="bg-warning">${yeniHarcama.alan}</td>
+      <td class="bg-warning">${yeniHarcama.miktar}</td>
+
+      <td class="bg-warning"> <i class="fa-solid fa-trash-can text-danger"> </i></td>
+    </tr>`;
+};
