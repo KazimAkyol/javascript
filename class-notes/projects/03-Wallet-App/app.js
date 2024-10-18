@@ -95,3 +95,15 @@ const harcamayiDomaYaz = (yeniHarcama) => {
     };
   });
 };
+
+//! hesapla ve güncelle
+
+const hesaplaVeGuncelle = () => {
+  const giderler = harcamaListesi.reduce(
+    (toplam, harcama) => toplam + Number(harcama.miktar)
+  );
+
+  giderinizTable.textContent = giderler;
+
+  kalanTable.textContent = gelirim - giderler;
+};
