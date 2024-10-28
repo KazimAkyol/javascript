@@ -22,6 +22,10 @@ class Book {
   }
 }
 
+//? new keyword ü  Book Constructor ı parametrelerle çağırır.
+//? Constructor, Book object in bir örneğini kalıbını oluşturur.
+//? Constructor daki tüm variablelar ve functionlar, oluşturulan her  single örneğe (instance a çocuklara) eklenir.
+
 const book1 = new Book("yaprak dökümü", "resat nuri", "1960");
 const book2 = new Book("safahat", "mehmet akif", "1910");
 
@@ -67,6 +71,8 @@ class Gazete extends Book {
 
 const gazete = new Gazete("sabah", "guneri", 1980, "13 aralik");
 const gazete2 = new Gazete("radikal", "", 1990, "13 nisan");
+
+//! extends edildiği zaman, atadan gelen her veriyi kullanmak zorundayız, en fazla value kısmını boş " " bırakabiliriz.
 
 console.log(gazete);
 console.log(gazete2);
