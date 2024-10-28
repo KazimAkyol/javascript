@@ -9,10 +9,8 @@
 class Book {
   constructor(a, b, c) {
     this.title = a;
-
-    this.year = c;
-
     this.yazar = b;
+    this.year = c;
 
     this.ozetFunction = function () {
       return `${this.title} kitabini ${this.year} yilinda ${this.yazar} yazmistir`;
@@ -36,7 +34,7 @@ console.log(book2.ozetFunction());
 console.log(book1.yilHesapla());
 console.log(book2.yilHesapla());
 
-//? INHERITANCE
+//? INHERITANCE (Kalitim Miras)
 
 //* Book object kalibindan Dergi Object'ine kalip getir
 
@@ -59,3 +57,16 @@ console.log(dergi2);
 console.log(dergi2.ozetFunction());
 console.log(dergi2.yilHesapla());
 
+class Gazete extends Book {
+  constructor(x, y, z, d) {
+    super(x, y, z);
+
+    this.day = d;
+  }
+}
+
+const gazete = new Gazete("sabah", "guneri", 1980, "13 aralik");
+const gazete2 = new Gazete("radikal", "", 1990, "13 nisan");
+
+console.log(gazete);
+console.log(gazete2);
