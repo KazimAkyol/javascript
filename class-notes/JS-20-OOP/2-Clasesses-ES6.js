@@ -35,3 +35,27 @@ console.log(book2.ozetFunction());
 
 console.log(book1.yilHesapla());
 console.log(book2.yilHesapla());
+
+//? INHERITANCE
+
+//* Book object kalibindan Dergi Object'ine kalip getir
+
+class Dergi extends Book {
+  constructor(title, yazar, year, d, e) {
+    super(title, yazar, year);
+
+    (this.mounth = d), (this.fiyat = e);
+  }
+}
+
+const dergi1 = new Dergi("marie clare", "elon musk", 1980, "aralik", 50);
+const dergi2 = new Dergi("giyim", "ipek bilir", 2000, "nisan", 50);
+
+console.log(dergi1);
+console.log(dergi1.ozetFunction());
+console.log(dergi1.yilHesapla());
+
+console.log(dergi2);
+console.log(dergi2.ozetFunction());
+console.log(dergi2.yilHesapla());
+
