@@ -24,20 +24,41 @@
 const defaultImage =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/220px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg";
 
-  const getirData = async() => {
-    const res= await fetch ("https://api.tvmaze.com/search/shows?q=girls");
+const getirData = async () => {
+  try {
+    const res = await fetch("https://api.tvmaze.com/search/shows?q=girls");
 
-    if(res.ok !=true) {
-        throw new Error(`url de hata var ${res.status}`)
+    if (res.ok != true) {
+      throw new Error(`url de hata var ${res.status}`);
     }
 
     const veri = await res.json();
 
     ekranaBastir(veri);
-} catch (error) {
+  } catch (error) {
+    console.log(error);
+    console.log("try-catch sayesinde koda devam edilebilir");
 
-    console.log(error)
-    console.log("try-catch sayesinde koda devam edilebilir")
+    document.querySelector(".users").innerHTML = `
+  <img src="./img/404.png"/>
+  <h1>${error}</h1>
+  
+  `;
+  }
+};
 
-    document.querySelector(".users").innerHTML = `<img src="./img/404.png" />`
-}
+getirData();
+
+const ekranaBastir = (data) => {
+  data.forEach((a) => {
+    console.log(a);
+
+    document.querySelector(".users").innerHTML += `
+  
+  <h1>${a.show.name} </h1>
+  
+  <img  src="${a.show.image?.medium || defaultImage}"/>
+  
+  `;
+  });
+};
