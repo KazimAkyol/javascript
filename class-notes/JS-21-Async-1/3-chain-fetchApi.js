@@ -24,9 +24,19 @@
 
 // console.log("merhaba");
 
-fetch("https://api.github.com/users")
-  .then((res) => res.json())
-  .then((veri) => ekranaBastir(veri));
+// butona basildiktan sonra verilerin gelmesi icin yazilan kod:
+
+document.querySelector(".btn").onclick = () => {
+  fetch("https://api.github.com/users")
+    .then((res) => {
+      if (res.ok != true) {
+        throw new Error("url de hata var");
+      }
+
+      return res.json();
+    })
+    .then((veri) => ekranaBastir(veri));
+};
 
 const ekranaBastir = (veri) => {
   veri.forEach((person) => {

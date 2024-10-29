@@ -12,6 +12,7 @@
 //* Aslinda dizilis olarak senkron mantiga benzeyen kod yazarak Asenkron kod yazmayı mumkun kilar.
 
 //* Await, promise-temelli herhangi bir fonksiyonun onune getirilerek getirildigi satirdaki kodun durdurulmasini saglar. Yapilan istek yerine getirilip sonuc degerlerinin dondurulmesi ile kodun calismasi devam eder.
+
 //! JavaScript try anahtar kelimesi kod bloğundaki kodları çalışma zamanında test etmek için kullanılır.
 
 //! JavaScript catch anahtar kelimesi çalışma zaman hatası sonucu oluşan hataları ekrana yazdırmak için kullanılır.
@@ -22,3 +23,21 @@
 
 const defaultImage =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/220px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg";
+
+  const getirData = async() => {
+    const res= await fetch ("https://api.tvmaze.com/search/shows?q=girls");
+
+    if(res.ok !=true) {
+        throw new Error(`url de hata var ${res.status}`)
+    }
+
+    const veri = await res.json();
+
+    ekranaBastir(veri);
+} catch (error) {
+
+    console.log(error)
+    console.log("try-catch sayesinde koda devam edilebilir")
+
+    document.querySelector(".users").innerHTML = `<img src="./img/404.png" />`
+}
