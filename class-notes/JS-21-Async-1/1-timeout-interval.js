@@ -19,7 +19,7 @@
 //*Asenkron (setTimeout) 1 seferlik
 
 setTimeout(() => {
-  console.log("günaydın nasılsınız");
+  console.log("günaydin nasilsiniz");
 }, 2000);
 
 console.log("selamun hello");
@@ -28,9 +28,10 @@ setTimeout(() => {
   console.log("aleyküm selam");
 }, 4000);
 
-//!yukarıdaki kodlar şu sırayla çalışır selamun hello- günaydın nasılsınız-aleyküm selam
+//! yukarıdaki kodlar şu sırayla çalışır selamun hello - günaydın nasılsınız - aleyküm selam
 
-//*Asenkron(setInterval, clearInterval) belli aralıklarla durdurulana kadar devam eder. mesela 1 dakikada bir döviz kurunu güncellemek için kullanılabilir
+//*Asenkron(setInterval, clearInterval) belli aralıklarla durdurulana kadar devam eder. mesela 1 dakikada bir döviz kurunu güncellemek için kullanılabilir.
+
 //***************************** */
 
 //?setInterval non-blocking (kod burada takılı kalmaz alttaki kodlarda çalışır)
@@ -40,6 +41,6 @@ const interv = setInterval(() => {
   console.log(++sayac);
 
   if (sayac == 7) {
-    clearInterval(interv); //başlayan intervalı durdurma metodu
+    clearInterval(interv); // başlayan intervalı durdurma metodu
   }
 }, 1000);

@@ -1,6 +1,6 @@
 //* ===========================================================
 //*                3- FETCH API
-//*=============================================================
+//*============================================================
 
 //? Dis kaynaklardan veri getirmek icin kullanilan basit bir arabirimdir.
 //? Ag istekleri yapmamiza ve cevaplari yonetebilmemize olanak saglar.
