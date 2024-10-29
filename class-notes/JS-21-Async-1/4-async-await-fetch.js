@@ -1,17 +1,19 @@
 //*===============================================================
 //*                   4- ASYNC-AWAIT
 //*===============================================================
+
 //? Async-Await ECMAScript 2017 ile Javascript diline eklenmistir.
 //? Aslinda Promise yapisinin syntax olarak basitlestirilmis halidir.
+
 //?! Bu baglamda syntatic sugar benzetmesi yapilabilir.
 
-//* Bir fonksiyonu async  hale getirmek icin fonksiyon keyword'nun onune async keyword'u eklenir.
+//* Bir fonksiyonu async hale getirmek icin fonksiyon keyword'ünün önüne async keyword'ü eklenir.
 
 //* Bir async fonksiyon icerisinde await keyword'u ile yapilan istegin cevabinin beklenmesi saglanir.
 
-//* Aslinda dizilis olarak senkron mantiga benzeyen kod yazarak Asenkron kod yazmayı mumkun kilar.
+//* Aslinda dizilis olarak senkron mantiga benzeyen kod yazarak Asenkron kod yazmayı mümkün kilar.
 
-//* Await, promise-temelli herhangi bir fonksiyonun onune getirilerek getirildigi satirdaki kodun durdurulmasini saglar. Yapilan istek yerine getirilip sonuc degerlerinin dondurulmesi ile kodun calismasi devam eder.
+//* Await, promise-temelli herhangi bir fonksiyonun önüne getirilerek getirildigi satirdaki kodun durdurulmasini saglar. Yapilan istek yerine getirilip sonuc degerlerinin döndürülmesi ile kodun calismasi devam eder.
 
 //! JavaScript try anahtar kelimesi kod bloğundaki kodları çalışma zamanında test etmek için kullanılır.
 
