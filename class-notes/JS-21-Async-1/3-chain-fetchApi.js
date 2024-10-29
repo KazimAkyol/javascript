@@ -18,4 +18,20 @@
 // Client error responses (400 – 499)
 // Server error responses (500 – 599)
 
-fetch("https://api.github.com/users").then((res) => console.log(res));
+// fetch("https://api.github.com/users")
+//   .then((res) => res.json())
+//   .then((veri) => console.log(veri));
+
+// console.log("merhaba");
+
+fetch("https://api.github.com/users")
+  .then((res) => res.json())
+  .then((veri) => ekranaBastir(veri));
+
+const ekranaBastir = (veri) => {
+  veri.forEach((person) => {
+    document.querySelector(
+      ".users"
+    ).innerHTML += `<h1>${person.login} </h1> <img width="50%" src=${person.avatar_url}/> <h3>${person.node_id}</h3>`;
+  });
+};
