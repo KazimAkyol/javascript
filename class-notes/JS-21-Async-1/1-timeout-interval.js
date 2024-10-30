@@ -25,9 +25,8 @@ setTimeout(() => {
 
 //*Asenkron(setInterval, clearInterval) belli aralıklarla durdurulana kadar devam eder. mesela 1 dakikada bir döviz kurunu güncellemek için kullanılabilir.
 
-//***************************** */
-
 //?setInterval non-blocking (kod burada takılı kalmaz alttaki kodlarda çalışır)
+
 let sayac = 0;
 
 const interv = setInterval(() => {
