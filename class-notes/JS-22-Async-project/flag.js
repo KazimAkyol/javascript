@@ -48,9 +48,9 @@ const ekranaBastir = (ülkeler) => {
 };
 
 //!ekrana bastırılacak dizi elemanlarının key leri farklı farklıysa===>>
-//!!!! Object.values(); objectlerin value larını,   numaralandırılabilir  bir dizi döndürür, istenen nesne nin içindeki object in value larını yaz, bu value lar ,object.value sayesinde dizi içinde toplanır
+//!!!! Object.values(); objectlerin value larını,   numaralandırılabilir  bir dizi döndürür, istenen nesne nin içindeki object in value larını yaz, bu value lar ,object.value sayesinde dizi içinde toplanır.
 
-//? Object.values(a.currencies)=currencies in value larını bir dizide toplar
+//? Object.values(a.currencies)=currencies in value larını bir dizide toplar.
 
-//* TRY: nin value sini dizi yapar 0 indexli: [{name: 'Turkish lira', symbol: '₺'}]. TRY key i silinir
-//* Object.values(country.languages)=languages in value larını bir dizide toplar[eng,span..] Eng key i silinir
+//* TRY: nin value sini dizi yapar 0 indexli: [{name: 'Turkish lira', symbol: '₺'}]. TRY key i silinir.
+//* Object.values(country.languages)=languages in value larını bir dizide toplar[eng,span..] Eng key i silinir.
