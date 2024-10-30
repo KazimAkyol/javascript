@@ -38,3 +38,14 @@ input.oninput = () => {
 
   ekranaBastir(inputYemekler);
 };
+
+//! bayraklara tıklanınca o ülkenin yemeği gelsin. API'yi aldığımız sitedeki url'nin endpoint'i ülke vatandaşları şeklinde, örneğin Turkish. Bizde bayraklara tıklanınca hazır img gelmişken ülke vatandaşı da gelmiş olsun diye id'sine bunu yerleştirdik ve fetch ile yazdığımız url'nin sonuna bu id yi ekleyerek tıkladığımız ülkenin yemeklerinin gelmesini sağladık.
+
+document.querySelectorAll("img").forEach(
+  (a) =>
+    (a.onclick = () => {
+      fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${a.id}`)
+        .then((res) => res.json())
+        .then((data) => ekranaBastir(data.meals));
+    })
+);
