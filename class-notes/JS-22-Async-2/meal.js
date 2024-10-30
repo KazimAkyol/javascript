@@ -12,6 +12,8 @@ fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
 const ekranaBastir = (veri) => {
   const foodDiv = document.querySelector(".food");
 
+  foodDiv.innerHTML = ""; // bu kod bu fonksiyona ne gönderilirse sadece onu bastirmamiza yarar, yani önce browser'i temizle sonra bastirirsin demis olduk
+
   veri.forEach((a) => {
     foodDiv.innerHTML += `
        <div class="col-lg-2 col-md-3 m-1">
@@ -29,6 +31,10 @@ const ekranaBastir = (veri) => {
 const input = document.querySelector("input");
 
 input.oninput = () => {
-  console.log(yemekler);
-  yemekler.meals.filter((a) => console.log());
+  //console.log(yemekler);
+  let inputYemekler = yemekler.meals.filter((a) =>
+    a.strMeal.toLowerCase().includes(input.value.toLowerCase())
+  );
+
+  ekranaBastir(inputYemekler);
 };
