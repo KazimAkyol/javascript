@@ -24,7 +24,7 @@
 
 // console.log("merhaba");
 
-// butona basildiktan sonra verilerin gelmesi icin yazilan kod:
+//! butona basildiktan sonra verilerin gelmesi icin yazilan kod:
 
 document.querySelector(".btn").onclick = () => {
   fetch("https://api.github.com/users")
