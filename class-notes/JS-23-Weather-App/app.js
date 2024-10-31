@@ -23,6 +23,7 @@ form.addEventListener("submit", async (e) => {
     ekranaBastir(veri);
   }
   console.log(veri);
+  form.value = "";
 });
 
 const ekranaBastir = (veri) => {
@@ -46,7 +47,7 @@ const ekranaBastir = (veri) => {
             } <img src="./assets/wi-humidity.svg" height="30px"/>${
     veri.main.humidity
   }</h6>
-            <li><img src="${iconUrl}"/></li>
+            <li><img src=${`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${veri.weather[0].icon}.svg`}"/></li>
             <li>${""}</li>
         </ul>
 </div>`;
@@ -54,8 +55,6 @@ const ekranaBastir = (veri) => {
 // const sehirAdi = document.querySelector(".form-control");
 
 // url = `https://api.openweathermap.org/data/2.5/weather?q=${şehiradi}&units=${units}&lang=${lang}&appid=${apiKey}`;
-
-const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${"diziden img url si gelecek"}.svg`;
 
 //! index.html den bir etiketin innerHTML sine gelen veriler bastırılacak
 // card.innerHTML = `
