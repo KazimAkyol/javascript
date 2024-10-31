@@ -2,15 +2,34 @@ console.log("App.js working");
 
 //! Variables
 let apiKey = "4ed283ae2ece6cf1fe2fe7e75b2ea7a5";
-let url; // API istegi kullanilacak
-let units = "metric";
-let lang = "en";
+let url; // API istegi icin kullanilacak
+let units = "metric"; // fahrenheit icin 'imperial' yazilmasi
+let lang = "en"; // ALmanya icin de 'DE' yazilmasi
 let cities = [];
 
-url = `https://api.openweathermap.org/data/2.5/weather?q=${şehiradı}&units=${units}&lang=${lang}&appid=${apiKey}`;
+const sehirAdi = document.querySelector(".form-control");
+const btn = document.querySelector("#search");
+const card = document.querySelector("#alert");
+
+btn.addEventListener("onsubmit", async () => {
+  const data = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${şehiradi}&units=${units}&lang=${lang}&appid=${apiKey}`
+  );
+  const veri = await data.json();
+  if (cities.length < 4) {
+    cities.push(veri);
+    ekranaBastir();
+  }
+  console.log(cities);
+});
+
+// const sehirAdi = document.querySelector(".form-control");
+
+url = `https://api.openweathermap.org/data/2.5/weather?q=${şehiradi}&units=${units}&lang=${lang}&appid=${apiKey}`;
 
 const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${"diziden img url si gelecek"}.svg`;
-//!index.html den bir etiketin innerHTML sine gelen veriler bastırılacak
+
+//! index.html den bir etiketin innerHTML sine gelen veriler bastırılacak
 card.innerHTML = ` 
 <div class="card mb-4 rounded-3 shadow-sm">
         <ul class="list-unstyled mt-2 mb-4">
