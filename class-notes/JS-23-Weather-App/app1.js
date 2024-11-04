@@ -90,5 +90,17 @@ const getWeatherData = async () => {
         alertMessage.classList.replace("d-block", d - none);
       }, 3000);
     }
+
+    //! Remove Cities
+
+    const singleClearButton = document.querySelector(".bi-x-circle");
+
+    singleClearButton.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        delete cities[cities.indexOf(e.target.closest(".col").id)];
+
+        e.target.closest(".col").remove(); // carpiya basilan karti DOM'dan siler.
+      });
+    });
   }
 };
