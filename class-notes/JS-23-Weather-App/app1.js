@@ -9,7 +9,18 @@ const cardContainer = document.getElementById("card-container");
 
 const apiKey = "d9742631ab44926faeb8d55a66b17a05";
 let url; // API istegi icin kullanacagiz
-let cities = [];
+let cities = []; // sergilenen tüm sehirlerin listesi
+let lang = "EN";
+
+//? Location find
+
+const locate = document.getElementById("locate");
+const userLocatonDiv = document.getElementById("userLocation");
+let userLocation = false;
+
+//? Language
+
+const langButton = document.querySelector();
 
 //! Event Listeners
 
@@ -28,19 +39,51 @@ form.addEventListener("submit", (e) => {
   form.reset(); // formu sifirlar
 });
 
+//location
+
+locate.addEventListener("click", () => {
+  navigator.geolocation?.getCurrentPosition(({ coords }) => {
+    // console.log(coords)
+
+    const { latitude, longitude } = coords;
+
+    url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&lang=${lang}&appid=${apiKey}`;
+    userLocation = true;
+    getWeatherData();
+  });
+});
+
+// language
+
+langButton.addEventListener("click", (e) => {
+  console.log(e.target.textContent);
+
+  if (e.target.textContent == "DE") {
+    input.setAttribute("placeholder", "Suche nach einer Stadt");
+    lang="DE"
+
+  } else if (e.target.textContent) {
+    input.setAttribute("placeholder", "Search for a city")
+    lang="EN";
+  }
+});
+
 //! Functions
 
 const getWeatherData = async () => {
   try {
-    const response = await fetch(url).then((response) => response.json()); //& fetch ile API istegi
+    // const response = await fetch(url).then((response) => response.json()); //& fetch ile API istegi
 
-    console.log(response);
+    const response = await axios(url); // Axios ile istek atma
+
+    // console.log(response); //& API ile gelen veri
   } catch (error) {
-    // console.log(error); //& API ile gelen veri
+    // console.log(error);
 
     //? Data Destructure
 
-    const { main, name, weather, sys } = response; //& fetch
+    // const { main, name, weather, sys } = response; //& fetch
+    const { main, name, weather, sys } = response.data; // Axios
 
     console.log(main, name, weather, sys);
 
